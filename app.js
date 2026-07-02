@@ -11,27 +11,29 @@ const diagnosticos = [
     "⚠️ ALERTA: Bujía con exceso de carbón. Se sugiere mantenimiento preventivo."
 ];
 
-boton.addEventListener('click', function() {
-    boton.disabled = true;
-    boton.innerText = "⚡ Conectando ECU...";
-    boton.style.opacity = "0.7";
-    consola.classList.remove('oculto');
-    resultado.innerText = "🔍 Escaneando sensores en tiempo real...";
-    resultado.style.color = "#3b82f6";
-    
-    setTimeout(() => { boton.innerText = "🤖 Analizando parámetros..."; }, 1000);
+if (boton) {
+    boton.addEventListener('click', function() {
+        boton.disabled = true;
+        boton.innerText = "⚡ Conectando ECU...";
+        boton.style.opacity = "0.7";
+        consola.classList.remove('oculto');
+        resultado.innerText = "🔍 Escaneando sensores en tiempo real...";
+        resultado.style.color = "#3b82f6";
+        
+        setTimeout(() => { boton.innerText = "🤖 Analizando parámetros..."; }, 1000);
 
-    setTimeout(() => {
-        const respuestaAlAzar = diagnosticos[Math.floor(Math.random() * diagnosticos.length)];
-        resultado.innerText = respuestaAlAzar;
-        if(respuestaAlAzar.includes("✅")) resultado.style.color = "#4ade80";
-        else if(respuestaAlAzar.includes("⚠️")) resultado.style.color = "#fbbf24";
-        else resultado.style.color = "#f87171";
-        boton.disabled = false;
-        boton.innerText = "Escanear Moto";
-        boton.style.opacity = "1";
-    }, 2500);
-});
+        setTimeout(() => {
+            const respuestaAlAzar = diagnosticos[Math.floor(Math.random() * diagnosticos.length)];
+            resultado.innerText = respuestaAlAzar;
+            if(respuestaAlAzar.includes("✅")) resultado.style.color = "#4ade80";
+            else if(respuestaAlAzar.includes("⚠️")) resultado.style.color = "#fbbf24";
+            else resultado.style.color = "#f87171";
+            boton.disabled = false;
+            boton.innerText = "Escanear Moto";
+            boton.style.opacity = "1";
+        }, 2000);
+    });
+}
 
 // --- PUNTO 1: LÓGICA DE HISTORIAL CLÍNICO ---
 const btnBuscarPlaca = document.getElementById('boton-buscar-placa');
@@ -43,21 +45,23 @@ const basePlacas = {
     "C1-2345": "📋 <b>Moto:</b> Yamaha FZ25<br>📅 <b>Último ingreso:</b> 02/06/2026<br>🛠️ <b>Trabajo realizado:</b> Mantenimiento general, cambio de pastillas de freno traseras y calibración de barras de suspensión."
 };
 
-btnBuscarPlaca.addEventListener('click', function() {
-    const placaIngresada = inputPlaca.value.trim().toUpperCase();
-    resultadoPlaca.classList.remove('oculto');
-    
-    if (placaIngresada === "") {
-        resultadoPlaca.innerHTML = "❌ Por favor, escribe un número de placa válido.";
-        resultadoPlaca.style.borderLeftColor = "#f87171";
-    } else if (basePlacas[placaIngresada]) {
-        resultadoPlaca.innerHTML = basePlacas[placaIngresada];
-        resultadoPlaca.style.borderLeftColor = "#4ade80";
-    } else {
-        resultadoPlaca.innerHTML = `🔍 <b>Placa: ${placaIngresada}</b><br>❌ No registra ingresos previos en Mecamotor. ¡Regístrala hoy agendando tu primer servicio!`;
-        resultadoPlaca.style.borderLeftColor = "#fbbf24";
-    }
-});
+if (btnBuscarPlaca) {
+    btnBuscarPlaca.addEventListener('click', function() {
+        const placaIngresada = inputPlaca.value.trim().toUpperCase();
+        resultadoPlaca.classList.remove('oculto');
+        
+        if (placaIngresada === "") {
+            resultadoPlaca.innerHTML = "❌ Por favor, escribe un número de placa válido.";
+            resultadoPlaca.style.borderLeftColor = "#f87171";
+        } else if (basePlacas[placaIngresada]) {
+            resultadoPlaca.innerHTML = basePlacas[placaIngresada];
+            resultadoPlaca.style.borderLeftColor = "#4ade80";
+        } else {
+            resultadoPlaca.innerHTML = `🔍 <b>Placa: ${placaIngresada}</b><br>❌ No registra ingresos previos en Mecamotor. ¡Regístrala hoy agendando tu primer servicio!`;
+            resultadoPlaca.style.borderLeftColor = "#fbbf24";
+        }
+    });
+}
 
 // --- PUNTO 2: LÓGICA DE REVISIÓN POR KILOMETRAJE ---
 const botonesKm = document.querySelectorAll('.btn-km');
@@ -79,40 +83,38 @@ botonesKm.forEach(boton => {
     });
 });
 
-// --- PUNTO 3: LÓGICA DEL COTIZADOR CORREGIDA AL 100% ---
-const checkboxes = document.querySelectorAll('.chk-servicio');
-const montoTotalElement = document.getElementById('monto-total');
-const btnEnviarCotizacion = document.getElementById('boton-enviar-cotizacion');
-
-function calcularTotal() {
-    let total = 0;
-    checkboxes.forEach(chk => { if (chk.checked) total += parseFloat(chk.value); });
-    montoTotalElement.innerText = "S/ " + total;
-}
-
-checkboxes.forEach(chk => { chk.addEventListener('change', calcularTotal); });
-
-btnEnviarCotizacion.addEventListener('click', function() {
-    let total = 0;
-    let serviciosSeleccionados = [];
+// --- ENLACE INTELIGENTE DE WHATSAPP (CELULAR Y LAPTOP AUTOMÁTICO) ---
+function abrirWhatsAppMecamotor(textoMensaje) {
+    let numeroTelefono = "51943398351";
+    let urlFinal = "";
     
-    // Verificamos cuáles están activos de forma súper limpia y segura
-    if (document.getElementById('srv-motor').checked) { total += 150; serviciosSeleccionados.push("Bajada de Motor Pro"); }
-    if (document.getElementById('srv-electrico').checked) { total += 40; serviciosSeleccionados.push("Sistema Eléctrico"); }
-    if (document.getElementById('srv-mantenimiento').checked) { total += 80; serviciosSeleccionados.push("Mantenimiento General"); }
-    if (document.getElementById('srv-frenos').checked) { total += 25; serviciosSeleccionados.push("Pastillas de Freno"); }
+    // Detectamos de forma agresiva si es un celular (Android, iPhone, iPad) o una laptop
+    let esCelular = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
-    if (serviciosSeleccionados.length === 0) {
-        alert("⚠️ Por favor, selecciona al menos un servicio para cotizar.");
-        return;
+    if (esCelular) {
+        // Si es celular, abrimos directamente la App sin cargar páginas web
+        urlFinal = "whatsapp://send?phone=" + numeroTelefono + "&text=" + encodeURIComponent(textoMensaje);
+    } else {
+        // Si es laptop o PC, cargamos la web oficial para que abra WhatsApp Web
+        urlFinal = "https://whatsapp.com" + numeroTelefono + "&text=" + encodeURIComponent(textoMensaje);
     }
     
-    // Armamos un mensaje de texto formateado directo para la web
-    let mensaje = "Hola Mecamotor, quiero cotizar: " + serviciosSeleccionados.join(" + ") + ". Total estimado: S/ " + total;
-    
-    // Aquí está tu número real 943398351 con el código de Perú (51)
-    let urlDestino = "https://wa.me/51943398351" + encodeURIComponent(mensaje);
-    
-    // Redirección directa en la misma pestaña para que ningún navegador lo bloquee
-    window.location.href = urlDestino;
-});
+    // Ejecutamos la redirección en la misma pestaña para burlar cualquier bloqueo de seguridad
+    window.location.href = urlFinal;
+}
+
+// Asignamos la acción al botón principal de arriba
+const btnWspPrincipal = document.getElementById('btn-whatsapp-principal');
+if (btnWspPrincipal) {
+    btnWspPrincipal.addEventListener('click', function() {
+        abrirWhatsAppMecamotor("Hola Mecamotor, quiero agendar una cita para mi moto.");
+    });
+}
+
+// Asignamos la acción al botón del cotizador de abajo
+const btnWspCotizar = document.getElementById('btn-whatsapp-cotizar');
+if (btnWspCotizar) {
+    btnWspCotizar.addEventListener('click', function() {
+        abrirWhatsAppMecamotor("Hola Mecamotor, quiero cotizar un mantenimiento para mi moto.");
+    });
+}
