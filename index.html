@@ -13,54 +13,55 @@
         <source src="taller.mp4" type="video/mp4">
     </video>
 
-    <!-- SECCIÓN 1: Tarjeta Principal Interactiva (INTACTA) -->
+    <!-- SECCIÓN 1: Pantalla de Inicio Repotenciada (Llena el espacio vacío) -->
     <div class="pantalla-inicio">
-        <div class="tarjeta-taller">
-            <div class="logo">🛠️ MECAMOTOR</div>
-            <h1>Servicio Técnico Especializado</h1>
-            <p>Potencia, precisión y tecnología robótica avanzada para tu motocicleta.</p>
+        <div class="contenedor-inicio-pro">
             
-            <div class="botones-container">
-                <button id="boton-diagnostico">Escanear Moto</button>
-                <button id="btn-whatsapp-principal" class="btn-whatsapp">
-                    💬 Agendar por WhatsApp
-                </button>
+            <!-- Columna Izquierda: Tu Tarjeta Interactiva intacta -->
+            <div class="tarjeta-taller">
+                <div class="logo">🛠️ MECAMOTOR</div>
+                <h1>Servicio Técnico Especializado</h1>
+                <p>Potencia, precisión y tecnología robótica avanzada para tu motocicleta.</p>
+                
+                <div class="botones-container">
+                    <button id="boton-diagnostico">Escanear Moto</button>
+                    <button id="btn-whatsapp-principal" class="btn-whatsapp">
+                        💬 Agendar por WhatsApp
+                    </button>
+                </div>
+                
+                <div id="consola-diagnostico" class="consola oculto">
+                    <p class="analizando">🤖 DIAGNÓSTICO EN CURSO:</p>
+                    <p id="resultado-scanner"></p>
+                </div>
             </div>
-            
-            <div id="consola-diagnostico" class="consola oculto">
-                <p class="analizando">🤖 DIAGNÓSTICO EN CURSO:</p>
-                <p id="resultado-scanner"></p>
-            </div>
-            
-            <div class="indicador-bajar">⚡ Desliza para ver la propuesta de valor ↓</div>
-        </div>
-    </div>
 
-    <!-- 🌟 NUEVA SECCIÓN AGREGADA: Propuesta de Valor y Pilares de Autoridad -->
-    <div class="seccion-oscura" style="border-top: 2px solid #3b82f6;">
-        <h2>⚡ DIAGNÓSTICO DIGITAL AVANZADO</h2>
-        <p class="subtitulo" style="max-width: 700px; margin: 0 auto 50px auto; line-height: 1.8;">
-            Mecánica de precisión para tu motocicleta. En Mecamotor no adivinamos las fallas ni te hacemos gastar de más; las escaneamos en tiempo real con tecnología robótica de punta para garantizar el máximo rendimiento de tu máquina.
-        </p>
-        
-        <div class="contenedor-pilares">
-            <div class="bloque-pilar">
-                <h3>📡 Precisión Electrónica</h3>
-                <p>Escaneo computarizado de sensores, inyección y compresión de motor con datos exactos en pantalla.</p>
+            <!-- Columna Derecha: Panel de Valor que rellena el vacío lateral -->
+            <div class="panel-valor-inicio">
+                <h2>⚡ DIAGNÓSTICO DIGITAL AVANZADO</h2>
+                <p class="descripcion-valor">En Mecamotor no adivinamos las fallas ni te hacemos gastar de más; las escaneamos en tiempo real con tecnología robótica de punta para garantizar el máximo rendimiento.</p>
+                
+                <div class="minis-pilares">
+                    <div class="mini-pilar">
+                        <h3>📡 Precisión Electrónica</h3>
+                        <p>Escaneo computarizado de sensores, inyección y compresión con datos exactos en pantalla.</p>
+                    </div>
+                    <div class="mini-pilar">
+                        <h3>📋 Transparencia Total</h3>
+                        <p>Historial clínico digital por placa. Mira el pasado de tu moto desde la web y paga solo lo justo.</p>
+                    </div>
+                    <div class="mini-pilar">
+                        <h3>⚙️ Ingeniería de Ruta</h3>
+                        <p>Mantenimientos milimétricos bajo manual de fabricante para garantizar la máxima potencia.</p>
+                    </div>
+                </div>
             </div>
-            <div class="bloque-pilar">
-                <h3>📋 Transparencia Total</h3>
-                <p>El único taller con historial clínico digital por placa. Mira el pasado de tu moto desde la web y paga solo lo justo.</p>
-            </div>
-            <div class="bloque-pilar">
-                <h3>⚙️ Ingeniería de Ruta</h3>
-                <p>Mantenimientos milimétricos ejecutados bajo manual de fabricante para garantizar la máxima potencia y seguridad en pista.</p>
-            </div>
+
         </div>
     </div>
 
     <!-- PUNTO 1: Sistema de Historial Clínico por Placa (INTACTO) -->
-    <div class="seccion-oscura" style="border-top: 1px solid #1e293b;">
+    <div class="seccion-oscura" style="border-top: 2px solid #3b82f6;">
         <h2>📋 HISTORIAL CLÍNICO DIGITAL</h2>
         <p class="subtitulo">Ingresa la placa de tu moto para ver sus reparaciones anteriores en nuestro taller.</p>
         <div class="buscador-container">
