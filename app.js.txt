@@ -1,0 +1,15 @@
+// Buscamos el botón y el texto oculto en la página web
+const boton = document.getElementById('boton-magico');
+const mensaje = document.getElementById('mensaje-oculto');
+
+// Le decimos qué hacer cuando el usuario haga clic
+boton.addEventListener('click', function() {
+    // Si el mensaje está oculto, lo muestra. Si no, lo esconde.
+    if (mensaje.className === 'oculto') {
+        mensaje.className = 'mostrar';
+        boton.innerText = 'Ocultar mensaje';
+    } else {
+        mensaje.className = 'oculto';
+        boton.innerText = 'Haz clic aquí';
+    }
+});
