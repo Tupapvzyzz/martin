@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <!-- Video cinematográfico de fondo en bucle -->
     <video autoplay muted loop playsinline preload="auto" id="video-fondo">
         <source src="taller.mp4" type="video/mp4">
     </video>
@@ -40,7 +41,7 @@
         <h2>📋 HISTORIAL CLÍNICO DIGITAL</h2>
         <p class="subtitulo">Ingresa la placa de tu moto para ver sus reparaciones anteriores en nuestro taller.</p>
         <div class="buscador-container">
-            <input type="text" id="input-placa" placeholder="Ej: 1234-ABC o C1-2345" maxlength="9">
+            <input type="text" id="input-placa" placeholder="Ej: 1234-ABC" maxlength="9">
             <button id="boton-buscar-placa">Consultar Placa</button>
         </div>
         <div id="resultado-placa" class="bloque-resultado-placa oculto"></div>
@@ -69,7 +70,7 @@
                 <label for="srv-motor">⚙️ Bajada de Motor Pro (Desde S/ 150)</label>
             </div>
             <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-electrico" value="40" class="chk-servicio" data-name="Sistema Eléctrico e Inyección">
+                <input type="checkbox" id="srv-electrico" value="40" class="chk-servicio" data-name="Sistema Electrico">
                 <label for="srv-electrico">⚡ Sistema Eléctrico e Inyección (Desde S/ 40)</label>
             </div>
             <div class="opcion-cotizar">
@@ -77,7 +78,7 @@
                 <label for="srv-mantenimiento">🧫 Mantenimiento General (S/ 80 fijo)</label>
             </div>
             <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-frenos" value="25" class="chk-servicio" data-name="Cambio de Pastillas/Zapatas">
+                <input type="checkbox" id="srv-frenos" value="25" class="chk-servicio" data-name="Pastillas de Freno">
                 <label for="srv-frenos">🛑 Pastillas de Freno (S/ 25)</label>
             </div>
 
