@@ -77,9 +77,8 @@ botonesKm.forEach(boton => {
         resultadoKm.classList.remove('oculto');
         resultadoKm.innerHTML = pautasKm[kilometraje];
     });
-});
-
-// --- PUNTO 3: LÓGICA DEL COTIZADOR CORREGIDA ---
+    
+    // --- PUNTO 3: LÓGICA DEL COTIZADOR (VERSION FINAL REPARADA) ---
 const checkboxes = document.querySelectorAll('.chk-servicio');
 const montoTotalElement = document.getElementById('monto-total');
 const btnEnviarCotizacion = document.getElementById('boton-enviar-cotizacion');
@@ -92,31 +91,31 @@ function calcularTotal() {
 
 checkboxes.forEach(chk => { chk.addEventListener('change', calcularTotal); });
 
-// Modificamos el evento del botón para que no use formularios y vaya directo a tu número
 btnEnviarCotizacion.addEventListener('click', function(e) {
-    e.preventDefault(); // Detiene cualquier acción rara del navegador
+    e.preventDefault(); 
     
     let total = 0;
     let serviciosSeleccionados = [];
     
-    checkboxes.forEach(chk => {
-        if (chk.checked) {
-            total += parseFloat(chk.value);
-            serviciosSeleccionados.push(chk.parentElement.querySelector('label').innerText.split('(')[0].trim());
-        }
-    });
+    // Recorremos las casillas marcadas de forma segura y directa
+    if (document.getElementById('srv-motor').checked) { total += 150; serviciosSeleccionados.push("Bajada de Motor Pro"); }
+    if (document.getElementById('srv-electrico').checked) { total += 40; serviciosSeleccionados.push("Sistema Eléctrico"); }
+    if (document.getElementById('srv-mantenimiento').checked) { total += 80; serviciosSeleccionados.push("Mantenimiento General"); }
+    if (document.getElementById('srv-frenos').checked) { total += 25; serviciosSeleccionados.push("Pastillas de Freno"); }
     
     if (serviciosSeleccionados.length === 0) {
         alert("⚠️ Por favor, selecciona al menos un servicio para cotizar.");
         return;
     }
     
-    // Armamos un mensaje de texto súper limpio y simple para evitar bugs
-    let mensaje = "Hola Mecamotor, quiero cotizar: " + serviciosSeleccionados.join(" + ") + ". Total estimado: S/ " + total;
+    // Texto plano perfecto sin caracteres raros que rompan el chat
+    let textoMensaje = "Hola Mecamotor, quiero cotizar estos servicios: " + serviciosSeleccionados.join(" + ") + ". Total estimado: S/ " + total;
     
-    // Creamos el enlace plano directo a tu número de teléfono real 943398351
-    let urlDestino = "https://wa.me" + encodeURIComponent(mensaje);
+    // Enlace directo a tu número sin intermediarios
+    let urlWhatsApp = "https://wa.me" + encodeURIComponent(textoMensaje);
     
-    // Abrimos el chat de forma directa y limpia
-    window.open(urlDestino, '_blank');
+    // Abrimos el chat de golpe de forma nativa
+    window.location.href = urlWhatsApp;
 });
+});
+
