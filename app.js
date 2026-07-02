@@ -115,12 +115,18 @@ btnEnviarCotizacion.addEventListener('click', function() {
         alert("⚠️ Por favor, selecciona al menos un servicio para cotizar.");
         return;
     }
+    // ✅ REEMPLAZO DEFINITIVO Y SEGURO:
+    if (serviciosSeleccionados.length === 0) {
+        alert("⚠️ Por favor, selecciona al menos un servicio para cotizar.");
+        return;
+    }
+
+    // Unimos los servicios usando el código %20 en lugar de espacios normales
+    let listaServicios = serviciosSeleccionados.join("%20,%20");
     
-    let listaServicios = serviciosSeleccionados.join(" , ");
+    // Creamos la ruta con formato web puro para que el navegador NO la bloquee
+    let enlaceWhatsApp = "https://wa.me" + listaServicios + ".%20Total%20estimado:%20S/%20" + total;
     
-    // Aquí ingresamos tu número real con el código de Perú (51) de manera directa y segura
-    let enlaceWhatsApp = "https://wa.me Mecamotor, quiero cotizar estos servicios: " + listaServicios + ". Total estimado: S/ " + total;
+    // Abrimos el chat de forma forzada abriendo una pestaña nueva limpia
+    window.open(enlaceWhatsApp, '_blank');
     
-    // Abrimos el chat de forma directa y limpia
-    window.location.href = enlaceWhatsApp;
-});
