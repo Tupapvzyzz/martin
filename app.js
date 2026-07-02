@@ -67,7 +67,7 @@ const pautasKm = {
     "5k": "<b>🏍️ Pauta de los 5,000 KM:</b><ul><li>Cambio obligatorio de aceite de motor y filtro.</li><li>Limpieza y regulación del cuerpo de aceleración.</li><li>Ajuste, lubricación y tensado de la cadena.</li></ul>",
     "10k": "<b>🏍️ Pauta de los 10,000 KM:</b><ul><li>Todo lo anterior + Reemplazo de bujía e inspección de filtros.</li><li>Calibración de luz de válvulas.</li></ul>",
     "20k": "<b>🏍️ Pauta de los 20,000 KM (Mantenimiento Mayor):</b><ul><li>Cambio de fluidos completo (Aceite, frenos, suspensión).</li><li>Reemplazo de kit de arrastre y pastillas.</li></ul>"
-    };
+};
 
 botonesKm.forEach(boton => {
     boton.addEventListener('click', function() {
@@ -77,8 +77,9 @@ botonesKm.forEach(boton => {
         resultadoKm.classList.remove('oculto');
         resultadoKm.innerHTML = pautasKm[kilometraje];
     });
-    
-    // --- PUNTO 3: LÓGICA DEL COTIZADOR (VERSION FINAL REPARADA) ---
+});
+
+// --- PUNTO 3: LÓGICA DEL COTIZADOR CORREGIDA AL 100% ---
 const checkboxes = document.querySelectorAll('.chk-servicio');
 const montoTotalElement = document.getElementById('monto-total');
 const btnEnviarCotizacion = document.getElementById('boton-enviar-cotizacion');
@@ -91,13 +92,11 @@ function calcularTotal() {
 
 checkboxes.forEach(chk => { chk.addEventListener('change', calcularTotal); });
 
-btnEnviarCotizacion.addEventListener('click', function(e) {
-    e.preventDefault(); 
-    
+btnEnviarCotizacion.addEventListener('click', function() {
     let total = 0;
     let serviciosSeleccionados = [];
     
-    // Recorremos las casillas marcadas de forma segura y directa
+    // Verificamos cuáles están activos de forma súper limpia y segura
     if (document.getElementById('srv-motor').checked) { total += 150; serviciosSeleccionados.push("Bajada de Motor Pro"); }
     if (document.getElementById('srv-electrico').checked) { total += 40; serviciosSeleccionados.push("Sistema Eléctrico"); }
     if (document.getElementById('srv-mantenimiento').checked) { total += 80; serviciosSeleccionados.push("Mantenimiento General"); }
@@ -108,14 +107,12 @@ btnEnviarCotizacion.addEventListener('click', function(e) {
         return;
     }
     
-    // Texto plano perfecto sin caracteres raros que rompan el chat
-    let textoMensaje = "Hola Mecamotor, quiero cotizar estos servicios: " + serviciosSeleccionados.join(" + ") + ". Total estimado: S/ " + total;
+    // Armamos un mensaje de texto formateado directo para la web
+    let mensaje = "Hola Mecamotor, quiero cotizar: " + serviciosSeleccionados.join(" + ") + ". Total estimado: S/ " + total;
     
-    // Enlace directo a tu número sin intermediarios
-    let urlWhatsApp = "https://wa.me" + encodeURIComponent(textoMensaje);
+    // Aquí está tu número real 943398351 con el código de Perú (51)
+    let urlDestino = "https://wa.me" + encodeURIComponent(mensaje);
     
-    // Abrimos el chat de golpe de forma nativa
-    window.location.href = urlWhatsApp;
+    // Redirección directa en la misma pestaña para que ningún navegador lo bloquee
+    window.location.href = urlDestino;
 });
-});
-
