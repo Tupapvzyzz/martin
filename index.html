@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- Video cinematográfico de fondo en bucle -->
+    <!-- Video de fondo -->
     <video autoplay muted loop playsinline preload="auto" id="video-fondo">
         <source src="taller.mp4" type="video/mp4">
     </video>
@@ -59,38 +59,18 @@
         <div id="resultado-km" class="bloque-resultado-km oculto"></div>
     </div>
 
-    <!-- PUNTO 3: Calculadora de Presupuesto Automático -->
-    <div class="seccion-oscura" style="border-top: 1px solid #1e293b;">
+    <!-- PUNTO 3: ENLACE PURO DIRECTO ANTI-TRABAS -->
+    <div class="seccion-oscura" style="border-top: 1px solid #1e293b; padding-bottom: 100px;">
         <h2>💰 COTIZADOR DE PRESUPUESTO INSTANTÁNEO</h2>
-        <p class="subtitulo">Selecciona los servicios que necesitas y calcula tu presupuesto en tiempo real.</p>
+        <p class="subtitulo">Presiona el texto verde de abajo para cotizar tus servicios directamente por WhatsApp.</p>
         
-        <div class="cotizador-box">
-            <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-motor" value="150" class="chk-servicio">
-                <label for="srv-motor">⚙️ Bajada de Motor Pro (Desde S/ 150)</label>
-            </div>
-            <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-electrico" value="40" class="chk-servicio">
-                <label for="srv-electrico">⚡ Sistema Eléctrico e Inyección (Desde S/ 40)</label>
-            </div>
-            <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-mantenimiento" value="80" class="chk-servicio">
-                <label for="srv-mantenimiento">🧫 Mantenimiento General (S/ 80 fijo)</label>
-            </div>
-            <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-frenos" value="25" class="chk-servicio">
-                <label for="srv-frenos">🛑 Pastillas de Freno (S/ 25)</label>
-            </div>
-
-            <div class="total-container">
-                <span>TOTAL ESTIMADO:</span>
-                <span id="monto-total">S/ 0</span>
-            </div>
-
-            <!-- Botón normal e independiente conectado a JavaScript -->
-            <button id="boton-enviar-cotizacion" style="margin-top: 20px; width: 100%; background: linear-gradient(135deg, #25d366, #128c7e);">
-                📱 Enviar Presupuesto por WhatsApp
-            </button>
+        <div style="margin-top: 30px;">
+            <!-- Un enlace de texto masivo imposible de bloquear o tapar por el diseño anterior -->
+            <a href="https://wa.me." 
+               target="_blank" 
+               style="color: #4ade80; font-size: 24px; font-weight: bold; text-decoration: underline; text-shadow: 0 0 10px rgba(74,222,128,0.5); display: inline-block; padding: 20px;">
+               ➔ CLIC AQUÍ PARA COTIZAR POR WHATSAPP 📱
+            </a>
         </div>
     </div>
 
