@@ -22,7 +22,8 @@
             
             <div class="botones-container">
                 <button id="boton-diagnostico">Escanear Moto</button>
-                <a href="https://whatsapp.com" target="_blank" class="btn-whatsapp">
+                <!-- Primer botón corregido sin target_blank para evitar bloqueos -->
+                <a href="https://wa.me" class="btn-whatsapp">
                     💬 Agendar por WhatsApp
                 </a>
             </div>
@@ -59,15 +60,14 @@
         <div id="resultado-km" class="bloque-resultado-km oculto"></div>
     </div>
 
-    <!-- PUNTO 3: ENLACE PURO CON API DE WHATSAPP -->
+    <!-- PUNTO 3: ENLACE INDESTRUCTIBLE DIRECTO -->
     <div class="seccion-oscura" style="border-top: 1px solid #1e293b; padding-bottom: 100px;">
         <h2>💰 COTIZADOR DE PRESUPUESTO INSTANTÁNEO</h2>
         <p class="subtitulo">Presiona el botón de abajo para cotizar tus servicios directamente por WhatsApp.</p>
         
         <div style="margin-top: 30px;">
-            <!-- Enlace limpio usando ://whatsapp.com sin puntos que causen error -->
-            <a href="https://://whatsapp.com/send?phone=51943398351&text=Hola%20Mecamotor,%20quiero%20cotizar%20un%20mantenimiento%20para%20mi%20moto" 
-               target="_blank" 
+            <!-- Cotizador corregido sin target_blank para forzar la apertura en la misma pantalla -->
+            <a href="https://wa.me" 
                class="btn-whatsapp"
                style="max-width: 320px; width: 100%; display: inline-block; text-decoration: none; background: linear-gradient(135deg, #25d366, #128c7e); padding: 15px; font-weight: bold; border-radius: 12px; color: white;">
                📱 Cotizar por WhatsApp
