@@ -31,29 +31,64 @@
                 <p id="resultado-scanner"></p>
             </div>
             
-            <div class="indicador-bajar">⚡ Desliza para ver especialidades ↓</div>
+            <div class="indicador-bajar">⚡ Desliza para ver módulos interactivos ↓</div>
         </div>
     </div>
 
-    <!-- SECCIÓN 2: Panel de Servicios Avanzados -->
-    <div class="seccion-servicios">
-        <h2>🛠️ NUESTRAS ESPECIALIDADES Y PRECIOS</h2>
-        <div class="contenedor-servicios">
-            <div class="bloque-servicio">
-                <h3>⚙️ Bajada de Motor Pro</h3>
-                <p>Ajuste completo, rectificación, calibración de válvulas y cambio de empaques.</p>
-                <div class="precio">Desde S/ 150</div>
+    <!-- PUNTO 1: Sistema de Historial Clínico por Placa -->
+    <div class="seccion-oscura">
+        <h2>📋 HISTORIAL CLÍNICO DIGITAL</h2>
+        <p class="subtitulo">Ingresa la placa de tu moto para ver sus reparaciones anteriores en nuestro taller.</p>
+        <div class="buscador-container">
+            <input type="text" id="input-placa" placeholder="Ej: 1234-ABC o C1-2345" maxlength="9">
+            <button id="boton-buscar-placa">Consultar Placa</button>
+        </div>
+        <div id="resultado-placa" class="bloque-resultado-placa oculto"></div>
+    </div>
+
+    <!-- PUNTO 2: Mantenimiento Preventivo por Kilometraje -->
+    <div class="seccion-oscura" style="border-top: 1px solid #1e293b;">
+        <h2>📊 REVISIÓN POR KILOMETRAJE</h2>
+        <p class="subtitulo">Selecciona el kilometraje actual de tu moto para ver qué servicios le tocan ya mismo.</p>
+        <div class="botones-km-container">
+            <button class="btn-km" data-km="5k">5,000 KM</button>
+            <button class="btn-km" data-km="10k">10,000 KM</button>
+            <button class="btn-km" data-km="20k">20,000 KM</button>
+        </div>
+        <div id="resultado-km" class="bloque-resultado-km oculto"></div>
+    </div>
+
+    <!-- PUNTO 3: Calculadora de Presupuesto Automático -->
+    <div class="seccion-oscura" style="border-top: 1px solid #1e293b;">
+        <h2>💰 COTIZADOR DE PRESUPUESTO INSTANTÁNEO</h2>
+        <p class="subtitulo">Selecciona los servicios que necesitas y calcula tu presupuesto en tiempo real.</p>
+        
+        <div class="cotizador-box">
+            <div class="opcion-cotizar">
+                <input type="checkbox" id="srv-motor" value="150" class="chk-servicio" data-name="Bajada de Motor Pro">
+                <label for="srv-motor">⚙️ Bajada de Motor Pro (Desde S/ 150)</label>
             </div>
-            <div class="bloque-servicio">
-                <h3>⚡ Sistema Eléctrico y Luces</h3>
-                <p>Diagnóstico de fallas, bobinados, instalación de alarmas, luces LED y cableado general.</p>
-                <div class="precio">Desde S/ 40</div>
+            <div class="opcion-cotizar">
+                <input type="checkbox" id="srv-electrico" value="40" class="chk-servicio" data-name="Sistema Eléctrico e Inyección">
+                <label for="srv-electrico">⚡ Sistema Eléctrico e Inyección (Desde S/ 40)</label>
             </div>
-            <div class="bloque-servicio">
-                <h3>🧫 Mantenimiento General</h3>
-                <p>Limpieza de carburador/inyectores, regulación de frenos, lubricación de cadena y lavado premium.</p>
-                <div class="precio">S/ 80 fijo</div>
+            <div class="opcion-cotizar">
+                <input type="checkbox" id="srv-mantenimiento" value="80" class="chk-servicio" data-name="Mantenimiento General">
+                <label for="srv-mantenimiento">🧫 Mantenimiento General (S/ 80 fijo)</label>
             </div>
+            <div class="opcion-cotizar">
+                <input type="checkbox" id="srv-frenos" value="25" class="chk-servicio" data-name="Cambio de Pastillas/Zapatas">
+                <label for="srv-frenos">🛑 Pastillas de Freno (S/ 25)</label>
+            </div>
+
+            <div class="total-container">
+                <span>TOTAL ESTIMADO:</span>
+                <span id="monto-total">S/ 0</span>
+            </div>
+
+            <button id="boton-enviar-cotizacion" style="margin-top: 20px; background: linear-gradient(135deg, #25d366, #128c7e);">
+                📱 Enviar Presupuesto por WhatsApp
+            </button>
         </div>
     </div>
 
