@@ -1,82 +1,815 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mecamotor | Taller Mecánico Especializado</title>
-    <link rel="icon" type="image/jpg" href="logo.meca.jpg">
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MECAMOTOR | Mecánica Especializada de Motos</title>
+
+<meta name="description"
+content="MECAMOTOR - Taller especializado en mantenimiento, reparación y diagnóstico de motocicletas deportivas, naked, touring y alta cilindrada.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="styles.css">
+
 </head>
+
 <body>
 
-    <!-- BARRA SUPERIOR NEGRA DE ATENCIÓN -->
-    <div class="barra-negra-atencion">
-        <p>⏰ Horario de Atención: Lunes a Sábado 8:30 am - 6:30 pm | 📞 Soporte: +51 943 398 351</p>
+
+
+<!--==============================
+LOADER
+==============================-->
+
+<div id="loader">
+
+<div class="loader-logo">
+
+<img src="logo.meca.jpg">
+
+<h2>MECAMOTOR</h2>
+
+</div>
+
+</div>
+
+
+
+
+<!--==============================
+CURSOR PERSONALIZADO
+==============================-->
+
+<div id="cursor"></div>
+
+
+
+
+
+<!--==============================
+NAVBAR
+==============================-->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<img src="logo.meca.jpg">
+
+</div>
+
+<ul class="menu">
+
+<li><a href="#inicio">Inicio</a></li>
+
+<li><a href="#servicios">Servicios</a></li>
+
+<li><a href="#galeria">Galería</a></li>
+
+<li><a href="#contacto">Contacto</a></li>
+
+</ul>
+
+<a class="btn-nav"
+href="https://wa.me/51943398351?text=Hola%20MECAMOTOR,%20quiero%20información."
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+WhatsApp
+
+</a>
+
+<div class="menu-mobile">
+
+<i class="fas fa-bars"></i>
+
+</div>
+
+</nav>
+
+</header>
+
+
+
+
+
+
+<!--==============================
+HERO
+==============================-->
+
+<section class="hero"
+id="inicio">
+
+<video autoplay
+muted
+loop
+playsinline
+class="hero-video">
+
+<source src="taller.mp4"
+type="video/mp4">
+
+</video>
+
+
+
+<div class="overlay"></div>
+
+
+
+<div class="hero-content">
+
+
+
+<h3>
+ESPECIALISTAS EN MOTOCICLETAS
+</h3>
+
+
+
+<h1>
+
+MECAMOTOR
+
+</h1>
+
+
+
+<p>
+
+Mantenimiento • Diagnóstico • Reparación • Performance
+
+</p>
+
+
+
+<div class="hero-buttons">
+
+<a href="#servicios"
+class="btn-primary">
+
+Nuestros Servicios
+
+</a>
+
+<a href="https://wa.me/51943398351?text=Hola%20MECAMOTOR,%20quiero%20agendar%20una%20cita."
+target="_blank"
+class="btn-secondary">
+
+Cotizar Ahora
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<!--==============================
+HERO SECUNDARIO
+==============================-->
+
+<section class="hero-bike">
+
+<div class="bike-left">
+
+<h2>
+
+La pasión por las motos
+es nuestro trabajo.
+
+</h2>
+
+<p>
+
+Especialistas en motos deportivas, naked, touring,
+cross y alta cilindrada.
+
+Trabajamos con Kawasaki, Yamaha,
+Honda, Suzuki, KTM, Ducati,
+BMW y muchas más.
+
+</p>
+
+<ul>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Diagnóstico computarizado
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Cambio de aceite
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Revisión completa
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Suspensión y frenos
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Sistema eléctrico
+
+</li>
+
+</ul>
+
+</div>
+
+
+
+
+
+<div class="bike-right">
+
+<img src="zx10r-hero.png"
+alt="Kawasaki ZX10R">
+
+</div>
+
+</section>
+<!--=====================================
+SERVICIOS
+======================================-->
+
+<section class="services" id="servicios">
+
+    <div class="section-title">
+
+        <span>NUESTROS SERVICIOS</span>
+
+        <h2>Especialistas en motocicletas</h2>
+
+        <p>
+            Tecnología, experiencia y pasión para mantener tu moto al máximo rendimiento.
+        </p>
+
     </div>
 
-    <!-- VIDEO DE FONDO CINEMATOGRÁFICO -->
-    <video autoplay muted loop playsinline preload="auto" id="video-fondo">
-        <source src="taller.mp4" type="video/mp4">
-    </video>
+    <div class="services-grid">
 
-    <!-- CONTENEDOR GENERAL DE LAS TARJETAS (SIMÉTRICO) -->
-    <main class="contenedor-principal">
-        <div class="fila-contenido">
-            
-            <!-- TARJETA IZQUIERDA: TU LOGO Y SERVICIOS -->
-            <section class="tarjeta-izquierda">
-                <div class="logo-contenedor">
-                    <img src="logo.meca.jpg" alt="Mecamotor Logo" class="logo-web">
-                </div>
-                <h2>Servicio Técnico Especializado</h2>
-                
-                <div class="lista-checks">
-                    <div class="check-item">✔️ Bajada de Motor Pro</div>
-                    <div class="check-item">✔️ Mantenimiento Preventivo Integral</div>
-                    <div class="check-item">✔️ Reparación de Sistema Eléctrico</div>
-                    <div class="check-item">✔️ Diagnóstico de Inyección Electrónica</div>
-                </div>
+        <div class="service-card">
 
-                <div class="botones-contenedor">
-                    <button id="boton-escanear" class="btn-azul">Escanear Moto</button>
-                    <a href="https://wa.me" target="_blank" class="btn-verde">🟢 Agendar Cita WhatsApp</a>
-                    <a href="https://wa.me" target="_blank" class="btn-amarillo">💰 Cotizar Ahora</a>
-                </div>
-                <div id="resultado-escaneo" class="resultado-texto"></div>
-            </section>
+            <i class="fa-solid fa-oil-can"></i>
 
-            <!-- TARJETA DERECHA: DIAGNÓSTICO E IMAGEN DEL MECÁNICO -->
-            <section class="tarjeta-derecha">
-                <div class="bloque-diagnostico-horizontal">
-                    <div class="texto-diagnostico">
-                        <h2>⚡ DIAGNÓSTICO DIGITAL AVANZADO</h2>
-                        <p class="descripcion-diagnostico">En Mecamotor no adivinamos las fallas; las escaneamos en tiempo real con tecnología avanzada para garantizar el máximo rendimiento.</p>
-                    </div>
-                    <!-- Imagen del mecánico humano arreglando -->
-                    <div class="imagen-lateral-contenedor">
-                        <img src="fondo.jpg" alt="Mecánico Humano Arreglando Moto" class="imagen-mecanico">
-                    </div>
-                </div>
-                
-                <div class="lista-beneficios">
-                    <div class="beneficio-item">
-                        <h3>🏍️ Precisión Electrónica</h3>
-                        <p>Escaneo computarizado de sensores, inyección y compresión con datos exactos en pantalla.</p>
-                    </div>
-                    <div class="beneficio-item">
-                        <h3>📋 Transparencia Total</h3>
-                        <p>Historial clínico digital por placa. Mira el pasado de tu moto y paga solo lo justo.</p>
-                    </div>
-                    <div class="beneficio-item">
-                        <h3>⚙️ Ingeniería de Ruta</h3>
-                        <p>Mantenimientos milimétricos bajo manual de fabricante para garantizar la máxima potencia.</p>
-                    </div>
-                </div>
-            </section>
+            <h3>Cambio de Aceite</h3>
+
+            <p>
+                Lubricantes premium, filtros originales y revisión completa.
+            </p>
 
         </div>
-    </main>
 
-    <script src="app.js"></script>
+        <div class="service-card">
+
+            <i class="fa-solid fa-gears"></i>
+
+            <h3>Motor</h3>
+
+            <p>
+                Reparación, ajuste, sincronización y reconstrucción de motores.
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+
+            <h3>Mantenimiento</h3>
+
+            <p>
+                Servicio preventivo y correctivo para cualquier cilindrada.
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <h3>Sistema Eléctrico</h3>
+
+            <p>
+                Diagnóstico computarizado y reparación electrónica.
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <i class="fa-solid fa-circle-radiation"></i>
+
+            <h3>Frenos</h3>
+
+            <p>
+                Cambio de pastillas, discos, líquido DOT y ABS.
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <i class="fa-solid fa-road"></i>
+
+            <h3>Suspensión</h3>
+
+            <p>
+                Horquillas, amortiguadores y regulación deportiva.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--=====================================
+ESTADÍSTICAS
+======================================-->
+
+<section class="stats">
+
+    <div class="stat">
+
+        <h2>+2500</h2>
+
+        <span>Motos Reparadas</span>
+
+    </div>
+
+    <div class="stat">
+
+        <h2>10+</h2>
+
+        <span>Años de Experiencia</span>
+
+    </div>
+
+    <div class="stat">
+
+        <h2>100%</h2>
+
+        <span>Clientes Satisfechos</span>
+
+    </div>
+
+    <div class="stat">
+
+        <h2>24/7</h2>
+
+        <span>Atención por WhatsApp</span>
+
+    </div>
+
+</section>
+
+
+
+
+<!--=====================================
+GALERÍA
+======================================-->
+
+<section class="gallery" id="galeria">
+
+    <div class="section-title">
+
+        <span>GALERÍA</span>
+
+        <h2>Nuestro Trabajo</h2>
+
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+
+            <img src="galeria-1.jpg" alt="Mecánico">
+
+        </div>
+
+        <div class="gallery-item">
+
+            <img src="galeria-2.jpg" alt="Moto">
+
+        </div>
+
+        <div class="gallery-item">
+
+            <img src="zx10r-hero.png" alt="ZX10R">
+
+        </div>
+
+        <div class="gallery-item">
+
+            <img src="carbon-bg.jpg" alt="Carbono">
+
+        </div>
+
+        <div class="gallery-item">
+
+            <img src="metal-bg.png" alt="Metal">
+
+        </div>
+
+        <div class="gallery-item">
+
+            <video autoplay muted loop playsinline>
+
+                <source src="taller.mp4" type="video/mp4">
+
+            </video>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!--=====================================
+POR QUÉ ELEGIRNOS
+======================================-->
+
+<section class="about">
+
+<div class="about-left">
+
+<h2>
+
+¿Por qué elegir MECAMOTOR?
+
+</h2>
+
+<p>
+
+Somos un taller especializado en motocicletas deportivas,
+naked, touring y alta cilindrada.
+
+Nuestro objetivo es que cada moto salga funcionando
+como si acabara de salir del concesionario.
+
+</p>
+
+<div class="features">
+
+<div>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h4>Garantía</h4>
+
+<p>
+
+Todos nuestros trabajos cuentan con garantía.
+
+</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-microchip"></i>
+
+<h4>Diagnóstico</h4>
+
+<p>
+
+Equipos modernos para detectar cualquier falla.
+
+</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-medal"></i>
+
+<h4>Calidad</h4>
+
+<p>
+
+Repuestos originales y herramientas profesionales.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="about-right">
+
+<img src="logo.meca.jpg" alt="MECAMOTOR">
+
+</div>
+
+</section>
+
+
+
+
+<!--=====================================
+LLAMADO A LA ACCIÓN
+======================================-->
+
+<section class="cta">
+
+<h2>
+
+¿Listo para darle el mejor cuidado a tu moto?
+
+</h2>
+
+<p>
+
+Agenda tu cita por WhatsApp y recibe atención personalizada.
+
+</p>
+
+<a href="https://wa.me/51943398351?text=Hola%20MECAMOTOR,%20quiero%20agendar%20una%20cita."
+class="cta-button"
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+Agendar Cita
+
+</a>
+
+</section>
+<!--=====================================
+CONTACTO
+======================================-->
+
+<section class="contact" id="contacto">
+
+    <div class="section-title">
+
+        <span>CONTACTO</span>
+
+        <h2>Agenda tu servicio</h2>
+
+        <p>
+            Estamos listos para atender cualquier problema de tu motocicleta.
+        </p>
+
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <h3>MECAMOTOR</h3>
+
+            <p>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Jesús María, Lima - Perú
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-phone"></i>
+
+                +51 943 398 351
+
+            </p>
+
+            <p>
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                WhatsApp Disponible
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-clock"></i>
+
+                Lunes a Sábado
+
+                8:00 AM - 7:00 PM
+
+            </p>
+
+        </div>
+
+        <form class="contact-form">
+
+            <input type="text" placeholder="Nombre">
+
+            <input type="email" placeholder="Correo">
+
+            <input type="text" placeholder="Teléfono">
+
+            <textarea rows="6" placeholder="Cuéntanos qué necesita tu moto..."></textarea>
+
+            <button type="submit">
+
+                Enviar Solicitud
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!--=====================================
+MAPA
+======================================-->
+
+<section class="map">
+
+<iframe
+
+src="https://www.google.com/maps?q=Jesús+María,+Lima,+Perú&output=embed"
+
+allowfullscreen
+
+loading="lazy">
+
+</iframe>
+
+</section>
+
+
+
+
+<!--=====================================
+FOOTER
+======================================-->
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-logo">
+
+<img src="logo.meca.jpg" alt="MECAMOTOR">
+
+<h2>MECAMOTOR</h2>
+
+<p>
+
+Especialistas en motocicletas deportivas,
+naked, touring y alta cilindrada.
+
+</p>
+
+</div>
+
+<div class="footer-links">
+
+<h3>Enlaces</h3>
+
+<a href="#inicio">Inicio</a>
+
+<a href="#servicios">Servicios</a>
+
+<a href="#galeria">Galería</a>
+
+<a href="#contacto">Contacto</a>
+
+</div>
+
+<div class="footer-contact">
+
+<h3>Contacto</h3>
+
+<p>
+
+<i class="fa-solid fa-phone"></i>
+
+943 398 351
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-location-dot"></i>
+
+Jesús María
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-envelope"></i>
+
+contacto@mecamotor.pe
+
+</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 MECAMOTOR
+
+Todos los derechos reservados.
+
+</div>
+
+</footer>
+
+
+
+
+<!--=====================================
+BOTÓN WHATSAPP
+======================================-->
+
+<a
+
+href="https://wa.me/51943398351?text=Hola%20MECAMOTOR,%20quiero%20agendar%20una%20cita."
+
+class="whatsapp"
+
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+
+
+
+<!--=====================================
+BOTÓN SUBIR
+======================================-->
+
+<button id="topButton">
+
+<i class="fa-solid fa-chevron-up"></i>
+
+</button>
+
+
+
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
