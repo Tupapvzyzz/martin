@@ -138,3 +138,9 @@ if (btnWspCotizar) {
         enviarAWhatsAppMecamotor(mensajeCotizacion);
     });
 }
+const cursorMeca = document.querySelector('.cursor-meca');
+
+document.addEventListener('mousemove', (e) => {
+  cursorMeca.style.left = e.clientX + 'px';
+  cursorMeca.style.top = e.clientY + 'px';
+});
