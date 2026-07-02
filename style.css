@@ -21,9 +21,20 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 40px 20px;
     box-sizing: border-box;
-    background: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.6)); 
+    background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6)); 
+}
+
+/* El contenedor inteligente de doble columna */
+.contenedor-inicio-pro {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    width: 100%;
 }
 
 @keyframes pulsoNeon {
@@ -33,7 +44,7 @@ body {
 }
 
 .tarjeta-taller {
-    background-color: rgba(15, 23, 42, 0.75);
+    background-color: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(12px);
     padding: 40px;
     border-radius: 25px;
@@ -43,6 +54,53 @@ body {
     max-width: 450px;
     width: 100%;
     box-sizing: border-box;
+}
+
+/* El nuevo panel derecho que llena el vacío lateral */
+.panel-valor-inicio {
+    background-color: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    border-radius: 25px;
+    padding: 40px;
+    max-width: 550px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.panel-valor-inicio h2 {
+    font-size: 24px;
+    color: #3b82f6;
+    margin-top: 0;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+    letter-spacing: 1px;
+}
+
+.descripcion-valor {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.minis-pilares {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mini-pilar h3 {
+    font-size: 16px;
+    color: #f8fafc;
+    margin: 0 0 5px 0;
+}
+
+.mini-pilar p {
+    font-size: 13.5px;
+    color: #94a3b8;
+    margin: 0;
+    line-height: 1.5;
 }
 
 .logo {
@@ -99,23 +157,13 @@ button:hover {
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
-.btn-whatsapp:hover { 
-    transform: translateY(-3px); 
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6); 
-}
+.btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6); }
 
 .indicador-bajar {
     margin-top: 30px;
     font-size: 13px;
     color: #3b82f6;
     font-weight: bold;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-6px); }
-    60% { transform: translateY(-3px); }
 }
 
 .seccion-oscura {
@@ -123,7 +171,6 @@ button:hover {
     padding: 70px 20px;
     text-align: center;
     backdrop-filter: blur(10px);
-    border-top: 2px solid #3b82f6;
 }
 
 .seccion-oscura h2 {
@@ -215,6 +262,12 @@ input[type="text"] {
     margin: 0 auto;
 }
 
+.opcion-cotizar { display: flex; align-items: center; gap: 15px; margin-bottom: 18px; text-align: left; }
+.opcion-cotizar input[type="checkbox"] { width: 22px; height: 22px; cursor: pointer; }
+.opcion-cotizar label { font-size: 15px; color: #cbd5e1; cursor: pointer; user-select: none; }
+.total-container { display: flex; justify-content: space-between; border-top: 1px solid #334155; padding-top: 20px; margin-top: 25px; font-weight: bold; font-size: 18px; }
+#monto-total { color: #4ade80; text-shadow: 0 0 10px rgba(74, 222, 128, 0.3); }
+
 .consola {
     background-color: #05070c;
     border-left: 4px solid #3b82f6;
@@ -227,43 +280,14 @@ input[type="text"] {
 .analizando { color: #3b82f6; margin: 0 0 10px 0; font-size: 13px; font-weight: bold; }
 #resultado-scanner { color: #4ade80; margin: 0; font-size: 14px; font-weight: bold; }
 .oculto { display: none; }
-/* --- ESTILOS DE LOS PILARES DE PROPUESTA DE VALOR --- */
-.contenedor-pilares {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    max-width: 1100px;
-    margin: 0 auto;
-}
 
-.bloque-pilar {
-    background: linear-gradient(145deg, #1e293b, #0f172a);
-    border: 1px solid #334155;
-    padding: 30px;
-    border-radius: 16px;
-    width: 290px;
-    text-align: left;
-    transition: 0.3s ease;
-    box-sizing: border-box;
-}
-
-.bloque-pilar:hover {
-    border-color: #3b82f6;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25);
-}
-
-.bloque-pilar h3 {
-    margin-top: 0;
-    color: #3b82f6;
-    font-size: 19px;
-    text-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
-}
-
-.bloque-pilar p {
-    font-size: 14px;
-    color: #94a3b8;
-    margin-bottom: 0;
-    line-height: 1.6;
+/* 📱 ADAPTACIÓN DE RESPONSIVE: Si entran desde un celular, las columnas se vuelven una sola fila ordenada */
+@media (max-width: 900px) {
+    .contenedor-inicio-pro {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .panel-valor-inicio {
+        max-width: 450px;
+    }
 }
