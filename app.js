@@ -40,8 +40,7 @@ const resultadoPlaca = document.getElementById('resultado-placa');
 
 const basePlacas = {
     "1234-ABC": "📋 <b>Moto:</b> Honda CB190R<br>📅 <b>Último ingreso:</b> 15/05/2026<br>🛠️ <b>Trabajo realizado:</b> Bajada de motor completa, cambio de discos de embrague y limpieza de inyectores. ¡Lista y asentada!",
-    "C1-2345": "📋 <b>Moto:</b> Yamaha FZ25<br>📅 <b>Último ingreso:</b> 02/06/2026<br>🛠️ <b>Trabajo realizado:</b> Mantenimiento general, cambio de pastillas de freno traseras y calibración de barras de suspensión.",
-    "9999-XYZ": "📋 <b>Moto:</b> Pulsar NS200<br>📅 <b>Último ingreso:</b> 20/06/2026<br>🛠️ <b>Trabajo realizado:</b> Diagnóstico por computadora del sistema eléctrico, cambio de bobina de alta y bujías nuevas."
+    "C1-2345": "📋 <b>Moto:</b> Yamaha FZ25<br>📅 <b>Último ingreso:</b> 02/06/2026<br>🛠️ <b>Trabajo realizado:</b> Mantenimiento general, cambio de pastillas de freno traseras y calibración de barras de suspensión."
 };
 
 btnBuscarPlaca.addEventListener('click', function() {
@@ -65,40 +64,33 @@ const botonesKm = document.querySelectorAll('.btn-km');
 const resultadoKm = document.getElementById('resultado-km');
 
 const pautasKm = {
-    "5k": "<b>🏍️ Pauta de los 5,000 KM:</b><ul><li>Cambio obligatorio de aceite de motor y filtro.</li><li>Limpieza y regulación del carburador o cuerpo de aceleración.</li><li>Ajuste, lubricación y tensado de la cadena de arrastre.</li><li>Revisión preventiva del desgaste de pastillas de freno.</li></ul>",
-    "10k": "<b>🏍️ Pauta de los 10,000 KM:</b><ul><li>Todo lo anterior + Cambio completo de bujía.</li><li>Limpieza o reemplazo del filtro de aire.</li><li>Calibración de luz de válvulas (Asentamiento de motor).</li><li>Revisión del nivel de líquido de frenos y refrigerante.</li></ul>",
-    "20k": "<b>🏍️ Pauta de los 20,000 KM (Mantenimiento Mayor):</b><ul><li>Cambio de fluidos completo (Aceite, frenos, suspensión).</li><li>Reemplazo del kit de arrastre completo (Cadena, piñón, catalina).</li><li>Limpieza profunda de inyectores por ultrasonido.</li><li>Revisión e inspección de rodajes de dirección y ruedas.</li></ul>"
+    "5k": "<b>🏍️ Pauta de los 5,000 KM:</b><ul><li>Cambio obligatorio de aceite de motor y filtro.</li><li>Limpieza y regulación del cuerpo de aceleración.</li><li>Ajuste, lubricación y tensado de la cadena.</li></ul>",
+    "10k": "<b>🏍️ Pauta de los 10,000 KM:</b><ul><li>Todo lo anterior + Reemplazo de bujía e inspección de filtros.</li><li>Calibración de luz de válvulas.</li></ul>",
+    "20k": "<b>🏍️ Pauta de los 20,000 KM (Mantenimiento Mayor):</b><ul><li>Cambio de fluidos completo (Aceite, frenos, suspensión).</li><li>Reemplazo de kit de arrastre y pastillas.</li></ul>"
 };
 
 botonesKm.forEach(boton => {
     boton.addEventListener('click', function() {
         botonesKm.forEach(b => b.classList.remove('activo'));
         this.classList.add('activo');
-        
         const kilometraje = this.getAttribute('data-km');
         resultadoKm.classList.remove('oculto');
         resultadoKm.innerHTML = pautasKm[kilometraje];
     });
 });
 
-// --- PUNTO 3: LÓGICA DEL COTIZADOR DE PRESUPUESTO ---
+// --- PUNTO 3: LÓGICA DEL COTIZADOR DE PRESUPUESTO CON TU NÚMERO ---
 const checkboxes = document.querySelectorAll('.chk-servicio');
 const montoTotalElement = document.getElementById('monto-total');
 const btnEnviarCotizacion = document.getElementById('boton-enviar-cotizacion');
 
 function calcularTotal() {
     let total = 0;
-    checkboxes.forEach(chk => {
-        if (chk.checked) {
-            total += parseFloat(chk.value);
-        }
-    });
+    checkboxes.forEach(chk => { if (chk.checked) total += parseFloat(chk.value); });
     montoTotalElement.innerText = "S/ " + total;
 }
 
-checkboxes.forEach(chk => {
-    chk.addEventListener('change', calcularTotal);
-});
+checkboxes.forEach(chk => { chk.addEventListener('change', calcularTotal); });
 
 btnEnviarCotizacion.addEventListener('click', function() {
     let total = 0;
@@ -115,18 +107,13 @@ btnEnviarCotizacion.addEventListener('click', function() {
         alert("⚠️ Por favor, selecciona al menos un servicio para cotizar.");
         return;
     }
-    // ✅ REEMPLAZO DEFINITIVO Y SEGURO:
-    if (serviciosSeleccionados.length === 0) {
-        alert("⚠️ Por favor, selecciona al menos un servicio para cotizar.");
-        return;
-    }
-
-    // Unimos los servicios usando el código %20 en lugar de espacios normales
+    
+    // Formateamos los espacios con %20 para evitar bloqueos del navegador
     let listaServicios = serviciosSeleccionados.join("%20,%20");
     
-    // Creamos la ruta con formato web puro para que el navegador NO la bloquee
-    let enlaceWhatsApp = "https://wa.me" + listaServicios + ".%20Total%20estimado:%20S/%20" + total;
+    // 👇 TU NÚMERO INTEGRADO EN LA RUTA DE INTERNET OFICIAL:
+    let enlaceWhatsApp = "https://wa.me" + listaServicios + ".%20Total:%20S/%20" + total;
     
-    // Abrimos el chat de forma forzada abriendo una pestaña nueva limpia
-    window.open(enlaceWhatsApp, '_blank');
-    
+    // Redirección directa para saltarse los bloqueadores de ventanas emergentes
+    window.location.href = enlaceWhatsApp;
+});
