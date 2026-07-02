@@ -1,5 +1,4 @@
 body {
-    /* Fondo digital futurista sin depender de imágenes externas */
     background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #2e1065 100%);
     color: #f8fafc;
     font-family: 'Segoe UI', Roboto, sans-serif;
@@ -8,8 +7,21 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    overflow: hidden;
 }
+
+.tarjeta-taller {
+    background-color: rgba(30, 41, 59, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #3b82f6;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    box-sizing: border-box; /* Evita que los elementos se desborden */
+}
+
 .logo {
     font-size: 28px;
     font-weight: 900;
@@ -29,21 +41,56 @@ p {
     line-height: 1.6;
 }
 
-button {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    color: white;
-    border: none;
-    padding: 14px 28px;
+/* Contenedor inteligente que obliga a los botones a ir uno abajo del otro */
+.botones-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-top: 25px;
+    width: 100%;
+}
+
+button, .btn-whatsapp {
+    width: 100%;
+    max-width: 28px; /* Controla el ancho máximo */
+    box-sizing: border-box;
+    padding: 14px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
     transition: 0.3s ease;
-    margin-top: 10px;
+    text-align: center;
 }
 
-/* Estilos interactivos para la consola de diagnóstico de la IA */
+/* Botón de Escáner */
+button {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+}
+
+/* Botón de WhatsApp */
+.btn-whatsapp {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: white;
+    text-decoration: none; /* Quita la línea de enlace abajo del texto */
+    display: block;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
 .consola {
     background-color: #090d16;
     border-left: 4px solid #4ade80;
@@ -68,31 +115,5 @@ button {
 }
 
 .oculto {
-    .botones-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-    margin-top: 15px;
-}
-
-.btn-whatsapp {
-    background: linear-gradient(135deg, #25d366, #128c7e);
-    color: white;
-    text-decoration: none;
-    padding: 14px 28px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-    transition: 0.3s ease;
-    width: calc(100% - 56px); /* Para que tenga el mismo ancho que el otro botón */
-    max-width: 250px;
-}
-
-.btn-whatsapp:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-}
     display: none;
 }
