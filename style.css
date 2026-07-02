@@ -171,7 +171,25 @@ input[type="text"] { background-color: #1e293b; border: 1px solid #334155; paddi
 .oculto { display: none; }
 
 @media (max-width: 900px) {
-    .contenedor-inicio-pro { flex-direction: column; gap: 30px; }
+    .contenedor-inicio-pro { flex-direction: column; gap: 30px; }    
+    /* Oculta el cursor genérico del sistema en toda la página */
+body, a, button {
+  cursor: none !important;
+}
+
+/* Diseña y escala la imagen de la moto */
+.moto-cursor {
+  width: 45px;                 /* Tamaño ideal en pantalla */
+  height: 45px;
+  background-image: url('fondo.jpg'); /* Reemplaza 'fondo.jpg' por el nombre exacto con el que guardaste esta foto en tu carpeta */
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  pointer-events: none;        /* Permite hacer clics a través de la moto */
+  z-index: 99999;              /* La mantiene siempre al frente de todo */
+  transform: translate(-10%, -20%) rotate(-15px); /* Ajusta el ángulo para que la llanta delantera sea el puntero */
+  transition: transform 0.05s ease-out; /* Suaviza levemente el movimiento */
+}
     .panel-valor-inicio { max-width: 450px; }
     .contenido-barra { flex-direction: column; align-items: center; gap: 6px; text-align: center; }
 }
