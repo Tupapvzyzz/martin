@@ -83,28 +83,52 @@ botonesKm.forEach(boton => {
     });
 });
 
-// --- MÓDULO 4: PROTOCOLO NATIVO INDESTRUCTIBLE (ABRE LA APP DIRECTO) ---
-function abrirWhatsAppMecamotor(textoMensaje) {
+// --- MÓDULO 4: CALCULADORA Y REDIRECCIÓN DE WHATSAPP REPARADA ---
+const checkboxes = document.querySelectorAll('.chk-servicio');
+const montoTotalElement = document.getElementById('monto-total');
+const btnWspCotizar = document.getElementById('btn-whatsapp-cotizar');
+const btnWspPrincipal = document.getElementById('btn-whatsapp-principal');
+
+function calcularTotal() {
+    let total = 0;
+    checkboxes.forEach(chk => { if (chk.checked) total += parseFloat(chk.value); });
+    montoTotalElement.innerText = "S/ " + total;
+}
+
+checkboxes.forEach(chk => { chk.addEventListener('change', calcularTotal); });
+
+function enviarAWhatsAppMecamotor(textoMensaje) {
     let numeroTelefono = "51943398351";
-    
-    // Usamos el protocolo interno de la app ("whatsapp://") que salta directo sin abrir páginas de descarga
+    // Protocolo nativo que abre tu app instalada de golpe
     let urlFinal = "whatsapp://send?phone=" + numeroTelefono + "&text=" + encodeURIComponent(textoMensaje);
-    
-    // Forzamos la redirección en la misma pestaña
     window.location.href = urlFinal;
 }
 
-// Conectamos los botones reales al nuevo motor nativo
-const btnWspPrincipal = document.getElementById('btn-whatsapp-principal');
 if (btnWspPrincipal) {
     btnWspPrincipal.addEventListener('click', function() {
-        abrirWhatsAppMecamotor("Hola Mecamotor, quiero agendar una cita para mi moto.");
+        enviarAWhatsAppMecamotor("Hola Mecamotor, quiero agendar una cita para mi moto.");
     });
 }
 
-const btnWspCotizar = document.getElementById('btn-whatsapp-cotizar');
+// Lógica de cotización reparada: Lee los IDs de forma directa y escribe el texto exacto
 if (btnWspCotizar) {
     btnWspCotizar.addEventListener('click', function() {
-        abrirWhatsAppMecamotor("Hola Mecamotor, quiero cotizar un mantenimiento para mi moto.");
+        let total = 0;
+        let serviciosSeleccionados = [];
+        
+        if (document.getElementById('srv-motor').checked) { total += 150; serviciosSeleccionados.push("Bajada de Motor Pro (S/ 150)"); }
+        if (document.getElementById('srv-electrico').checked) { total += 40; serviciosSeleccionados.push("Sistema Eléctrico (S/ 40)"); }
+        if (document.getElementById('srv-mantenimiento').checked) { total += 80; serviciosSeleccionados.push("Mantenimiento General (S/ 80)"); }
+        if (document.getElementById('srv-frenos').checked) { total += 25; serviciosSeleccionados.push("Pastillas de Freno (S/ 25)"); }
+        
+        if (serviciosSeleccionados.length === 0) {
+            alert("⚠️ Por favor, selecciona al menos un servicio para cotizar.");
+            return;
+        }
+        
+        // Armamos el mensaje final ultra detallado para tu chat
+        let mensajeCotizacion = "Hola Mecamotor, quiero cotizar estos servicios para mi moto: \n" + serviciosSeleccionados.join(" \n ") + " \n Total estimado: S/ " + total;
+        
+        enviarAWhatsAppMecamotor(mensajeCotizacion);
     });
 }
