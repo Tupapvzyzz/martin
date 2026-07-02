@@ -177,19 +177,20 @@ body, a, button {
   cursor: none !important;
 }
 
-/* Diseña y escala la imagen de la moto */
-.moto-cursor {
-  width: 45px;                 /* Tamaño ideal en pantalla */
-  height: 45px;
-  background-image: url('fondo.jpg'); /* Reemplaza 'fondo.jpg' por el nombre exacto con el que guardaste esta foto en tu carpeta */
+/* Oculta por completo el mouse viejo en toda la página y elementos */
+html, body, a, button, input {
+  cursor: none !important;
+}
+
+/* Le da el tamaño de cursor a tu imagen grande */
+.cursor-meca {
+  width: 40px;  /* Si lo quieres más grande, sube a 50px o 60px */
+  height: 40px;
+  background-image: url('logodos.meca.png'); /* Tu archivo exacto */
   background-size: contain;
   background-repeat: no-repeat;
   position: fixed;
-  pointer-events: none;        /* Permite hacer clics a través de la moto */
-  z-index: 99999;              /* La mantiene siempre al frente de todo */
-  transform: translate(-10%, -20%) rotate(-15px); /* Ajusta el ángulo para que la llanta delantera sea el puntero */
-  transition: transform 0.05s ease-out; /* Suaviza levemente el movimiento */
-}
-    .panel-valor-inicio { max-width: 450px; }
-    .contenido-barra { flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+  pointer-events: none; /* Crucial para que te deje hacer clic en los botones */
+  z-index: 99999;       /* Lo pone por encima de todo el diseño */
+  transform: translate(-10%, -10%); /* Ajusta la punta del clic */
 }
