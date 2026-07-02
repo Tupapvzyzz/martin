@@ -1,144 +1,29 @@
-/* REGLAS GENERALES Y OCULTAR CURSOR */
+/* ========================================================
+   1. REGLAS GENERALES Y DETALLES DEL CURSOR
+   ======================================================== */
 html, body, a, button, input {
-  cursor: none !important; /* Apaga por completo la flecha blanca */
+  cursor: none !important; /* Mantiene apagado el mouse de Windows */
 }
 
 body {
   color: #f8fafc;
-  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #0f172a;
+  background-color: #0d1117;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-/* EL NUEVO CURSOR DE MECA MOTOR */
+/* El elemento del cursor personalizado */
 .cursor-meca {
-  width: 40px;                 /* Ajusta aquí si lo quieres más grande o chico */
-  height: 40px;
-  background-image: url('logodos.meca.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: fixed;
-  pointer-events: none;        /* Permite que hagas clics normales en los botones */
-  z-index: 99999;              /* Siempre flotando sobre todo el diseño */
-  transform: translate(-10%, -10%);
-}
-
-/* BARRA SUPERIOR */
-.barra-superior {
-  background-color: rgba(15, 23, 42, 0.9);
-  padding: 10px 0;
-  border-bottom: 1px solid #1e293b;
-  position: relative;
-  z-index: 10;
-}
-.contenido-barra {
-  display: flex;
-  justify-content: space-around;
-  max-width: 1200px;
-  margin: 0 auto;
-  font-size: 14px;
-}
-
-/* VIDEO DE FONDO */
-#video-fondo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.3;
-}
-
-/* CONTENEDOR PRINCIPAL */
-.contenedor-principal {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
-  position: relative;
-  z-index: 10;
-}
-.fila-contenido {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-/* TARJETAS */
-.tarjeta-izquierda, .tarjeta-derecha {
-  background-color: rgba(15, 23, 42, 0.75);
-  border: 1px solid #1e293b;
-  border-radius: 12px;
-  padding: 30px;
-  flex: 1;
-  min-width: 300px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-}
-
-.logo-contenedor {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.logo-web {
-  max-width: 150px;
-  height: auto;
-}
-
-/* BOTONES */
-.botones-contenedor {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 25px;
-}
-.btn-azul, .btn-verde {
-  border: none;
-  padding: 14px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 16px;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  transition: all 0.3s ease;
-}
-.btn-azul { background-color: #2563eb; }
-.btn-verde { background-color: #16a34a; }
-
-.resultado-texto {
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-}
-
-/* BENEFICIOS DE DIAGNÓSTICO */
-.lista-beneficios {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 25px;
-}
-.beneficio-item h3 {
-  margin: 0 0 5px 0;
-  font-size: 18px;
-  color: #38bdf8;
-}
-.beneficio-item p {
-  margin: 0;
-  color: #cbd5e1;
-  font-size: 14px;
-}
-html, body, a, button {
-  cursor: none !important;
-}
-.cursor-meca {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   background-image: url('logodos.meca.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -146,4 +31,168 @@ html, body, a, button {
   pointer-events: none;
   z-index: 999999;
   transform: translate(-10%, -10%);
+}
+
+/* ========================================================
+   2. VIDEO DE FONDO EN PANTALLA COMPLETA REAL
+   ======================================================== */
+#video-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1; /* Se mantiene atrás de las tarjetas */
+  opacity: 0.25; /* Oscurece el fondo para que los textos resalten */
+}
+
+/* ========================================================
+   3. CONTENEDOR PRINCIPAL Y MAQUETACIÓN (GRID TRASLÚCIDO)
+   ======================================================== */
+.contenedor-principal {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.fila-contenido {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+/* ESTILO UNIFICADO PARA AMBAS TARJETAS */
+.tarjeta-izquierda, .tarjeta-derecha {
+  background: rgba(15, 23, 42, 0.75); /* Fondo oscuro semitransparente moderno */
+  backdrop-filter: blur(12px);       /* Efecto de vidrio esmerilado */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* ========================================================
+   4. DETALLES DE LA TARJETA IZQUIERDA (CONTENIDO Y BOTONES)
+   ======================================================== */
+.logo-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 110px; /* Evita que imágenes grandes empujen el contenido */
+}
+
+.logo-web {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.tarjeta-izquierda h2 {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+.tarjeta-izquierda p {
+  font-size: 15px;
+  color: #94a3b8;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+/* BOTONES DE ACCIÓN */
+.botones-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn-azul, .btn-verde {
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-azul { background-color: #2563eb; }
+.btn-verde { background-color: #16a34a; }
+
+/* Efecto hover simulado para botones con tu cursor */
+.btn-azul:hover, .btn-verde:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}
+
+/* CONTENEDOR DEL RESULTADO DEL ESCANEO */
+.resultado-texto {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.4;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================================
+   5. DETALLES DE LA TARJETA DERECHA (DIAGNÓSTICO DIGITAL)
+   ======================================================== */
+.tarjeta-derecha h2 {
+  font-size: 22px;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.descripcion-diagnostico {
+  font-size: 15px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.lista-beneficios {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.beneficio-item h3 {
+  margin: 0 0 6px 0;
+  font-size: 17px;
+  color: #38bdf8; /* Azul claro eléctrico llamativo */
+  font-weight: 600;
+}
+
+.beneficio-item p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.5;
 }
