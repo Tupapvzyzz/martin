@@ -1,4 +1,4 @@
-// SISTEMA DE ESCANEO DE DIAGNÓSTICO DIGITAL
+// MODULO DE ESCANEO DE DIAGNÓSTICO DIGITAL
 const botonEscanear = document.getElementById('boton-escanear');
 const resultadoEscaneo = document.getElementById('resultado-escaneo');
 
