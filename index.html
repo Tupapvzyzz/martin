@@ -7,6 +7,69 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecamotor | Taller Mecánico Especializado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- REVISA AQUÍ: Agregamos el video de fondo en bucle -->
+    <video autoplay muted loop playsinline id="video-fondo">
+        <source src="taller.mp4" type="video/mp4">
+    </video>
+
+    <!-- SECCIÓN 1: Tarjeta Principal Interactiva -->
+    <div class="pantalla-inicio">
+        <div class="tarjeta-taller">
+            <div class="logo">🛠️ MECAMOTOR</div>
+            <h1>Servicio Técnico Especializado</h1>
+            <p>Potencia, precisión y tecnología robótica avanzada para tu motocicleta.</p>
+            
+            <div class="botones-container">
+                <button id="boton-diagnostico">Escanear Moto</button>
+                <a href="https://wa.me" target="_blank" class="btn-whatsapp">
+                    💬 Agendar por WhatsApp
+                </a>
+            </div>
+            
+            <div id="consola-diagnostico" class="consola oculto">
+                <p class="analizando">🤖 Iniciando escáner cyber-mecánico...</p>
+                <p id="resultado-scanner"></p>
+            </div>
+            
+            <div class="indicador-bajar">⚡ Desliza para ver nuestros servicios ↓</div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 2: Panel de Servicios Avanzados -->
+    <div class="seccion-servicios">
+        <h2>🛠️ NUESTRAS ESPECIALIDADES Y PRECIOS</h2>
+        <div class="contenedor-servicios">
+            <div class="bloque-servicio">
+                <h3>⚙️ Bajada de Motor Pro</h3>
+                <p>Ajuste completo, rectificación, calibración de válvulas y cambio de empaques.</p>
+                <div class="precio">Desde S/ 150</div>
+            </div>
+            <div class="bloque-servicio">
+                <h3>⚡ Sistema Eléctrico y Luces</h3>
+                <p>Diagnóstico de fallas, bobinados, instalación de alarmas, luces LED y cableado general.</p>
+                <div class="precio">Desde S/ 40</div>
+            </div>
+            <div class="bloque-servicio">
+                <h3>🧫 Mantenimiento General</h3>
+                <p>Limpieza de carburador/inyectores, regulación de frenos, lubricación de cadena y lavado premium.</p>
+                <div class="precio">S/ 80 fijo</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
 
     <!-- SECCIÓN 1: Tarjeta Principal Interactiva -->
     <div class="pantalla-inicio">
