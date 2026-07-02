@@ -67,7 +67,7 @@ const pautasKm = {
     "5k": "<b>🏍️ Pauta de los 5,000 KM:</b><ul><li>Cambio obligatorio de aceite de motor y filtro.</li><li>Limpieza y regulación del cuerpo de aceleración.</li><li>Ajuste, lubricación y tensado de la cadena.</li></ul>",
     "10k": "<b>🏍️ Pauta de los 10,000 KM:</b><ul><li>Todo lo anterior + Reemplazo de bujía e inspección de filtros.</li><li>Calibración de luz de válvulas.</li></ul>",
     "20k": "<b>🏍️ Pauta de los 20,000 KM (Mantenimiento Mayor):</b><ul><li>Cambio de fluidos completo (Aceite, frenos, suspensión).</li><li>Reemplazo de kit de arrastre y pastillas.</li></ul>"
-};
+    };
 
 botonesKm.forEach(boton => {
     boton.addEventListener('click', function() {
@@ -79,7 +79,7 @@ botonesKm.forEach(boton => {
     });
 });
 
-// --- PUNTO 3: LÓGICA DEL COTIZADOR DE PRESUPUESTO CON TU NÚMERO ---
+// --- PUNTO 3: LÓGICA DEL COTIZADOR CORREGIDA ---
 const checkboxes = document.querySelectorAll('.chk-servicio');
 const montoTotalElement = document.getElementById('monto-total');
 const btnEnviarCotizacion = document.getElementById('boton-enviar-cotizacion');
@@ -92,14 +92,17 @@ function calcularTotal() {
 
 checkboxes.forEach(chk => { chk.addEventListener('change', calcularTotal); });
 
-btnEnviarCotizacion.addEventListener('click', function() {
+// Modificamos el evento del botón para que no use formularios y vaya directo a tu número
+btnEnviarCotizacion.addEventListener('click', function(e) {
+    e.preventDefault(); // Detiene cualquier acción rara del navegador
+    
     let total = 0;
     let serviciosSeleccionados = [];
     
     checkboxes.forEach(chk => {
         if (chk.checked) {
             total += parseFloat(chk.value);
-            serviciosSeleccionados.push(chk.getAttribute('data-name'));
+            serviciosSeleccionados.push(chk.parentElement.querySelector('label').innerText.split('(')[0].trim());
         }
     });
     
@@ -108,12 +111,12 @@ btnEnviarCotizacion.addEventListener('click', function() {
         return;
     }
     
-    // Formateamos los espacios con %20 para evitar bloqueos del navegador
-    let listaServicios = serviciosSeleccionados.join("%20,%20");
+    // Armamos un mensaje de texto súper limpio y simple para evitar bugs
+    let mensaje = "Hola Mecamotor, quiero cotizar: " + serviciosSeleccionados.join(" + ") + ". Total estimado: S/ " + total;
     
-    // 👇 TU NÚMERO INTEGRADO EN LA RUTA DE INTERNET OFICIAL:
-    let enlaceWhatsApp = "https://wa.me" + listaServicios + ".%20Total:%20S/%20" + total;
+    // Creamos el enlace plano directo a tu número de teléfono real 943398351
+    let urlDestino = "https://wa.me" + encodeURIComponent(mensaje);
     
-    // Redirección directa para saltarse los bloqueadores de ventanas emergentes
-    window.location.href = enlaceWhatsApp;
+    // Abrimos el chat de forma directa y limpia
+    window.open(urlDestino, '_blank');
 });
