@@ -1,4 +1,4 @@
-// --- MÓDULO ORIGINAL: ESCÁNER ---
+// --- MÓDULO 1: EL ESCÁNER INTERACTIVO ---
 const boton = document.getElementById('boton-diagnostico');
 const consola = document.getElementById('consola-diagnostico');
 const resultado = document.getElementById('resultado-scanner');
@@ -35,7 +35,7 @@ if (boton) {
     });
 }
 
-// --- PUNTO 1: LÓGICA DE HISTORIAL CLÍNICO ---
+// --- MÓDULO 2: HISTORIAL CLÍNICO POR PLACA ---
 const btnBuscarPlaca = document.getElementById('boton-buscar-placa');
 const inputPlaca = document.getElementById('input-placa');
 const resultadoPlaca = document.getElementById('resultado-placa');
@@ -63,7 +63,7 @@ if (btnBuscarPlaca) {
     });
 }
 
-// --- PUNTO 2: LÓGICA DE REVISIÓN POR KILOMETRAJE ---
+// --- MÓDULO 3: REVISIÓN POR KILOMETRAJE ---
 const botonesKm = document.querySelectorAll('.btn-km');
 const resultadoKm = document.getElementById('resultado-km');
 
@@ -83,26 +83,18 @@ botonesKm.forEach(boton => {
     });
 });
 
+// --- MÓDULO 4: PROTOCOLO NATIVO INDESTRUCTIBLE (ABRE LA APP DIRECTO) ---
 function abrirWhatsAppMecamotor(textoMensaje) {
     let numeroTelefono = "51943398351";
-    let urlFinal = "";
     
-    // Detectamos de forma agresiva si es un celular o una laptop
-    let esCelular = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    // Usamos el protocolo interno de la app ("whatsapp://") que salta directo sin abrir páginas de descarga
+    let urlFinal = "whatsapp://send?phone=" + numeroTelefono + "&text=" + encodeURIComponent(textoMensaje);
     
-    if (esCelular) {
-        // En celular: Abre directo la aplicación instalada sin intermediarios
-        urlFinal = "whatsapp://send?phone=" + numeroTelefono + "&text=" + encodeURIComponent(textoMensaje);
-    } else {
-        // En laptop/PC: Usa la API web oficial que abre Chrome de forma nativa sin errores de red
-        urlFinal = "https://whatsapp.com" + numeroTelefono + "&text=" + encodeURIComponent(textoMensaje);
-    }
-    
-    // Redirige la pantalla actual de golpe para evitar bloqueos de seguridad de Chrome
+    // Forzamos la redirección en la misma pestaña
     window.location.href = urlFinal;
 }
 
-// Conectamos los botones reales al motor inteligente
+// Conectamos los botones reales al nuevo motor nativo
 const btnWspPrincipal = document.getElementById('btn-whatsapp-principal');
 if (btnWspPrincipal) {
     btnWspPrincipal.addEventListener('click', function() {
