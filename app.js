@@ -88,20 +88,34 @@ function abrirWhatsAppMecamotor(textoMensaje) {
     let numeroTelefono = "51943398351";
     let urlFinal = "";
     
-    // Detectamos de forma agresiva si es un celular (Android, iPhone, iPad) o una laptop
+    // Detectamos de forma agresiva si es un celular o una laptop
     let esCelular = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
     if (esCelular) {
-        // Si es celular, abrimos directamente la App sin cargar páginas web
+        // En celular: Abre directo la aplicación instalada sin intermediarios
         urlFinal = "whatsapp://send?phone=" + numeroTelefono + "&text=" + encodeURIComponent(textoMensaje);
     } else {
-        // Si es laptop o PC, cargamos la web oficial para que abra WhatsApp Web
+        // En laptop/PC: Usa la API web oficial que abre Chrome de forma nativa sin errores de red
         urlFinal = "https://whatsapp.com" + numeroTelefono + "&text=" + encodeURIComponent(textoMensaje);
     }
     
-    // Ejecutamos la redirección en la misma pestaña para burlar cualquier bloqueo de seguridad
+    // Redirige la pantalla actual de golpe para evitar bloqueos de seguridad de Chrome
     window.location.href = urlFinal;
 }
+
+// Conectamos los botones reales al motor inteligente
+const btnWspPrincipal = document.getElementById('btn-whatsapp-principal');
+if (btnWspPrincipal) {
+    btnWspPrincipal.addEventListener('click', function() {
+        abrirWhatsAppMecamotor("Hola Mecamotor, quiero agendar una cita para mi moto.");
+    });
+}
+
+const btnWspCotizar = document.getElementById('btn-whatsapp-cotizar');
+if (btnWspCotizar) {
+    btnWspCotizar.addEventListener('click', function() {
+        abrirWhatsAppMecamotor("Hola Mecamotor, quiero cotizar un mantenimiento para mi moto.");
+    });
 
 // Asignamos la acción al botón principal de arriba
 const btnWspPrincipal = document.getElementById('btn-whatsapp-principal');
