@@ -4,47 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mecamotor | Taller Mecánico Especializado</title>
+    <!-- Tu logo oficial en la pestaña del navegador -->
     <link rel="icon" type="image/jpg" href="logo.meca.jpg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- 🗓️ TOP BAR: Barra Superior con tu Horario Real de Atención -->
+    <div class="barra-superior">
+        <div class="contenido-barra">
+            <span class="item-barra">⏰ Atención: Lunes a Sábado 8:30 am - 6:30 pm</span>
+            <span class="item-barra">📞 Soporte: +51 943 398 351</span>
+        </div>
+    </div>
 
     <!-- Video cinematográfico de fondo en bucle -->
     <video autoplay muted loop playsinline preload="auto" id="video-fondo">
         <source src="taller.mp4" type="video/mp4">
     </video>
 
-    <!-- SECCIÓN 1: Pantalla de Inicio Reparada Dinámica -->
+    <!-- SECCIÓN 1: Pantalla de Inicio Master -->
     <div class="pantalla-inicio">
         <div class="contenedor-inicio-pro">
-            
-            <!-- Columna Izquierda: Tu Tarjeta Interactiva con el Logo Redimensionado -->
             <div class="tarjeta-taller">
                 <div class="logo-container">
-                    <!-- Usamos el nombre exacto de tu archivo guardado en GitHub -->
                     <img src="logo.meca.jpg" alt="Mecamotor Logo" class="logo-oficial">
                 </div>
                 <h1>Servicio Técnico Especializado</h1>
                 <p>Potencia, precisión y tecnología robótica avanzada para tu motocicleta.</p>
-                
                 <div class="botones-container">
                     <button id="boton-diagnostico">Escanear Moto</button>
                     <button id="btn-whatsapp-principal" class="btn-whatsapp">
                         💬 Agendar por WhatsApp
                     </button>
                 </div>
-                
                 <div id="consola-diagnostico" class="consola oculto">
                     <p class="analizando">🤖 DIAGNÓSTICO EN CURSO:</p>
                     <p id="resultado-scanner"></p>
                 </div>
             </div>
 
-            <!-- Columna Derecha: Panel de Valor (Rellena el espacio lateral) -->
             <div class="panel-valor-inicio">
                 <h2>⚡ DIAGNÓSTICO DIGITAL AVANZADO</h2>
                 <p class="descripcion-valor">En Mecamotor no adivinamos las fallas ni te hacemos gastar de más; las escaneamos en tiempo real con tecnología robótica de punta para garantizar el máximo rendimiento.</p>
-                
                 <div class="minis-pilares">
                     <div class="mini-pilar">
                         <h3>📡 Precisión Electrónica</h3>
@@ -60,7 +62,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -87,37 +88,48 @@
         <div id="resultado-km" class="bloque-resultado-km oculto"></div>
     </div>
 
-    <!-- PUNTO 3: Cotizador Interactivo Ajustado -->
+    <!-- PUNTO 3: El Módulo de Cotización con tu Imagen Real Ajustada -->
     <div class="seccion-oscura" style="border-top: 1px solid #1e293b; padding-bottom: 100px;">
-        <h2>💰 COTIZADOR DE PRESUPUESTO INSTANTÁNEO</h2>
-        <p class="subtitulo">Selecciona los servicios que necesitas y calcula tu presupuesto en tiempo real.</p>
-        
-        <div class="cotizador-box">
-            <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-motor" value="150" class="chk-servicio">
-                <label for="srv-motor">⚙️ Bajada de Motor Pro (Desde S/ 150)</label>
-            </div>
-            <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-electrico" value="40" class="chk-servicio">
-                <label for="srv-electrico">⚡ Sistema Eléctrico e Inyección (Desde S/ 40)</label>
-            </div>
-            <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-mantenimiento" value="80" class="chk-servicio">
-                <label for="srv-mantenimiento">🧫 Mantenimiento General (S/ 80 fijo)</label>
-            </div>
-            <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-frenos" value="25" class="chk-servicio">
-                <label for="srv-frenos">🛑 Pastillas de Freno (S/ 25)</label>
+        <div class="contenedor-cotizador-split">
+            
+            <!-- Lado Izquierdo: Tu Calculadora de Precios Activa -->
+            <div class="columna-interactiva">
+                <h2>💰 COTIZADOR DE PRESUPUESTO INSTANTÁNEO</h2>
+                <p class="subtitulo">Selecciona los servicios que necesitas y calcula tu presupuesto en tiempo real.</p>
+                <div class="cotizador-box">
+                    <div class="opcion-cotizar">
+                        <input type="checkbox" id="srv-motor" value="150" class="chk-servicio">
+                        <label for="srv-motor">⚙️ Bajada de Motor Pro (Desde S/ 150)</label>
+                    </div>
+                    <div class="opcion-cotizar">
+                        <input type="checkbox" id="srv-electrico" value="40" class="chk-servicio">
+                        <label for="srv-electrico">⚡ Sistema Eléctrico e Inyección (Desde S/ 40)</label>
+                    </div>
+                    <div class="opcion-cotizar">
+                        <input type="checkbox" id="srv-mantenimiento" value="80" class="chk-servicio">
+                        <label for="srv-mantenimiento">🧫 Mantenimiento General (S/ 80 fijo)</label>
+                    </div>
+                    <div class="opcion-cotizar">
+                        <input type="checkbox" id="srv-frenos" value="25" class="chk-servicio">
+                        <label for="srv-frenos">🛑 Pastillas de Freno (S/ 25)</label>
+                    </div>
+                    <div class="total-container">
+                        <span>TOTAL ESTIMADO:</span>
+                        <span id="monto-total">S/ 0</span>
+                    </div>
+                    <button id="btn-whatsapp-cotizar" class="btn-whatsapp" style="margin-top: 20px; width: 100%; border: none;">
+                        📱 Enviar Presupuesto por WhatsApp
+                    </button>
+                </div>
             </div>
 
-            <div class="total-container">
-                <span>TOTAL ESTIMADO:</span>
-                <span id="monto-total">S/ 0</span>
+            <!-- Lado Derecho: Tu imagen real logouno.meca.png perfectamente enlazada -->
+            <div class="columna-imagen">
+                <div class="marco-imagen-premium">
+                    <img src="logouno.meca.png" alt="Mecánico arreglando moto Mecamotor" class="imagen-lateral-real">
+                </div>
             </div>
 
-            <button id="btn-whatsapp-cotizar" class="btn-whatsapp" style="margin-top: 20px; width: 100%; border: none;">
-                📱 Enviar Presupuesto por WhatsApp
-            </button>
         </div>
     </div>
 
