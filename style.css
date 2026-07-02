@@ -1,30 +1,25 @@
-/* ========================================================
-   1. REGLAS GENERALES Y DETALLES DEL CURSOR
-   ======================================================== */
+/* REGLAS BASE Y CURSOR CON TU LOGO REAL */
 html, body, a, button, input {
-  cursor: none !important; /* Mantiene apagado el mouse de Windows */
+  cursor: none !important;
 }
 
 body {
   color: #f8fafc;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Segoe UI', Roboto, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #0d1117;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
   overflow-x: hidden;
 }
 
-/* El elemento del cursor personalizado */
 .cursor-meca {
-  width: 42px;
-  height: 42px;
-  background-image: url('logodos.meca.png');
+  width: 40px;
+  height: 40px;
+  background-image: url('logo.meca.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   position: fixed;
@@ -33,9 +28,6 @@ body {
   transform: translate(-10%, -10%);
 }
 
-/* ========================================================
-   2. VIDEO DE FONDO EN PANTALLA COMPLETA REAL
-   ======================================================== */
 #video-fondo {
   position: fixed;
   top: 0;
@@ -43,16 +35,14 @@ body {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  z-index: -1; /* Se mantiene atrás de las tarjetas */
-  opacity: 0.25; /* Oscurece el fondo para que los textos resalten */
+  z-index: -1;
+  opacity: 0.2;
 }
 
-/* ========================================================
-   3. CONTENEDOR PRINCIPAL Y MAQUETACIÓN (GRID TRASLÚCIDO)
-   ======================================================== */
+/* INTERFAZ EN MALLA (GRID) */
 .contenedor-principal {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1240px;
   margin: auto;
   padding: 20px;
   box-sizing: border-box;
@@ -61,138 +51,137 @@ body {
 
 .fila-contenido {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 30px;
   width: 100%;
 }
 
-/* ESTILO UNIFICADO PARA AMBAS TARJETAS */
 .tarjeta-izquierda, .tarjeta-derecha {
-  background: rgba(15, 23, 42, 0.75); /* Fondo oscuro semitransparente moderno */
-  backdrop-filter: blur(12px);       /* Efecto de vidrio esmerilado */
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 35px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* ========================================================
-   4. DETALLES DE LA TARJETA IZQUIERDA (CONTENIDO Y BOTONES)
-   ======================================================== */
+/* LOGO DE LA COMPAÑÍA EN LA TARJETA */
 .logo-contenedor {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  width: 100%;
-  height: 110px; /* Evita que imágenes grandes empujen el contenido */
+  margin-bottom: 15px;
 }
-
 .logo-web {
-  max-height: 100%;
-  width: auto;
-  object-fit: contain;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
 }
 
 .tarjeta-izquierda h2 {
   font-size: 24px;
-  font-weight: 700;
   text-align: center;
   margin: 10px 0;
-  color: #ffffff;
 }
-
 .tarjeta-izquierda p {
-  font-size: 15px;
   color: #94a3b8;
   text-align: center;
-  line-height: 1.5;
-  margin-bottom: 25px;
+  font-size: 15px;
 }
 
-/* BOTONES DE ACCIÓN */
+/* MAQUETACIÓN DE LA LISTA DE COMPROBACIONES (CHECKS) */
+.lista-checks {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.check-item {
+  font-size: 14px;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+/* BOTONERA MEJORADA */
 .botones-contenedor {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 100%;
 }
-
-.btn-azul, .btn-verde {
+.btn-azul, .btn-verde, .btn-amarillo {
   border: none;
-  padding: 14px;
-  border-radius: 10px;
+  padding: 13px;
+  border-radius: 8px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
   text-decoration: none;
   color: white;
-  transition: transform 0.2s ease, filter 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
 }
-
 .btn-azul { background-color: #2563eb; }
 .btn-verde { background-color: #16a34a; }
+.btn-amarillo { background-color: #d97706; }
 
-/* Efecto hover simulado para botones con tu cursor */
-.btn-azul:hover, .btn-verde:hover {
-  filter: brightness(1.15);
-  transform: translateY(-2px);
+.btn-azul:hover, .btn-verde:hover, .btn-amarillo:hover {
+  transform: scale(1.02);
 }
 
-/* CONTENEDOR DEL RESULTADO DEL ESCANEO */
 .resultado-texto {
-  margin-top: 20px;
-  font-weight: 600;
-  font-size: 15px;
+  margin-top: 15px;
+  font-weight: bold;
   text-align: center;
-  line-height: 1.4;
-  padding: 10px;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.2);
 }
 
-/* ========================================================
-   5. DETALLES DE LA TARJETA DERECHA (DIAGNÓSTICO DIGITAL)
-   ======================================================== */
-.tarjeta-derecha h2 {
-  font-size: 22px;
-  color: #ffffff;
-  margin-top: 0;
-  margin-bottom: 15px;
-  letter-spacing: 0.5px;
+/* BLOQUE SUPERIOR DE LA SECCIÓN DERECHA */
+.bloque-diagnostico-horizontal {
   display: flex;
+  gap: 20px;
   align-items: center;
-  gap: 10px;
+  margin-bottom: 25px;
+}
+.texto-diagnostico { flex: 1; }
+
+/* REGLAS PARA LA IMAGEN LATERAL DE LA MOTO */
+.imagen-lateral-contenedor {
+  width: 140px;
+  height: 110px;
+  flex-shrink: 0;
+}
+.imagen-lateral {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.tarjeta-derecha h2 {
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
 .descripcion-diagnostico {
-  font-size: 15px;
   color: #cbd5e1;
-  line-height: 1.6;
-  margin-bottom: 25px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .lista-beneficios {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 20px;
 }
-
 .beneficio-item h3 {
-  margin: 0 0 6px 0;
+  margin: 0 0 4px 0;
   font-size: 17px;
-  color: #38bdf8; /* Azul claro eléctrico llamativo */
-  font-weight: 600;
+  color: #38bdf8;
 }
-
 .beneficio-item p {
   margin: 0;
   color: #94a3b8;
   font-size: 14px;
-  line-height: 1.5;
 }
