@@ -1,4 +1,4 @@
-// MODULO DE ESCANEO MECAMOTOR
+// SISTEMA DE ESCANEO DE DIAGNÓSTICO DIGITAL
 const botonEscanear = document.getElementById('boton-escanear');
 const resultadoEscaneo = document.getElementById('resultado-escaneo');
 
@@ -34,13 +34,3 @@ if (botonEscanear && resultadoEscaneo) {
     }, 2000);
   });
 }
-
-// CONTROLADOR DEL MOUSE (INDEPENDIENTE)
-const cursorMeca = document.querySelector('.cursor-meca');
-
-document.addEventListener('mousemove', (e) => {
-  if (cursorMeca) {
-    cursorMeca.style.left = e.clientX + 'px';
-    cursorMeca.style.top = e.clientY + 'px';
-  }
-});
