@@ -2,22 +2,30 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Súper Página Web</title>
-    <!-- Conectamos los estilos visuales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecamotor | Taller Mecánico del Futuro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="tarjeta">
-        <h1>🚀 ¡Bienvenidos a mi primera web putitos!</h1>
-        <p>Este sitio fue programado usando HTML, CSS y JavaScript.</p>
+    <!-- Contenedor translúcido para que se aprecie el robot de fondo -->
+    <div class="tarjeta-taller">
+        <div class="logo">🛠️ MECAMOTOR</div>
+        <h1>Servicio Técnico Especializado</h1>
+        <p>Potencia, precisión y tecnología robótica avanzada para tu motocicleta.</p>
         
-        <!-- Un botón interactivo -->
-        <button id="boton-magico">Haz clic aquí</button>
-        <p id="mensaje-oculto" class="oculto">🔥 ¡Felicidades! Acabas de entrar a mi pág código JavaScript real.</p>
+        <!-- Botones de Interacción -->
+        <div class="botones-container">
+            <button id="boton-diagnostico">Escanear Moto</button>
+        </div>
+        
+        <!-- Pantalla de diagnóstico oculta -->
+        <div id="consola-diagnostico" class="consola oculto">
+            <p class="analizando">🤖 Iniciando escáner cyber-mecánico...</p>
+            <p id="resultado-scanner"></p>
+        </div>
     </div>
 
-    <!-- Conectamos la lógica del botón -->
     <script src="app.js"></script>
 </body>
 </html>
