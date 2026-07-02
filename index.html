@@ -59,26 +59,31 @@
         <div id="resultado-km" class="bloque-resultado-km oculto"></div>
     </div>
 
-    <!-- PUNTO 3: Calculadora de Presupuesto Automático -->
+    <!-- PUNTO 3: Calculadora de Presupuesto Automático (MÉTODO NATIVO ANTI-BLOQUEOS) -->
     <div class="seccion-oscura" style="border-top: 1px solid #1e293b;">
         <h2>💰 COTIZADOR DE PRESUPUESTO INSTANTÁNEO</h2>
         <p class="subtitulo">Selecciona los servicios que necesitas y calcula tu presupuesto en tiempo real.</p>
         
-        <div class="cotizador-box">
+        <!-- Formulario nativo conectado directamente a tu WhatsApp 943398351 -->
+        <form action="https://wa.me" method="get" target="_blank" class="cotizador-box">
+            
+            <!-- Texto oculto obligatorio que pide WhatsApp para procesar el mensaje -->
+            <input type="hidden" name="text" value="Hola Mecamotor, quiero cotizar los servicios seleccionados de la web.">
+
             <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-motor" value="150" class="chk-servicio" data-name="Bajada de Motor Pro">
+                <input type="checkbox" id="srv-motor" value="150" class="chk-servicio">
                 <label for="srv-motor">⚙️ Bajada de Motor Pro (Desde S/ 150)</label>
             </div>
             <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-electrico" value="40" class="chk-servicio" data-name="Sistema Electrico">
+                <input type="checkbox" id="srv-electrico" value="40" class="chk-servicio">
                 <label for="srv-electrico">⚡ Sistema Eléctrico e Inyección (Desde S/ 40)</label>
             </div>
             <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-mantenimiento" value="80" class="chk-servicio" data-name="Mantenimiento General">
+                <input type="checkbox" id="srv-mantenimiento" value="80" class="chk-servicio">
                 <label for="srv-mantenimiento">🧫 Mantenimiento General (S/ 80 fijo)</label>
             </div>
             <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-frenos" value="25" class="chk-servicio" data-name="Pastillas de Freno">
+                <input type="checkbox" id="srv-frenos" value="25" class="chk-servicio">
                 <label for="srv-frenos">🛑 Pastillas de Freno (S/ 25)</label>
             </div>
 
@@ -87,10 +92,11 @@
                 <span id="monto-total">S/ 0</span>
             </div>
 
-            <button id="boton-enviar-cotizacion" style="margin-top: 20px; background: linear-gradient(135deg, #25d366, #128c7e);">
+            <!-- Botón de envío nativo que no puede ser bloqueado -->
+            <button type="submit" style="margin-top: 20px; width: 100%; background: linear-gradient(135deg, #25d366, #128c7e);">
                 📱 Enviar Presupuesto por WhatsApp
             </button>
-        </div>
+        </form>
     </div>
 
     <script src="app.js"></script>
