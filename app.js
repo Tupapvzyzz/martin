@@ -26,21 +26,27 @@ if (boton) {
             const respuestaAlAzar = diagnosticos[Math.floor(Math.random() * diagnosticos.length)];
             resultado.innerText = respuestaAlAzar;
             if(respuestaAlAzar.includes("✅")) resultado.style.color = "#4ade80";
-            else if(respuestaAlAzar.includes("⚠️")) resultado.style.color = "#fbbf24";        
-                const motoCursor = document.querySelector('.moto-cursor');
+    else if(respuestaAlAzar.includes("⚠️")) resultado.style.color = "#fbbf24";
+    else resultado.style.color = "#f87171"; // El else que estaba perdido vuelve a su lugar correcto
+
+    boton.disabled = false;
+    boton.innerText = "Escanear Moto";
+    boton.style.opacity = "1";
+    
+  }, 2000);
+});
+
+// ==========================================
+// CÓDIGO DEL CURSOR (DEBE IR TOTALMENTE AFUERA Y SEPARADO)
+// ==========================================
+const cursorMeca = document.querySelector('.cursor-meca');
 
 document.addEventListener('mousemove', (e) => {
-  motoCursor.style.left = e.clientX + 'px';
-  motoCursor.style.top = e.clientY + 'px';
+  if (cursorMeca) {
+    cursorMeca.style.left = e.clientX + 'px';
+    cursorMeca.style.top = e.clientY + 'px';
+  }
 });
-            else resultado.style.color = "#f87171";
-            boton.disabled = false;
-            boton.innerText = "Escanear Moto";
-            boton.style.opacity = "1";
-        }, 2000);
-    });
-}
-
 // --- MÓDULO 2: HISTORIAL CLÍNICO POR PLACA ---
 const btnBuscarPlaca = document.getElementById('boton-buscar-placa');
 const inputPlaca = document.getElementById('input-placa');
