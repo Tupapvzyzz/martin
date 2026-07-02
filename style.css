@@ -3,10 +3,9 @@ body {
     font-family: 'Segoe UI', Roboto, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0f172a; /* Fondo oscuro por si el video tarda en cargar */
+    background-color: transparent; /* Quitamos el fondo negro del body */
 }
 
-/* Forzamos al video a quedarse fijo ocupando toda la pantalla */
 #video-fondo {
     position: fixed;
     top: 0;
@@ -14,10 +13,9 @@ body {
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    z-index: -1;
+    z-index: -2; /* Lo mandamos al fondo absoluto */
 }
 
-/* Primera pantalla translúcida */
 .pantalla-inicio {
     display: flex;
     justify-content: center;
@@ -25,12 +23,12 @@ body {
     min-height: 100vh;
     padding: 20px;
     box-sizing: border-box;
-    background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6)); 
+    background: rgba(15, 23, 42, 0.4); /* Capa oscura mínima */
 }
 
 .tarjeta-taller {
-    background-color: rgba(30, 41, 59, 0.75); /* Más transparente para que se vea el video */
-    backdrop-filter: blur(12px);
+    background-color: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(10px);
     padding: 40px;
     border-radius: 20px;
     border: 2px solid #3b82f6;
@@ -108,9 +106,8 @@ button:hover {
     letter-spacing: 1px;
 }
 
-/* SECCIÓN DE SERVICIOS */
 .seccion-servicios {
-    background-color: rgba(15, 23, 42, 0.95); /* Bloque sólido abajo para que se lea bien */
+    background-color: #0f172a;
     padding: 60px 20px;
     text-align: center;
     border-top: 2px solid #3b82f6;
