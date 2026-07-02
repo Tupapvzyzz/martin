@@ -1,4 +1,4 @@
-// MODULO 1: SISTEMA DE ESCANEO DE MOTOCICLETA
+// MODULO DE ESCANEO MECAMOTOR
 const botonEscanear = document.getElementById('boton-escanear');
 const resultadoEscaneo = document.getElementById('resultado-escaneo');
 
@@ -20,7 +20,6 @@ if (botonEscanear && resultadoEscaneo) {
       const respuestaAlAzar = respuestas[Math.floor(Math.random() * respuestas.length)];
       resultadoEscaneo.innerText = respuestaAlAzar;
 
-      // Evalúa el color de la respuesta sin romper la sintaxis
       if (respuestaAlAzar.includes("✅")) {
         resultadoEscaneo.style.color = "#4ade80";
       } else if (respuestaAlAzar.includes("⚠️")) {
@@ -29,7 +28,6 @@ if (botonEscanear && resultadoEscaneo) {
         resultadoEscaneo.style.color = "#f87171";
       }
 
-      // Restablece el botón original
       botonEscanear.disabled = false;
       botonEscanear.innerText = "Escanear Moto";
       botonEscanear.style.opacity = "1";
@@ -37,9 +35,7 @@ if (botonEscanear && resultadoEscaneo) {
   });
 }
 
-// =======================================================
-// MODULO 2: CONTROLADOR DEL CURSOR DE MECA MOTOR (INDEPENDIENTE)
-// =======================================================
+// CONTROLADOR DEL MOUSE (INDEPENDIENTE)
 const cursorMeca = document.querySelector('.cursor-meca');
 
 document.addEventListener('mousemove', (e) => {
