@@ -83,7 +83,6 @@ botonesKm.forEach(boton => {
     });
 });
 
-// --- ENLACE INTELIGENTE DE WHATSAPP (CELULAR Y LAPTOP AUTOMÁTICO) ---
 function abrirWhatsAppMecamotor(textoMensaje) {
     let numeroTelefono = "51943398351";
     let urlFinal = "";
@@ -111,21 +110,6 @@ if (btnWspPrincipal) {
     });
 }
 
-const btnWspCotizar = document.getElementById('btn-whatsapp-cotizar');
-if (btnWspCotizar) {
-    btnWspCotizar.addEventListener('click', function() {
-        abrirWhatsAppMecamotor("Hola Mecamotor, quiero cotizar un mantenimiento para mi moto.");
-    });
-
-// Asignamos la acción al botón principal de arriba
-const btnWspPrincipal = document.getElementById('btn-whatsapp-principal');
-if (btnWspPrincipal) {
-    btnWspPrincipal.addEventListener('click', function() {
-        abrirWhatsAppMecamotor("Hola Mecamotor, quiero agendar una cita para mi moto.");
-    });
-}
-
-// Asignamos la acción al botón del cotizador de abajo
 const btnWspCotizar = document.getElementById('btn-whatsapp-cotizar');
 if (btnWspCotizar) {
     btnWspCotizar.addEventListener('click', function() {
