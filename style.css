@@ -3,21 +3,21 @@ body {
     font-family: 'Segoe UI', Roboto, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0f172a; /* Fondo oscuro de respaldo */
+    background-color: #0f172a; /* Fondo oscuro por si el video tarda en cargar */
 }
 
-/* Código mágico para fijar el video a pantalla completa detrás del texto */
+/* Forzamos al video a quedarse fijo ocupando toda la pantalla */
 #video-fondo {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    object-fit: cover; /* Estira el video sin deformarlo */
-    z-index: -1; /* Lo manda al fondo de todo */
+    object-fit: cover;
+    z-index: -1;
 }
 
-/* Modificamos la pantalla de inicio para ponerle una capa oscura encima al video */
+/* Primera pantalla translúcida */
 .pantalla-inicio {
     display: flex;
     justify-content: center;
@@ -25,32 +25,20 @@ body {
     min-height: 100vh;
     padding: 20px;
     box-sizing: border-box;
-    /* Capa oscura translúcida para que se note tu video pero el texto se lea impecable */
-    background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.7)); 
+    background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6)); 
 }
+
 .tarjeta-taller {
-    background-color: rgba(30, 41, 59, 0.85);
-    backdrop-filter: blur(10px);
+    background-color: rgba(30, 41, 59, 0.75); /* Más transparente para que se vea el video */
+    backdrop-filter: blur(12px);
     padding: 40px;
     border-radius: 20px;
     border: 2px solid #3b82f6;
-    .precio {
-    display: inline-block;
-    margin-top: 15px;
-    background-color: rgba(74, 222, 128, 0.15);
-    color: #4ade80;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 15px;
-    border: 1px solid rgba(74, 222, 128, 0.3);
-}
     box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
     text-align: center;
     max-width: 450px;
     width: 100%;
     box-sizing: border-box;
-    position: relative;
 }
 
 .logo {
@@ -63,7 +51,7 @@ body {
 }
 
 h1 { font-size: 22px; margin-bottom: 15px; }
-p { color: #94a3b8; line-height: 1.6; }
+p { color: #cbd5e1; line-height: 1.6; }
 
 .botones-container {
     display: flex;
@@ -115,18 +103,19 @@ button:hover {
 .indicador-bajar {
     margin-top: 25px;
     font-size: 13px;
-    color: #64748b;
+    color: #94a3b8;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
-/* --- NUEVA SECCIÓN DE SERVICIOS --- */
+/* SECCIÓN DE SERVICIOS */
 .seccion-servicios {
-    background-color: rgba(15, 23, 42, 0.9);
+    background-color: rgba(15, 23, 42, 0.95); /* Bloque sólido abajo para que se lea bien */
     padding: 60px 20px;
     text-align: center;
-    backdrop-filter: blur(5px);
     border-top: 2px solid #3b82f6;
+    position: relative;
+    z-index: 10;
 }
 
 .seccion-servicios h2 {
@@ -161,18 +150,21 @@ button:hover {
     box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
 }
 
-.bloque-servicio h3 {
-    margin-top: 0;
-    color: #f8fafc;
-    font-size: 18px;
+.bloque-servicio h3 { margin-top: 0; color: #f8fafc; font-size: 18px; }
+.bloque-servicio p { font-size: 14px; margin-bottom: 0; }
+
+.precio {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: rgba(74, 222, 128, 0.15);
+    color: #4ade80;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid rgba(74, 222, 128, 0.3);
 }
 
-.bloque-servicio p {
-    font-size: 14px;
-    margin-bottom: 0;
-}
-
-/* Consola de diagnóstico */
 .consola {
     background-color: #090d16;
     border-left: 4px solid #4ade80;
