@@ -3,30 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mecamotor | Taller Mecánico del Futuro</title>
+    <title>Mecamotor | Taller Mecánico Especializado</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="tarjeta-taller">
-        <div class="logo">🛠️ MECAMOTOR</div>
-        <h1>Servicio Técnico Especializado</h1>
-        <p>Potencia, precisión y tecnología robótica avanzada para tu motocicleta.</p>
-        
-        <!-- Aquí metemos los dos botones ordenados dentro de su contenedor -->
-        <div class="botones-container">
-            <button id="boton-diagnostico">Escanear Moto</button>
-            <a href="https://wa.me" target="_blank" class="btn-whatsapp">
-                💬 Agendar por WhatsApp
-            </a>
+    <!-- SECCIÓN 1: Tarjeta Principal Interactiva -->
+    <div class="pantalla-inicio">
+        <div class="tarjeta-taller">
+            <div class="logo">🛠️ MECAMOTOR</div>
+            <h1>Servicio Técnico Especializado</h1>
+            <p>Potencia, precisión y tecnología robótica avanzada para tu motocicleta.</p>
+            
+            <div class="botones-container">
+                <button id="boton-diagnostico">Escanear Moto</button>
+                <a href="https://wa.me" target="_blank" class="btn-whatsapp">
+                    💬 Agendar por WhatsApp
+                </a>
+            </div>
+            
+            <div id="consola-diagnostico" class="consola oculto">
+                <p class="analizando">🤖 Iniciando escáner cyber-mecánico...</p>
+                <p id="resultado-scanner"></p>
+            </div>
+            
+            <!-- Flecha interactiva para invitar a bajar -->
+            <div class="indicador-bajar">⚡ Desliza para ver nuestros servicios ↓</div>
         </div>
-        
-        <!-- Consola de diagnóstico -->
-        <div id="consola-diagnostico" class="consola oculto">
-            <p class="analizando">🤖 Iniciando escáner cyber-mecánico...</p>
-            <p id="resultado-scanner"></p>
+    </div>
+
+    <!-- SECCIÓN 2: Panel de Servicios Avanzados -->
+    <div class="seccion-servicios">
+        <h2>🛠️ NUESTRAS ESPECIALIDADES</h2>
+        <div class="contenedor-servicios">
+            <div class="bloque-servicio">
+                <h3>⚙️ Reparación de Motor</h3>
+                <p>Ajuste completo, bajada de motor, calibración de válvulas y optimización de compresión.</p>
+            </div>
+            <div class="bloque-servicio">
+                <h3>⚡ Sistema Eléctrico</h3>
+                <p>Diagnóstico de fallas por computadora, bobinados, sistema de carga y luces LED.</p>
+            </div>
+            <div class="bloque-servicio">
+                <h3>🧫 Mantenimiento Pro</h3>
+                <p>Limpieza de inyectores/carburador, cambio de fluidos premium y pastillas de freno.</p>
+            </div>
         </div>
     </div>
 
     <script src="app.js"></script>
 </body>
+</html>
