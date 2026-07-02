@@ -53,7 +53,7 @@ p {
 
 button, .btn-whatsapp {
     width: 100%;
-    max-width: 28px; /* Controla el ancho máximo */
+    max-width: 280px; /* Controla el ancho máximo */
     box-sizing: border-box;
     padding: 14px;
     font-size: 16px;
