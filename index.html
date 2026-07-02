@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- Video de fondo -->
+    <!-- Video cinematográfico de fondo en bucle -->
     <video autoplay muted loop playsinline preload="auto" id="video-fondo">
         <source src="taller.mp4" type="video/mp4">
     </video>
@@ -22,10 +22,10 @@
             
             <div class="botones-container">
                 <button id="boton-diagnostico">Escanear Moto</button>
-                <!-- Enlace API Universal forzado para celular -->
-                <a href="https://whatsapp.com" class="btn-whatsapp">
+                <!-- Botón inteligente de contacto principal -->
+                <button id="btn-whatsapp-principal" class="btn-whatsapp">
                     💬 Agendar por WhatsApp
-                </a>
+                </button>
             </div>
             
             <div id="consola-diagnostico" class="consola oculto">
@@ -60,18 +60,18 @@
         <div id="resultado-km" class="bloque-resultado-km oculto"></div>
     </div>
 
-    <!-- PUNTO 3: COTIZADOR CON ENLACE UNIVERSAL -->
-    <div class="seccion-oscura" style="border-top: 1px solid #1e293b; padding-bottom: 100px;">
+    <!-- PUNTO 3: Calculadora de Presupuesto Automático -->
+    <div class="seccion-oscura" style="border-top: 1px solid #1e293b;">
         <h2>💰 COTIZADOR DE PRESUPUESTO INSTANTÁNEO</h2>
         <p class="subtitulo">Presiona el botón de abajo para cotizar tus servicios directamente por WhatsApp.</p>
         
-        <div style="margin-top: 30px;">
-            <!-- Segundo botón con API Universal forzado para celular -->
-            <a href="https://whatsapp.com" 
-               class="btn-whatsapp"
-               style="max-width: 320px; width: 100%; display: inline-block; text-decoration: none; background: linear-gradient(135deg, #25d366, #128c7e); padding: 15px; font-weight: bold; border-radius: 12px; color: white;">
-               📱 Cotizar por WhatsApp
-            </a>
+        <div class="cotizador-box" style="text-align: center;">
+            <p style="color: #cbd5e1; margin-bottom: 25px;">Dale clic abajo para enviarnos los servicios que necesitas revisar y te daremos un presupuesto en Soles al instante.</p>
+            
+            <!-- Botón inteligente para la cotización inferior -->
+            <button id="btn-whatsapp-cotizar" class="btn-whatsapp" style="max-width: 320px; width: 100%; display: inline-block; background: linear-gradient(135deg, #25d366, #128c7e); padding: 15px; font-weight: bold; border-radius: 12px; color: white; border: none;">
+                📱 Cotizar por WhatsApp
+            </button>
         </div>
     </div>
 
