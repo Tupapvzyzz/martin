@@ -1,6 +1,9 @@
-/* REGLAS BASE Y CURSOR CON TU LOGO REAL */
+/* CURSOR NATIVO DE MOTO KAWASAKI CON EL PUNTO DE CLIC EN LA LLANTA DELANTERA */
 html, body, a, button, input {
-  cursor: none !important;
+  cursor: url('moto-cursor.png') 0 32, auto !important;
+}
+a:hover, button:hover {
+  cursor: url('moto-cursor.png') 0 32, pointer !important;
 }
 
 body {
@@ -8,26 +11,33 @@ body {
   font-family: 'Segoe UI', Roboto, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #0d1117;
+  background-color: #080c10;
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
   overflow-x: hidden;
 }
 
-.cursor-meca {
-  width: 40px;
-  height: 40px;
-  background-image: url('logo.meca.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: fixed;
-  pointer-events: none;
-  z-index: 999999;
-  transform: translate(-10%, -10%);
+/* BARRA NEGRA SUPERIOR DE ATENCIÓN ORIGINAL */
+.barra-negra-atencion {
+  background-color: #000000;
+  width: 100%;
+  padding: 12px 0;
+  text-align: center;
+  border-bottom: 2px solid #111;
+  position: relative;
+  z-index: 100;
+}
+.barra-negra-atencion p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.5px;
 }
 
+/* VIDEO DE FONDO: 100% VISIBLE ATRÁS */
 #video-fondo {
   position: fixed;
   top: 0;
@@ -36,13 +46,13 @@ body {
   height: 100vh;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.45; /* Equilibrio perfecto para ver el video y leer el texto */
 }
 
-/* INTERFAZ EN MALLA (GRID) */
+/* CONTENEDOR FLOTANTE COMPACTO */
 .contenedor-principal {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1180px;
   margin: auto;
   padding: 20px;
   box-sizing: border-box;
@@ -51,92 +61,92 @@ body {
 
 .fila-contenido {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
   width: 100%;
 }
 
+/* TARJETAS EXTRA TRASLÚCIDAS (DEJAN VER EL VIDEO DE FONDO) */
 .tarjeta-izquierda, .tarjeta-derecha {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 35px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.65); /* Fondo oscuro muy transparente */
+  backdrop-filter: blur(6px);       /* Desenfoque ligero para no tapar los detalles del video */
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
 }
 
-/* LOGO DE LA COMPAÑÍA EN LA TARJETA */
+/* LOGO DE MECAMOTOR */
 .logo-contenedor {
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
 }
 .logo-web {
-  max-width: 200px;
+  max-width: 180px;
   height: auto;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .tarjeta-izquierda h2 {
-  font-size: 24px;
+  font-size: 22px;
   text-align: center;
-  margin: 10px 0;
-}
-.tarjeta-izquierda p {
-  color: #94a3b8;
-  text-align: center;
-  font-size: 15px;
+  margin: 10px 0 20px 0;
 }
 
-/* MAQUETACIÓN DE LA LISTA DE COMPROBACIONES (CHECKS) */
+/* LISTA DE CHECKS DE SERVICIOS */
 .lista-checks {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.05);
   padding: 15px;
-  border-radius: 10px;
-  margin: 15px 0;
+  border-radius: 8px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 .check-item {
   font-size: 14px;
-  color: #e2e8f0;
+  color: #f1f5f9;
   font-weight: 500;
 }
 
-/* BOTONERA MEJORADA */
+/* BOTONERA ULTRA INTERACTIVA ESTILO KAWASAKI */
 .botones-contenedor {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 .btn-azul, .btn-verde, .btn-amarillo {
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 13px;
-  border-radius: 8px;
+  border-radius: 6px;
   font-weight: bold;
   font-size: 15px;
   text-align: center;
   text-decoration: none;
   color: white;
-  transition: transform 0.2s;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.btn-azul { background-color: #2563eb; }
-.btn-verde { background-color: #16a34a; }
-.btn-amarillo { background-color: #d97706; }
+.btn-azul { background-color: #1e40af; }
+.btn-verde { background-color: #15803d; }
+.btn-amarillo { background-color: #b45309; }
 
+/* EFECTO INTERACTIVO AL PASAR EL MOUSE (HOVER) */
 .btn-azul:hover, .btn-verde:hover, .btn-amarillo:hover {
-  transform: scale(1.02);
+  transform: translateY(-2px) scale(1.02);
+  border-color: #39ff14; /* Iluminación Verde Kawasaki Ninja */
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
 }
 
 .resultado-texto {
   margin-top: 15px;
   font-weight: bold;
   text-align: center;
+  font-size: 15px;
 }
 
-/* BLOQUE SUPERIOR DE LA SECCIÓN DERECHA */
+/* SECCIÓN DEL MECÁNICO TRABAJANDO (IMAGEN DE FONDO.JPG) */
 .bloque-diagnostico-horizontal {
   display: flex;
   gap: 20px;
@@ -145,23 +155,29 @@ body {
 }
 .texto-diagnostico { flex: 1; }
 
-/* REGLAS PARA LA IMAGEN LATERAL DE LA MOTO */
 .imagen-lateral-contenedor {
-  width: 140px;
-  height: 110px;
+  width: 150px;
+  height: 120px;
   flex-shrink: 0;
 }
-.imagen-lateral {
+.imagen-mecanico {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  object-fit: cover; /* Se encuadra perfectamente */
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease;
+}
+/* La foto reacciona al interactuar con ella */
+.imagen-mecanico:hover {
+  transform: scale(1.05);
+  border-color: #39ff14;
 }
 
 .tarjeta-derecha h2 {
-  font-size: 20px;
-  margin: 0 0 10px 0;
+  font-size: 19px;
+  color: #ffffff;
+  margin: 0 0 8px 0;
 }
 .descripcion-diagnostico {
   color: #cbd5e1;
@@ -173,15 +189,15 @@ body {
 .lista-beneficios {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 .beneficio-item h3 {
   margin: 0 0 4px 0;
-  font-size: 17px;
+  font-size: 16px;
   color: #38bdf8;
 }
 .beneficio-item p {
   margin: 0;
   color: #94a3b8;
-  font-size: 14px;
+  font-size: 13px;
 }
