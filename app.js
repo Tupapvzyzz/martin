@@ -1,15 +1,24 @@
-// Buscamos el botón y el texto oculto en la página web
-const boton = document.getElementById('boton-magico');
-const mensaje = document.getElementById('mensaje-oculto');
+const boton = document.getElementById('boton-diagnostico');
+const consola = document.getElementById('consola-diagnostico');
+const resultado = document.getElementById('resultado-scanner');
 
-// Le decimos qué hacer cuando el usuario haga clic
+// Lista de diagnósticos aleatorios del taller mecánico
+const diagnosticos = [
+    "✅ Compresión de motor óptima. Sistema listo para rodar.",
+    "⚠️ Alerta: Nivel de aceite bajo. Requiere cambio preventivo.",
+    "❌ Error: Desgaste severo en pastillas de freno delanteras.",
+    "✅ Diagnóstico completo limpio. Filtros de aire limpios.",
+    "⚠️ Alerta: Bujía con acumulación de carbón. Se sugiere limpieza."
+];
+
 boton.addEventListener('click', function() {
-    // Si el mensaje está oculto, lo muestra. Si no, lo esconde.
-    if (mensaje.className === 'oculto') {
-        mensaje.className = 'mostrar';
-        boton.innerText = 'Ocultar mensaje';
-    } else {
-        mensaje.className = 'oculto';
-        boton.innerText = 'Haz clic aquí';
-    }
+    // Mostramos la caja de la consola
+    consola.classList.remove('oculto');
+    resultado.innerText = "Calculando parámetros...";
+    
+    // Simulamos que el robot analiza la moto por 1 segundo antes de dar la respuesta
+    setTimeout(() => {
+        const respuestaAlAzar = diagnosticos[Math.floor(Math.random() * diagnosticos.length)];
+        resultado.innerText = respuestaAlAzar;
+    }, 1000);
 });
