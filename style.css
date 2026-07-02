@@ -1,10 +1,6 @@
 body {
-    /* Fondo con imagen de robot mecánico ajustada a pantalla completa */
-    background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), 
-                      url('https://unsplash.com');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    /* Fondo digital futurista sin depender de imágenes externas */
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #2e1065 100%);
     color: #f8fafc;
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: flex;
@@ -12,20 +8,8 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
-
-.tarjeta-taller {
-    background-color: rgba(30, 41, 59, 0.85); /* Efecto cristal translúcido */
-    backdrop-filter: blur(8px);
-    padding: 40px;
-    border-radius: 20px;
-    border: 2px solid #3b82f6; /* Borde de neón azul */
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
-    text-align: center;
-    max-width: 450px;
-    width: 90%;
-}
-
 .logo {
     font-size: 28px;
     font-weight: 900;
