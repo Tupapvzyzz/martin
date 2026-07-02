@@ -8,12 +8,12 @@
 </head>
 <body>
 
-    <!-- Video de fondo -->
+    <!-- Video cinematográfico de fondo en bucle -->
     <video autoplay muted loop playsinline preload="auto" id="video-fondo">
         <source src="taller.mp4" type="video/mp4">
     </video>
 
-    <!-- SECCIÓN 1: Tarjeta Principal Interactiva -->
+    <!-- SECCIÓN 1: Tarjeta Principal Interactiva (INTACTA) -->
     <div class="pantalla-inicio">
         <div class="tarjeta-taller">
             <div class="logo">🛠️ MECAMOTOR</div>
@@ -32,12 +32,35 @@
                 <p id="resultado-scanner"></p>
             </div>
             
-            <div class="indicador-bajar">⚡ Desliza para ver módulos interactivos ↓</div>
+            <div class="indicador-bajar">⚡ Desliza para ver la propuesta de valor ↓</div>
         </div>
     </div>
 
-    <!-- PUNTO 1: Sistema de Historial Clínico por Placa -->
-    <div class="seccion-oscura">
+    <!-- 🌟 NUEVA SECCIÓN AGREGADA: Propuesta de Valor y Pilares de Autoridad -->
+    <div class="seccion-oscura" style="border-top: 2px solid #3b82f6;">
+        <h2>⚡ DIAGNÓSTICO DIGITAL AVANZADO</h2>
+        <p class="subtitulo" style="max-width: 700px; margin: 0 auto 50px auto; line-height: 1.8;">
+            Mecánica de precisión para tu motocicleta. En Mecamotor no adivinamos las fallas ni te hacemos gastar de más; las escaneamos en tiempo real con tecnología robótica de punta para garantizar el máximo rendimiento de tu máquina.
+        </p>
+        
+        <div class="contenedor-pilares">
+            <div class="bloque-pilar">
+                <h3>📡 Precisión Electrónica</h3>
+                <p>Escaneo computarizado de sensores, inyección y compresión de motor con datos exactos en pantalla.</p>
+            </div>
+            <div class="bloque-pilar">
+                <h3>📋 Transparencia Total</h3>
+                <p>El único taller con historial clínico digital por placa. Mira el pasado de tu moto desde la web y paga solo lo justo.</p>
+            </div>
+            <div class="bloque-pilar">
+                <h3>⚙️ Ingeniería de Ruta</h3>
+                <p>Mantenimientos milimétricos ejecutados bajo manual de fabricante para garantizar la máxima potencia y seguridad en pista.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PUNTO 1: Sistema de Historial Clínico por Placa (INTACTO) -->
+    <div class="seccion-oscura" style="border-top: 1px solid #1e293b;">
         <h2>📋 HISTORIAL CLÍNICO DIGITAL</h2>
         <p class="subtitulo">Ingresa la placa de tu moto para ver sus reparaciones anteriores en nuestro taller.</p>
         <div class="buscador-container">
@@ -47,7 +70,7 @@
         <div id="resultado-placa" class="bloque-resultado-placa oculto"></div>
     </div>
 
-    <!-- PUNTO 2: Mantenimiento Preventivo por Kilometraje -->
+    <!-- PUNTO 2: Mantenimiento Preventivo por Kilometraje (INTACTO) -->
     <div class="seccion-oscura" style="border-top: 1px solid #1e293b;">
         <h2>📊 REVISIÓN POR KILOMETRAJE</h2>
         <p class="subtitulo">Selecciona el kilometraje actual de tu moto para ver qué servicios le tocan ya mismo.</p>
@@ -59,26 +82,26 @@
         <div id="resultado-km" class="bloque-resultado-km oculto"></div>
     </div>
 
-    <!-- PUNTO 3: El Cotizador Interactivo Recuperado -->
+    <!-- PUNTO 3: Cotizador Interactivo Ajustado (INTACTO) -->
     <div class="seccion-oscura" style="border-top: 1px solid #1e293b; padding-bottom: 100px;">
         <h2>💰 COTIZADOR DE PRESUPUESTO INSTANTÁNEO</h2>
         <p class="subtitulo">Selecciona los servicios que necesitas y calcula tu presupuesto en tiempo real.</p>
         
         <div class="cotizador-box">
             <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-motor" value="150" class="chk-servicio" data-name="Bajada de Motor Pro">
+                <input type="checkbox" id="srv-motor" value="150" class="chk-servicio">
                 <label for="srv-motor">⚙️ Bajada de Motor Pro (Desde S/ 150)</label>
             </div>
             <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-electrico" value="40" class="chk-servicio" data-name="Sistema Electrico">
+                <input type="checkbox" id="srv-electrico" value="40" class="chk-servicio">
                 <label for="srv-electrico">⚡ Sistema Eléctrico e Inyección (Desde S/ 40)</label>
             </div>
             <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-mantenimiento" value="80" class="chk-servicio" data-name="Mantenimiento General">
+                <input type="checkbox" id="srv-mantenimiento" value="80" class="chk-servicio">
                 <label for="srv-mantenimiento">🧫 Mantenimiento General (S/ 80 fijo)</label>
             </div>
             <div class="opcion-cotizar">
-                <input type="checkbox" id="srv-frenos" value="25" class="chk-servicio" data-name="Pastillas de Freno">
+                <input type="checkbox" id="srv-frenos" value="25" class="chk-servicio">
                 <label for="srv-frenos">🛑 Pastillas de Freno (S/ 25)</label>
             </div>
 
@@ -87,7 +110,6 @@
                 <span id="monto-total">S/ 0</span>
             </div>
 
-            <!-- Botón Inteligente de Cotización -->
             <button id="btn-whatsapp-cotizar" class="btn-whatsapp" style="margin-top: 20px; width: 100%; border: none;">
                 📱 Enviar Presupuesto por WhatsApp
             </button>
