@@ -38,7 +38,6 @@ const btnBuscarPlaca = document.getElementById('boton-buscar-placa');
 const inputPlaca = document.getElementById('input-placa');
 const resultadoPlaca = document.getElementById('resultado-placa');
 
-// Simulador de base de datos de clientes reales
 const basePlacas = {
     "1234-ABC": "📋 <b>Moto:</b> Honda CB190R<br>📅 <b>Último ingreso:</b> 15/05/2026<br>🛠️ <b>Trabajo realizado:</b> Bajada de motor completa, cambio de discos de embrague y limpieza de inyectores. ¡Lista y asentada!",
     "C1-2345": "📋 <b>Moto:</b> Yamaha FZ25<br>📅 <b>Último ingreso:</b> 02/06/2026<br>🛠️ <b>Trabajo realizado:</b> Mantenimiento general, cambio de pastillas de freno traseras y calibración de barras de suspensión.",
@@ -108,7 +107,7 @@ btnEnviarCotizacion.addEventListener('click', function() {
     checkboxes.forEach(chk => {
         if (chk.checked) {
             total += parseFloat(chk.value);
-            serviciosSeleccionados.push("- " + chk.getAttribute('data-name'));
+            serviciosSeleccionados.push(chk.getAttribute('data-name'));
         }
     });
     
@@ -117,14 +116,11 @@ btnEnviarCotizacion.addEventListener('click', function() {
         return;
     }
     
-    // Armamos el texto limpio para WhatsApp
-    let mensajeTexto = `Hola Mecamotor! He cotizado un presupuesto en su web para mi moto:\n\n` + 
-                       serviciosSeleccionados.join("\n") + 
-                       `\n\n💰 *Total Estimado: S/ ${total}*\n\n¿Tienen disponibilidad para agendar una cita?`;
+    let listaServicios = serviciosSeleccionados.join(" , ");
     
-    // Codificamos el enlace de forma correcta
-    let enlaceWhatsApp = `https://wa.me{encodeURIComponent(mensajeTexto)}`;
+    // Aquí ingresamos tu número real con el código de Perú (51) de manera directa y segura
+    let enlaceWhatsApp = "https://wa.me Mecamotor, quiero cotizar estos servicios: " + listaServicios + ". Total estimado: S/ " + total;
     
-    // Abrimos el chat en una pestaña nueva
-    window.open(enlaceWhatsApp, '_blank');
-}); 
+    // Abrimos el chat de forma directa y limpia
+    window.location.href = enlaceWhatsApp;
+});
