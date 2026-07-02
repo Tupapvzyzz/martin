@@ -111,7 +111,7 @@ btnEnviarCotizacion.addEventListener('click', function() {
     let mensaje = "Hola Mecamotor, quiero cotizar: " + serviciosSeleccionados.join(" + ") + ". Total estimado: S/ " + total;
     
     // Aquí está tu número real 943398351 con el código de Perú (51)
-    let urlDestino = "https://wa.me" + encodeURIComponent(mensaje);
+    let urlDestino = "https://wa.me/51943398351" + encodeURIComponent(mensaje);
     
     // Redirección directa en la misma pestaña para que ningún navegador lo bloquee
     window.location.href = urlDestino;
