@@ -1,17 +1,23 @@
 body {
-    /* Tu imagen de fondo personalizada fija a pantalla completa */
-    background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)), 
-                      url('fondo.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Mantiene la imagen quieta al deslizar */
     color: #f8fafc;
     font-family: 'Segoe UI', Roboto, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #0f172a; /* Fondo oscuro de respaldo */
 }
 
-/* Contenedor de la primera vista */
+/* Código mágico para fijar el video a pantalla completa detrás del texto */
+#video-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* Estira el video sin deformarlo */
+    z-index: -1; /* Lo manda al fondo de todo */
+}
+
+/* Modificamos la pantalla de inicio para ponerle una capa oscura encima al video */
 .pantalla-inicio {
     display: flex;
     justify-content: center;
@@ -19,8 +25,9 @@ body {
     min-height: 100vh;
     padding: 20px;
     box-sizing: border-box;
+    /* Capa oscura translúcida para que se note tu video pero el texto se lea impecable */
+    background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.7)); 
 }
-
 .tarjeta-taller {
     background-color: rgba(30, 41, 59, 0.85);
     backdrop-filter: blur(10px);
