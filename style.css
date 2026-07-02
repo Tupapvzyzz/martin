@@ -227,3 +227,43 @@ input[type="text"] {
 .analizando { color: #3b82f6; margin: 0 0 10px 0; font-size: 13px; font-weight: bold; }
 #resultado-scanner { color: #4ade80; margin: 0; font-size: 14px; font-weight: bold; }
 .oculto { display: none; }
+/* --- ESTILOS DE LOS PILARES DE PROPUESTA DE VALOR --- */
+.contenedor-pilares {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.bloque-pilar {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border: 1px solid #334155;
+    padding: 30px;
+    border-radius: 16px;
+    width: 290px;
+    text-align: left;
+    transition: 0.3s ease;
+    box-sizing: border-box;
+}
+
+.bloque-pilar:hover {
+    border-color: #3b82f6;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25);
+}
+
+.bloque-pilar h3 {
+    margin-top: 0;
+    color: #3b82f6;
+    font-size: 19px;
+    text-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+}
+
+.bloque-pilar p {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 0;
+    line-height: 1.6;
+}
