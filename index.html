@@ -1,36 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mecamotor | Taller Mecánico Especializado</title>
-    <!-- Tu logo oficial en la pestaña del navegador -->
-    <link rel="icon" type="image/jpg" href="logo.meca.jpg">
-    <link rel="stylesheet" href="style.css?v=100">
-</head>
 <body>
 
-    <!-- CAJA DEL CURSOR PERSONALIZADO -->
+    <!-- El cursor flotante -->
     <div class="cursor-meca"></div>
 
-    <!-- TOP BAR: Barra Superior con tu Horario Real de Atención -->
-    <div class="barra-superior">
-        <div class="contenido-barra">
-            <span class="item-barra">⏰ Atención: Lunes a Sábado 8:30 am - 6:30 pm</span>
-            <span class="item-barra">📞 Soporte: +51 943 398 351</span>
-        </div>
-    </div>
-
-    <!-- Video cinematográfico de fondo en bucle -->
+    <!-- Video de fondo independiente -->
     <video autoplay muted loop playsinline preload="auto" id="video-fondo">
         <source src="taller.mp4" type="video/mp4">
     </video>
 
-    <!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
+    <!-- Caja contenedora principal -->
     <main class="contenedor-principal">
         <div class="fila-contenido">
             
-            <!-- TARJETA IZQUIERDA: SERVICIO TÉCNICO -->
+            <!-- TARJETA IZQUIERDA -->
             <section class="tarjeta-izquierda">
                 <div class="logo-contenedor">
                     <img src="logodos.meca.png" alt="Mecamotor Logo" class="logo-web">
@@ -40,19 +22,19 @@
                 
                 <div class="botones-contenedor">
                     <button id="boton-escanear" class="btn-azul">Escanear Moto</button>
-                    <a href="https://wa.me" target="_blank" class="btn-verde">🟢 Agendar por WhatsApp</a>
+                    <a href="https://wa.me" target="_blank" class="btn-verde">Agendar por WhatsApp</a>
                 </div>
                 <div id="resultado-escaneo" class="resultado-texto"></div>
             </section>
 
-            <!-- TARJETA DERECHA: DIAGNÓSTICO DIGITAL -->
+            <!-- TARJETA DERECHA -->
             <section class="tarjeta-derecha">
                 <h2>⚡ DIAGNÓSTICO DIGITAL AVANZADO</h2>
                 <p class="descripcion-diagnostico">En Mecamotor no adivinamos las fallas ni te hacemos gastar de más; las escaneamos en tiempo real con tecnología robótica de punta para garantizar el máximo rendimiento.</p>
                 
                 <div class="lista-beneficios">
                     <div class="beneficio-item">
-                        <h3>🏍️ Precisión Electrónica</h3>
+                        <h3>🏍️ Precisión Electronica</h3>
                         <p>Escaneo computarizado de sensores, inyección y compresión con datos exactos en pantalla.</p>
                     </div>
                     <div class="beneficio-item">
@@ -69,7 +51,5 @@
         </div>
     </main>
 
-    <!-- EL SCRIPT SIEMPRE ABAJO DE TODO CON TRUCO ANTI-CACHÉ -->
-    <script src="app.js?v=101"></script>
+    <script src="app.js?v=102"></script>
 </body>
-</html>
