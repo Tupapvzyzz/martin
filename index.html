@@ -1,53 +1,67 @@
-<body>
-    <head>
+html<!DOCTYPE html>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mecamotor | Taller Mecánico Especializado</title>
-    <!-- Tu logo oficial en la pestaña del navegador -->
     <link rel="icon" type="image/jpg" href="logo.meca.jpg">
-    
-    <!-- ENLACE CORREGIDO: Le quitamos el ?v=100 que probablemente rompió la ruta en tu servidor -->
     <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-    <!-- El cursor flotante -->
+    <!-- ELEMENTO DEL CURSOR FLOTANTE -->
     <div class="cursor-meca"></div>
 
-    <!-- Video de fondo independiente -->
+    <!-- VIDEO DE FONDO CINEMATOGRÁFICO -->
     <video autoplay muted loop playsinline preload="auto" id="video-fondo">
         <source src="taller.mp4" type="video/mp4">
     </video>
 
-    <!-- Caja contenedora principal -->
+    <!-- CONTENEDOR PRINCIPAL DE LA WEB -->
     <main class="contenedor-principal">
         <div class="fila-contenido">
             
-         <!-- TARJETA IZQUIERDA -->
-<section class="tarjeta-izquierda">
-    <div class="logo-contenedor">
-        <!-- CORREGIDO: Tu logo real -->
-        <img src="logo.meca.jpg" alt="Mecamotor Logo" class="logo-web">
-    </div>
-    <h2>Servicio Técnico Especializado</h2>
+            <!-- TARJETA IZQUIERDA: SERVICIO TÉCNICO COMPLETO -->
+            <section class="tarjeta-izquierda">
+                <div class="logo-contenedor">
+                    <img src="logo.meca.jpg" alt="Mecamotor Logo" class="logo-web">
                 </div>
                 <h2>Servicio Técnico Especializado</h2>
                 <p>Potencia, precisión y tecnología robótica avanzada para tu motocicleta.</p>
                 
+                <!-- LISTADO DE CHECKS RESTAURADO -->
+                <div class="lista-checks">
+                    <div class="check-item">✔️ Bajada de Motor Pro</div>
+                    <div class="check-item">✔️ Mantenimiento Preventivo Integral</div>
+                    <div class="check-item">✔️ Reparación de Sistema Eléctrico</div>
+                    <div class="check-item">✔️ Diagnóstico de Inyección Electrónica</div>
+                </div>
+
+                <!-- ACCIONES Y LINKS DIRECTOS A WHATSAPP -->
                 <div class="botones-contenedor">
                     <button id="boton-escanear" class="btn-azul">Escanear Moto</button>
-                    <a href="https://wa.me" target="_blank" class="btn-verde">Agendar por WhatsApp</a>
+                    <a href="https://wa.me" target="_blank" class="btn-verde">🟢 Agendar Cita WhatsApp</a>
+                    <a href="https://wa.me" target="_blank" class="btn-amarillo">💰 Cotizar Ahora</a>
                 </div>
                 <div id="resultado-escaneo" class="resultado-texto"></div>
             </section>
 
-            <!-- TARJETA DERECHA -->
+            <!-- TARJETA DERECHA: DIAGNÓSTICO DIGITAL Y CONTENIDO VISUAL -->
             <section class="tarjeta-derecha">
-                <h2>⚡ DIAGNÓSTICO DIGITAL AVANZADO</h2>
-                <p class="descripcion-diagnostico">En Mecamotor no adivinamos las fallas ni te hacemos gastar de más; las escaneamos en tiempo real con tecnología robótica de punta para garantizar el máximo rendimiento.</p>
+                <div class="bloque-diagnostico-horizontal">
+                    <div class="texto-diagnostico">
+                        <h2>⚡ DIAGNÓSTICO DIGITAL AVANZADO</h2>
+                        <p class="descripcion-diagnostico">En Mecamotor no adivinamos las fallas ni te hacemos gastar de más; las escaneamos en tiempo real con tecnología robótica de punta para garantizar el máximo rendimiento.</p>
+                    </div>
+                    <!-- IMAGEN ADAPTADA A LOS LADOS DEL DIAGNÓSTICO -->
+                    <div class="imagen-lateral-contenedor">
+                        <img src="fondo.jpg" alt="Diagnóstico Mecamotor" class="imagen-lateral">
+                    </div>
+                </div>
                 
                 <div class="lista-beneficios">
                     <div class="beneficio-item">
-                        <h3>🏍️ Precisión Electronica</h3>
+                        <h3>🏍️ Precisión Electrónica</h3>
                         <p>Escaneo computarizado de sensores, inyección y compresión con datos exactos en pantalla.</p>
                     </div>
                     <div class="beneficio-item">
@@ -64,5 +78,6 @@
         </div>
     </main>
 
-    <script src="app.js?v=102"></script>
+    <script src="app.js"></script>
 </body>
+</html>
