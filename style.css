@@ -1,25 +1,38 @@
 body {
-    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #2e1065 100%);
+    /* Tu imagen de fondo personalizada fija a pantalla completa */
+    background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)), 
+                      url('fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Mantiene la imagen quieta al deslizar */
     color: #f8fafc;
     font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor de la primera vista */
+.pantalla-inicio {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .tarjeta-taller {
     background-color: rgba(30, 41, 59, 0.85);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
     padding: 40px;
     border-radius: 20px;
     border: 2px solid #3b82f6;
     box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
     text-align: center;
     max-width: 450px;
-    width: 90%;
+    width: 100%;
     box-sizing: border-box;
+    position: relative;
 }
 
 .logo {
@@ -31,17 +44,9 @@ body {
     margin-bottom: 10px;
 }
 
-h1 {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
+h1 { font-size: 22px; margin-bottom: 15px; }
+p { color: #94a3b8; line-height: 1.6; }
 
-p {
-    color: #94a3b8;
-    line-height: 1.6;
-}
-
-/* Contenedor que centra y separa los botones */
 .botones-container {
     display: flex;
     flex-direction: column;
@@ -51,10 +56,9 @@ p {
     width: 100%;
 }
 
-/* Regla limpia para que ambos botones tengan forma rectangular perfecta */
 button, .btn-whatsapp {
     width: 100%;
-    max-width: 320px; /* Tamaño ideal para que el texto no se amontone */
+    max-width: 320px;
     padding: 14px;
     font-size: 16px;
     font-weight: bold;
@@ -66,7 +70,6 @@ button, .btn-whatsapp {
     display: inline-block;
 }
 
-/* Botón de Escáner */
 button {
     background: linear-gradient(135deg, #3b82f6, #1d4ed8);
     color: white;
@@ -79,7 +82,6 @@ button:hover {
     box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
 }
 
-/* Botón de WhatsApp */
 .btn-whatsapp {
     background: linear-gradient(135deg, #25d366, #128c7e);
     color: white;
@@ -92,6 +94,67 @@ button:hover {
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
 }
 
+.indicador-bajar {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #64748b;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* --- NUEVA SECCIÓN DE SERVICIOS --- */
+.seccion-servicios {
+    background-color: rgba(15, 23, 42, 0.9);
+    padding: 60px 20px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    border-top: 2px solid #3b82f6;
+}
+
+.seccion-servicios h2 {
+    font-size: 26px;
+    color: #3b82f6;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+.contenedor-servicios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bloque-servicio {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    padding: 25px;
+    border-radius: 12px;
+    width: 280px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.bloque-servicio:hover {
+    border-color: #3b82f6;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+}
+
+.bloque-servicio h3 {
+    margin-top: 0;
+    color: #f8fafc;
+    font-size: 18px;
+}
+
+.bloque-servicio p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* Consola de diagnóstico */
 .consola {
     background-color: #090d16;
     border-left: 4px solid #4ade80;
@@ -101,20 +164,6 @@ button:hover {
     text-align: left;
     font-family: 'Courier New', Courier, monospace;
 }
-
-.analizando {
-    color: #3b82f6;
-    margin: 0 0 10px 0;
-    font-size: 14px;
-}
-
-#resultado-scanner {
-    color: #4ade80;
-    margin: 0;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.oculto {
-    display: none;
-}
+.analizando { color: #3b82f6; margin: 0 0 10px 0; font-size: 14px; }
+#resultado-scanner { color: #4ade80; margin: 0; font-size: 15px; font-weight: bold; }
+.oculto { display: none; }
