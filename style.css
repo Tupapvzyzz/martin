@@ -291,3 +291,19 @@ input[type="text"] {
         max-width: 450px;
     }
 }
+/* --- ESTILO DE TU NUEVO LOGO OFICIAL --- */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.logo-oficial {
+    max-width: 160px; /* Tamaño perfecto para que luzca imponente */
+    width: 100%;
+    height: auto;
+    border-radius: 18px; /* Redondea los bordes del cuadrado negro original */
+    border: 2px solid #3b82f6; /* Añade un marco neón azul a juego con la web */
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); /* Hace que el logo brille en la tarjeta */
+}
