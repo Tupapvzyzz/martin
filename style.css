@@ -6,6 +6,22 @@ body {
     background-color: #0f172a;
 }
 
+/* 🏁 TOP BAR PREMIUM NEGRO */
+.barra-superior {
+    background-color: #090d16;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.25);
+    font-size: 13px;
+    font-weight: 500;
+    color: #94a3b8;
+    letter-spacing: 0.5px;
+    padding: 12px 20px;
+    position: relative;
+    z-index: 100;
+}
+
+.contenido-barra { display: flex; justify-content: space-between; max-width: 1100px; margin: 0 auto; width: 100%; }
+.item-barra { display: flex; align-items: center; gap: 6px; }
+
 #video-fondo {
     position: fixed;
     top: 0;
@@ -20,13 +36,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: calc(100vh - 43px);
     padding: 40px 20px;
     box-sizing: border-box;
     background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6)); 
 }
 
-/* El contenedor inteligente de doble columna */
 .contenedor-inicio-pro {
     display: flex;
     flex-direction: row;
@@ -56,7 +71,6 @@ body {
     box-sizing: border-box;
 }
 
-/* El nuevo panel derecho que llena el vacío lateral */
 .panel-valor-inicio {
     background-color: rgba(15, 23, 42, 0.65);
     backdrop-filter: blur(8px);
@@ -77,103 +91,53 @@ body {
     letter-spacing: 1px;
 }
 
-.descripcion-valor {
-    color: #cbd5e1;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
+.descripcion-valor { color: #cbd5e1; font-size: 15px; line-height: 1.6; margin-bottom: 25px; }
+.minis-pilares { display: flex; flex-direction: column; gap: 20px; }
+.mini-pilar h3 { font-size: 16px; color: #f8fafc; margin: 0 0 5px 0; }
+.mini-pilar p { font-size: 13.5px; color: #94a3b8; margin: 0; line-height: 1.5; }
 
-.minis-pilares {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.mini-pilar h3 {
-    font-size: 16px;
-    color: #f8fafc;
-    margin: 0 0 5px 0;
-}
-
-.mini-pilar p {
-    font-size: 13.5px;
-    color: #94a3b8;
-    margin: 0;
-    line-height: 1.5;
-}
-
-.logo {
-    font-size: 32px;
-    font-weight: 900;
-    letter-spacing: 3px;
-    color: #3b82f6;
-    text-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
-    margin-bottom: 10px;
-}
+.logo-container { display: flex; justify-content: center; margin-bottom: 20px; width: 100%; }
+.logo-oficial { max-width: 150px; width: 100%; height: auto; border-radius: 14px; border: 2px solid #3b82f6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
 
 h1 { font-size: 22px; margin-bottom: 15px; font-weight: 700; }
 p { color: #cbd5e1; line-height: 1.6; }
 
-.botones-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    margin-top: 25px;
-    width: 100%;
-}
-
-button, .btn-whatsapp {
-    width: 100%;
-    max-width: 320px;
-    padding: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    text-align: center;
-    box-sizing: border-box;
-    display: inline-block;
-}
-
-button {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    color: white;
-    border: none;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-}
-
-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.7);
-}
-
-.btn-whatsapp {
-    background: linear-gradient(135deg, #25d366, #128c7e);
-    color: white;
-    text-decoration: none;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-}
-
+.botones-container { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 25px; width: 100%; }
+button, .btn-whatsapp { width: 100%; max-width: 320px; padding: 15px; font-size: 16px; font-weight: bold; border-radius: 12px; cursor: pointer; transition: 0.3s ease; text-align: center; box-sizing: border-box; display: inline-block; }
+button { background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; border: none; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); }
+button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.7); }
+.btn-whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); color: white; text-decoration: none; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
 .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6); }
 
-.indicador-bajar {
-    margin-top: 30px;
-    font-size: 13px;
-    color: #3b82f6;
-    font-weight: bold;
+.indicador-bajar { margin-top: 30px; font-size: 13px; color: #3b82f6; font-weight: bold; }
+
+/* 🌟 CÓDIGO MAESTRO: SECCIÓN 2 CON TU FOTO REAL FIX FIJA DE FONDO */
+.bloque-servicios-fondo-real {
+    position: relative;
+    background-image: linear-gradient(rgba(11, 15, 25, 0.88), rgba(11, 15, 25, 0.94)), 
+                      url('logouno.meca.png'); /* Inyectamos tu foto en el fondo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Mantiene tu foto fija al deslizar */
+    padding: 80px 20px;
+    border-top: 2px solid #3b82f6;
+    z-index: 10;
 }
 
-.seccion-oscura {
-    background-color: rgba(11, 15, 25, 0.96);
-    padding: 70px 20px;
+/* Tarjetas transparentes con efecto cristal para que se note el fondo del mecánico */
+.tarjeta-modulo-transparente {
+    background-color: rgba(30, 41, 59, 0.45);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(51, 65, 85, 0.4);
+    padding: 40px 20px;
+    max-width: 550px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     text-align: center;
-    backdrop-filter: blur(10px);
 }
 
-.seccion-oscura h2 {
+.tarjeta-modulo-transparente h2 {
     font-size: 24px;
     color: #3b82f6;
     text-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
@@ -181,129 +145,33 @@ button:hover {
     letter-spacing: 1px;
 }
 
-.subtitulo { color: #94a3b8; font-size: 15px; margin-bottom: 30px; }
+.subtitulo { color: #cbd5e1; font-size: 15px; margin-bottom: 30px; }
 
-.buscador-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    max-width: 500px;
-    margin: 0 auto 25px auto;
-}
-
-input[type="text"] {
-    background-color: #1e293b;
-    border: 1px solid #334155;
-    padding: 15px;
-    color: white;
-    font-size: 16px;
-    border-radius: 10px;
-    width: 60%;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.bloque-resultado-placa {
-    background-color: #0f172a;
-    border-left: 4px solid #3b82f6;
-    padding: 20px;
-    max-width: 500px;
-    margin: 0 auto;
-    border-radius: 8px;
-    text-align: left;
-}
-
-.botones-km-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    max-width: 500px;
-    margin: 0 auto 25px auto;
-}
-
-.btn-km {
-    background-color: #1e293b;
-    border: 1px solid #334155;
-    color: white;
-    padding: 12px;
-    font-size: 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100px;
-    font-weight: bold;
-}
-
-.btn-km.activo {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    border-color: #60a5fa;
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
-}
-
-.bloque-resultado-km {
-    background-color: #0f172a;
-    border-left: 4px solid #a855f7;
-    padding: 20px;
-    max-width: 500px;
-    margin: 0 auto;
-    border-radius: 8px;
-    text-align: left;
-}
-
+/* Elementos comunes */
+.buscador-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 25px; }
+input[type="text"] { background-color: #1e293b; border: 1px solid #334155; padding: 15px; color: white; font-size: 16px; border-radius: 10px; width: 60%; max-width: 300px; font-weight: bold; text-transform: uppercase; text-align: center; }
+.bloque-resultado-placa { background-color: #0f172a; border-left: 4px solid #3b82f6; padding: 20px; max-width: 500px; margin: 0 auto; border-radius: 8px; text-align: left; }
+.botones-km-container { display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; }
+.btn-km { background-color: #1e293b; border: 1px solid #334155; color: white; padding: 12px; font-size: 14px; border-radius: 8px; cursor: pointer; width: 100px; font-weight: bold; }
+.btn-km.activo { background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-color: #60a5fa; box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
+.bloque-resultado-km { background-color: #0f172a; border-left: 4px solid #a855f7; padding: 20px; max-width: 500px; margin: 0 auto; border-radius: 8px; text-align: left; }
 .bloque-resultado-km ul { margin: 10px 0 0 0; padding-left: 20px; color: #cbd5e1; }
 .bloque-resultado-km li { margin-bottom: 8px; font-size: 14.5px; }
 
-.cotizador-box {
-    background-color: #1e293b;
-    border: 1px solid #334155;
-    border-radius: 16px;
-    padding: 30px;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
+.cotizador-box { background-color: rgba(30, 41, 59, 0.7); border: 1px solid #334155; border-radius: 16px; padding: 30px; max-width: 500px; margin: 0 auto; }
 .opcion-cotizar { display: flex; align-items: center; gap: 15px; margin-bottom: 18px; text-align: left; }
 .opcion-cotizar input[type="checkbox"] { width: 22px; height: 22px; cursor: pointer; }
 .opcion-cotizar label { font-size: 15px; color: #cbd5e1; cursor: pointer; user-select: none; }
 .total-container { display: flex; justify-content: space-between; border-top: 1px solid #334155; padding-top: 20px; margin-top: 25px; font-weight: bold; font-size: 18px; }
 #monto-total { color: #4ade80; text-shadow: 0 0 10px rgba(74, 222, 128, 0.3); }
 
-.consola {
-    background-color: #05070c;
-    border-left: 4px solid #3b82f6;
-    padding: 18px;
-    border-radius: 10px;
-    margin-top: 25px;
-    text-align: left;
-    font-family: 'Courier New', Courier, monospace;
-}
+.consola { background-color: #05070c; border-left: 4px solid #3b82f6; padding: 18px; border-radius: 10px; margin-top: 25px; text-align: left; font-family: 'Courier New', Courier, monospace; }
 .analizando { color: #3b82f6; margin: 0 0 10px 0; font-size: 13px; font-weight: bold; }
 #resultado-scanner { color: #4ade80; margin: 0; font-size: 14px; font-weight: bold; }
 .oculto { display: none; }
 
-/* 📱 ADAPTACIÓN DE RESPONSIVE: Si entran desde un celular, las columnas se vuelven una sola fila ordenada */
 @media (max-width: 900px) {
-    .contenedor-inicio-pro {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .panel-valor-inicio {
-        max-width: 450px;
-    }
-}
-/* --- ESTILO DE TU NUEVO LOGO OFICIAL --- */
-.logo-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
-    width: 100%;
-}
-
-.logo-oficial {
-    max-width: 160px; /* Tamaño perfecto para que luzca imponente */
-    width: 100%;
-    height: auto;
-    border-radius: 18px; /* Redondea los bordes del cuadrado negro original */
-    border: 2px solid #3b82f6; /* Añade un marco neón azul a juego con la web */
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); /* Hace que el logo brille en la tarjeta */
+    .contenedor-inicio-pro { flex-direction: column; gap: 30px; }
+    .panel-valor-inicio { max-width: 450px; }
+    .contenido-barra { flex-direction: column; align-items: center; gap: 6px; text-align: center; }
 }
