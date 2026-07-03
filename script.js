@@ -169,61 +169,55 @@ const reveal = () => {
 window.addEventListener("scroll", reveal);
 
 reveal();
-/*======================================
-        KAWASAKI CURSOR PRO
-=======================================*/
+/
+/* ================================
+   CURSOR KAWASAKI PRO CON FUEGO
+================================ */
 
-const cursor = document.getElementById("kawaCursor");
+const kawaCursor = document.getElementById("kawaCursor");
 
-let mouseX = 0;
-let mouseY = 0;
+if (kawaCursor) {
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let cursorX = mouseX;
+  let cursorY = mouseY;
 
-let posX = 0;
-let posY = 0;
-
-document.addEventListener("mousemove",(e)=>{
-
+  document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
+  });
 
-});
+  function moveKawaCursor() {
+    cursorX += (mouseX - cursorX) * 0.25;
+    cursorY += (mouseY - cursorY) * 0.25;
 
-function animateCursor(){
+    kawaCursor.style.left = cursorX + "px";
+    kawaCursor.style.top = cursorY + "px";
 
-    posX += (mouseX-posX)*0.18;
-    posY += (mouseY-posY)*0.18;
+    requestAnimationFrame(moveKawaCursor);
+  }
 
-    cursor.style.left = posX+"px";
-    cursor.style.top  = posY+"px";
+  moveKawaCursor();
 
-    requestAnimationFrame(animateCursor);
+  const hoverElements = document.querySelectorAll(
+    "a, button, .btn-primary, .btn-secondary, .cta-button, .btn-whatsapp, .whatsapp-float, .service-card, .brands-grid div, input, textarea"
+  );
 
+  hoverElements.forEach((element) => {
+    element.addEventListener("mouseenter", () => {
+      kawaCursor.classList.add("kawa-active");
+    });
+
+    element.addEventListener("mouseleave", () => {
+      kawaCursor.classList.remove("kawa-active");
+    });
+  });
+
+  document.addEventListener("mousedown", () => {
+    kawaCursor.classList.add("kawa-click");
+  });
+
+  document.addEventListener("mouseup", () => {
+    kawaCursor.classList.remove("kawa-click");
+  });
 }
-
-animateCursor();
-
-
-const hoverItems=document.querySelectorAll(
-"a,button,.btn,.service-card,.brand-card,input,.gallery img,.card"
-);
-
-hoverItems.forEach(item=>{
-
-    item.addEventListener("mouseenter",()=>{
-
-        cursor.classList.add("kawa-hover");
-
-    });
-
-    item.addEventListener("mouseleave",()=>{
-
-        cursor.classList.remove("kawa-hover");
-
-    });
-
-});
-
-
-/* ================= INIT ================= */
-
-console.log("MECAMOTOR V2 cargado correctamente 🔥");
