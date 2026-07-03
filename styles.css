@@ -246,6 +246,39 @@ header {
 .cta-button:hover {
   transform: translateY(-5px) scale(1.05);
 }
+.ktm-watermark{
+
+    position:absolute;
+
+    top:900px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:900px;
+
+    height:900px;
+
+    background:url("ktm-racing.png") center/contain no-repeat;
+
+    opacity:.08;
+
+    filter:grayscale(.2);
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+section{
+
+    position:relative;
+
+    z-index:2;
+
+}
 /* =========================
    SECCIONES GENERALES
 ========================= */
