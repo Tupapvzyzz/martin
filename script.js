@@ -97,5 +97,74 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }, 700);
   }
 });
+    /* ================= SONIDO MOTOR + HUMO ================= */
+
+const motorBtn = document.getElementById("motorBtn");
+const smokeContainer = document.getElementById("smokeContainer");
+
+const motorSound = new Audio("motor.mp3");
+motorSound.loop = true;
+motorSound.volume = 0.45;
+
+let motorActivo = false;
+let smokeInterval;
+
+if (motorBtn) {
+  motorBtn.addEventListener("click", () => {
+    motorActivo = !motorActivo;
+
+    if (motorActivo) {
+      motorSound.play();
+
+      motorBtn.textContent = "🔇 Apagar motor";
+      motorBtn.classList.add("active");
+
+      smokeInterval = setInterval(() => {
+        crearHumo();
+        crearParticulaFuego();
+      }, 180);
+
+    } else {
+      motorSound.pause();
+
+      motorBtn.textContent = "🔊 Encender motor";
+      motorBtn.classList.remove("active");
+
+      clearInterval(smokeInterval);
+    }
+  });
+}
+
+function crearHumo() {
+  if (!smokeContainer) return;
+
+  const humo = document.createElement("span");
+  humo.className = "smoke";
+
+  humo.style.left = 60 + Math.random() * 35 + "px";
+  humo.style.bottom = 35 + Math.random() * 20 + "px";
+
+  smokeContainer.appendChild(humo);
+
+  setTimeout(() => {
+    humo.remove();
+  }, 2800);
+}
+
+function crearParticulaFuego() {
+  if (!smokeContainer) return;
+
+  const fire = document.createElement("span");
+  fire.className = "fire-particle";
+
+  fire.style.setProperty("--x", `${Math.random() * 90}px`);
+  fire.style.setProperty("--y", `${-40 - Math.random() * 90}px`);
+
+  smokeContainer.appendChild(fire);
+
+  setTimeout(() => {
+    fire.remove();
+  }, 1000);
+}
   });
 });
