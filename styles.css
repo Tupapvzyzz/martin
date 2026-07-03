@@ -968,4 +968,104 @@ body{
   position: relative;
   z-index: 2;
 }
+/* ================= MOTOR BUTTON ================= */
+
+.motor-btn {
+  position: fixed;
+  left: 25px;
+  bottom: 25px;
+  z-index: 99999999;
+
+  padding: 14px 24px;
+  border: none;
+  border-radius: 40px;
+
+  background: #00ff44;
+  color: #000;
+
+  font-weight: bold;
+  font-size: 15px;
+
+  box-shadow:
+    0 0 15px #00ff44,
+    0 0 35px #00ff44;
+
+  cursor: pointer;
+}
+
+.motor-btn.active {
+  background: #ff6a00;
+  box-shadow:
+    0 0 15px #ff6a00,
+    0 0 35px #ff6a00;
+}
+
+/* ================= HUMO Y PARTÍCULAS ================= */
+
+#smokeContainer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999999;
+  overflow: hidden;
+}
+
+.smoke {
+  position: fixed;
+  bottom: 35px;
+  left: 70px;
+
+  width: 35px;
+  height: 35px;
+
+  background: rgba(180, 180, 180, 0.28);
+  border-radius: 50%;
+
+  filter: blur(8px);
+
+  animation: smokeMove 2.8s linear forwards;
+}
+
+@keyframes smokeMove {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.5);
+  }
+
+  20% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(120px, -180px) scale(3.8);
+  }
+}
+
+.fire-particle {
+  position: fixed;
+  bottom: 45px;
+  left: 75px;
+
+  width: 7px;
+  height: 7px;
+
+  background: #ff6a00;
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 10px #ff6a00,
+    0 0 25px #ff2a00;
+
+  animation: fireMove 1s ease-out forwards;
+}
+
+@keyframes fireMove {
+  to {
+    opacity: 0;
+    transform:
+      translate(var(--x), var(--y))
+      scale(0);
+  }
+}
 }
