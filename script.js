@@ -169,6 +169,59 @@ const reveal = () => {
 window.addEventListener("scroll", reveal);
 
 reveal();
+/*======================================
+        KAWASAKI CURSOR PRO
+=======================================*/
+
+const cursor = document.getElementById("kawaCursor");
+
+let mouseX = 0;
+let mouseY = 0;
+
+let posX = 0;
+let posY = 0;
+
+document.addEventListener("mousemove",(e)=>{
+
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+});
+
+function animateCursor(){
+
+    posX += (mouseX-posX)*0.18;
+    posY += (mouseY-posY)*0.18;
+
+    cursor.style.left = posX+"px";
+    cursor.style.top  = posY+"px";
+
+    requestAnimationFrame(animateCursor);
+
+}
+
+animateCursor();
+
+
+const hoverItems=document.querySelectorAll(
+"a,button,.btn,.service-card,.brand-card,input,.gallery img,.card"
+);
+
+hoverItems.forEach(item=>{
+
+    item.addEventListener("mouseenter",()=>{
+
+        cursor.classList.add("kawa-hover");
+
+    });
+
+    item.addEventListener("mouseleave",()=>{
+
+        cursor.classList.remove("kawa-hover");
+
+    });
+
+});
 
 
 /* ================= INIT ================= */
