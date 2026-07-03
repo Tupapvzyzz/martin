@@ -1,3 +1,4 @@
+/* ================= LOADER ================= */
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
 
@@ -9,56 +10,74 @@ window.addEventListener("load", () => {
   }
 });
 
+/* ================= CURSOR KAWASAKI PRO ================= */
 const cursor = document.getElementById("kawaCursor");
 
-let mouseX = 0;
-let mouseY = 0;
 let lastX = 0;
 let lastY = 0;
 
 document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-
   if (!cursor) return;
 
-  const dx = mouseX - lastX;
-  const dy = mouseY - lastY;
+  const x = e.clientX;
+  const y = e.clientY;
+
+  const dx = x - lastX;
+  const dy = y - lastY;
   const angle = Math.atan2(dy, dx) * 180 / Math.PI;
 
-  cursor.style.left = mouseX + "px";
-  cursor.style.top = mouseY + "px";
+  cursor.style.left = x + "px";
+  cursor.style.top = y + "px";
   cursor.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
 
-  createTrail(mouseX, mouseY);
+  crearEstela(x, y);
 
-  lastX = mouseX;
-  lastY = mouseY;
+  lastX = x;
+  lastY = y;
 });
 
-function createTrail(x, y) {
-  const trail = document.createElement("span");
-  trail.className = "kawa-trail";
-  trail.style.left = x + "px";
-  trail.style.top = y + "px";
+function crearEstela(x, y) {
+  const estela = document.createElement("span");
+  estela.className = "kawa-trail";
+  estela.style.left = x + "px";
+  estela.style.top = y + "px";
 
-  document.body.appendChild(trail);
+  document.body.appendChild(estela);
 
   setTimeout(() => {
-    trail.remove();
+    estela.remove();
   }, 500);
 }
 
 document.addEventListener("click", (e) => {
-  for (let i = 0; i < 8; i++) {
-    const spark = document.createElement("span");
-    spark.className = "kawa-spark";
-    spark.style.left = e.clientX + "px";
-    spark.style.top = e.clientY + "px";
-    spark.style.setProperty("--x", `${(Math.random() - 0.5) * 120}px`);
-    spark.style.setProperty("--y", `${(Math.random() - 0.5) * 120}px`);
-    document.body.appendChild(spark);
+  for (let i = 0; i < 10; i++) {
+    const chispa = document.createElement("span");
+    chispa.className = "kawa-spark";
 
-    setTimeout(() => spark.remove(), 600);
+    chispa.style.left = e.clientX + "px";
+    chispa.style.top = e.clientY + "px";
+
+    chispa.style.setProperty("--x", `${(Math.random() - 0.5) * 160}px`);
+    chispa.style.setProperty("--y", `${(Math.random() - 0.5) * 160}px`);
+
+    document.body.appendChild(chispa);
+
+    setTimeout(() => {
+      chispa.remove();
+    }, 650);
   }
+});
+
+/* ================= SMOOTH SCROLL ================= */
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    const target = document.querySelector(this.getAttribute("href"));
+
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
 });
