@@ -174,54 +174,25 @@ window.addEventListener("scroll", reveal);
 
 reveal();
 /
-/* ================================
-   CURSOR KAWASAKI PRO CON FUEGO
-================================ */
+/* ================= CURSOR KAWASAKI ================= */
 
-const kawaCursor = document.getElementById("kawaCursor");
+window.addEventListener("DOMContentLoaded", () => {
 
-if (kawaCursor) {
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let cursorX = mouseX;
-  let cursorY = mouseY;
+    const cursor = document.getElementById("kawaCursor");
 
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
+    if (!cursor) {
+        console.error("No existe #kawaCursor");
+        return;
+    }
 
-  function moveKawaCursor() {
-    cursorX += (mouseX - cursorX) * 0.25;
-    cursorY += (mouseY - cursorY) * 0.25;
+    console.log("Cursor encontrado");
 
-    kawaCursor.style.left = cursorX + "px";
-    kawaCursor.style.top = cursorY + "px";
+    document.addEventListener("mousemove", (e) => {
 
-    requestAnimationFrame(moveKawaCursor);
-  }
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
 
-  moveKawaCursor();
-
-  const hoverElements = document.querySelectorAll(
-    "a, button, .btn-primary, .btn-secondary, .cta-button, .btn-whatsapp, .whatsapp-float, .service-card, .brands-grid div, input, textarea"
-  );
-
-  hoverElements.forEach((element) => {
-    element.addEventListener("mouseenter", () => {
-      kawaCursor.classList.add("kawa-active");
     });
 
-    element.addEventListener("mouseleave", () => {
-      kawaCursor.classList.remove("kawa-active");
-    });
-  });
+});
 
-  document.addEventListener("mousedown", () => {
-    kawaCursor.classList.add("kawa-click");
-  });
-
-  document.addEventListener("mouseup", () => {
-    kawaCursor.classList.remove("kawa-click");
-  });
-}
