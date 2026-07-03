@@ -1,367 +1,284 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MECAMOTOR | Taller de Motos en Lima</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<title>MECAMOTOR | Taller de Motos en Lima</title>
-
-<meta name="description" content="MECAMOTOR - Taller especializado en motos deportivas y alta cilindrada en Jesús María, Lima.">
-
-<!-- GOOGLE FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<!-- ICONOS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<!-- AOS ANIMATIONS -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<!-- CSS -->
-<link rel="stylesheet" href="styles.css">
-
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-     
 <body>
 
-<!-- ================= LOADER ================= -->
+<!-- LOADER -->
 <div class="loader" id="loader">
-    <div class="loader-content">
-        <img src="logo.meca.jpg" alt="MECAMOTOR">
-        <h2>MECAMOTOR</h2>
-        <div class="bar"></div>
-    </div>
+  <div class="loader-content">
+    <img src="logo.meca.jpg" alt="MECAMOTOR">
+    <h2>MECAMOTOR</h2>
+    <div class="bar"></div>
+  </div>
 </div>
 
-
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <header>
-    <nav class="navbar">
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.meca.jpg" alt="Logo MECAMOTOR">
+    </div>
 
-        <div class="logo">
-            <img src="logo.meca.jpg" alt="logo">
-        </div>
+    <ul class="menu">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#marcas">Marcas</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
 
-        <ul class="menu">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#marcas">Marcas</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-
-        <a class="btn-whatsapp"
-           href="https://wa.me/51943398351?text=Hola%20quiero%20información%20de%20MECAMOTOR"
-           target="_blank">
-
-            <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
-
-    </nav>
+    <a class="btn-whatsapp" href="https://wa.me/51943398351" target="_blank">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+  </nav>
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section id="inicio" class="hero">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="taller.mp4" type="video/mp4">
+  </video>
 
-    <video autoplay muted loop playsinline class="bg-video">
-        <source src="taller.mp4" type="video/mp4">
-    </video>
+  <div class="overlay"></div>
 
-    <div class="overlay"></div>
+  <div class="hero-content" data-aos="fade-up">
+    <h3>ESPECIALISTAS EN MOTOS</h3>
+    <h1>MECAMOTOR</h1>
+    <p>Reparación • Diagnóstico • Performance • Alta cilindrada</p>
 
-    <div class="hero-content" data-aos="fade-up">
-
-        <h3>ESPECIALISTAS EN MOTOS</h3>
-
-        <h1>MECAMOTOR</h1>
-
-        <p>Reparación • Diagnóstico • Performance • Alta cilindrada</p>
-
-        <div class="hero-buttons">
-
-            <a href="#servicios" class="btn-primary">Ver Servicios</a>
-
-            <a href="https://wa.me/51943398351" class="btn-secondary" target="_blank">
-                Agendar Cita
-            </a>
-
-        </div>
-
+    <div class="hero-buttons">
+      <a href="#servicios" class="btn-primary">Ver Servicios</a>
+      <a href="https://wa.me/51943398351" class="btn-secondary" target="_blank">Agendar Cita</a>
     </div>
-
+  </div>
 </section>
 
-<!-- ================= INTRO ================= -->
+<!-- INTRO -->
 <section class="intro" data-aos="fade-up">
+  <div class="intro-text">
+    <h2>Tu moto en manos expertas</h2>
+    <p>
+      En MECAMOTOR brindamos mantenimiento, reparación y diagnóstico profesional
+      para motos deportivas, urbanas y de alta cilindrada.
+    </p>
+  </div>
+</section>
 
-    <div class="intro-text">
-        <!-- ================= MARCAS ================= -->
+<!-- MARCAS -->
 <section id="marcas" class="brands" data-aos="fade-up">
+  <h2>Marcas que atendemos</h2>
 
-    <h2>Marcas que atendemos</h2>
-
-    <div class="brands-grid">
-
-        <div>Kawasaki</div>
-        <div>Yamaha</div>
-        <div>Honda</div>
-        <div>Suzuki</div>
-        <div>KTM</div>
-        <div>Ducati</div>
-        <div>BMW</div>
-        <div>Bajaj</div>
-
-    </div>
-
+  <div class="brands-grid">
+    <div>Kawasaki</div>
+    <div>Yamaha</div>
+    <div>Honda</div>
+    <div>Suzuki</div>
+    <div>KTM</div>
+    <div>Ducati</div>
+    <div>BMW</div>
+    <div>Bajaj</div>
+  </div>
 </section>
 
-<!-- ================= SERVICIOS ================= -->
+<!-- SERVICIOS -->
 <section id="servicios" class="services">
+  <h2 data-aos="fade-up">Nuestros Servicios</h2>
 
-    <h2 data-aos="fade-up">Nuestros Servicios</h2>
-
-    <div class="services-container">
-
-        <div class="service-card" data-aos="zoom-in">
-            <i class="fa-solid fa-oil-can"></i>
-            <h3>Cambio de Aceite</h3>
-            <p>Lubricación y mantenimiento profesional.</p>
-        </div>
-
-        <div class="service-card" data-aos="zoom-in">
-            <i class="fa-solid fa-gears"></i>
-            <h3>Motor</h3>
-            <p>Reparación y ajuste de motores de alto rendimiento.</p>
-        </div>
-
-        <div class="service-card" data-aos="zoom-in">
-            <i class="fa-solid fa-bolt"></i>
-            <h3>Sistema Eléctrico</h3>
-            <p>Diagnóstico completo electrónico.</p>
-        </div>
-
-        <div class="service-card" data-aos="zoom-in">
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-            <h3>Mantenimiento</h3>
-            <p>Servicio preventivo y correctivo.</p>
-        </div>
-
+  <div class="services-container">
+    <div class="service-card" data-aos="zoom-in">
+      <i class="fa-solid fa-oil-can"></i>
+      <h3>Cambio de Aceite</h3>
+      <p>Lubricación y mantenimiento profesional.</p>
     </div>
 
+    <div class="service-card" data-aos="zoom-in">
+      <i class="fa-solid fa-gears"></i>
+      <h3>Motor</h3>
+      <p>Reparación y ajuste de motores de alto rendimiento.</p>
+    </div>
+
+    <div class="service-card" data-aos="zoom-in">
+      <i class="fa-solid fa-bolt"></i>
+      <h3>Sistema Eléctrico</h3>
+      <p>Diagnóstico completo electrónico.</p>
+    </div>
+
+    <div class="service-card" data-aos="zoom-in">
+      <i class="fa-solid fa-screwdriver-wrench"></i>
+      <h3>Mantenimiento</h3>
+      <p>Servicio preventivo y correctivo.</p>
+    </div>
+  </div>
 </section>
 
-<!-- ================= ROBOT MECÁNICO ================= -->
+<!-- ROBOT -->
 <section class="robot" data-aos="fade-up">
+  <div class="robot-text">
+    <h2>Tecnología y precisión</h2>
+    <p>
+      Trabajamos con precisión mecánica y tecnología moderna para asegurar
+      el mejor rendimiento de tu moto.
+    </p>
+  </div>
 
-    <div class="robot-text">
-
-        <h2>Tecnología y precisión</h2>
-
-        <p>
-            En MECAMOTOR trabajamos con precisión mecánica y tecnología moderna
-            para asegurar el mejor rendimiento de tu moto.
-        </p>
-
-    </div>
-
-    <div class="robot-img">
-
-        <img src="robot.jpg" alt="Robot Mecánico">
-
-    </div>
-
+  <div class="robot-img">
+    <img src="robot.jpg" alt="Robot Mecánico">
+  </div>
 </section>
 
-<!-- ================= ESTADÍSTICAS ================= -->
+<!-- STATS -->
 <section class="stats">
+  <div>
+    <h3>2500+</h3>
+    <p>Motos reparadas</p>
+  </div>
 
-    <div>
-        <h3>2500+</h3>
-        <p>Motos reparadas</p>
-    </div>
+  <div>
+    <h3>10+</h3>
+    <p>Años de experiencia</p>
+  </div>
 
-    <div>
-        <h3>10+</h3>
-        <p>Años de experiencia</p>
-    </div>
+  <div>
+    <h3>100%</h3>
+    <p>Clientes satisfechos</p>
+  </div>
 
-    <div>
-        <h3>100%</h3>
-        <p>Clientes satisfechos</p>
-    </div>
-
-    <div>
-        <h3>24/7</h3>
-        <p>Atención WhatsApp</p>
-    </div>
-
+  <div>
+    <h3>24/7</h3>
+    <p>Atención WhatsApp</p>
+  </div>
 </section>
-        <!-- ================= GALERÍA ================= -->
+
+<!-- GALERÍA -->
 <section class="gallery" data-aos="fade-up">
+  <h2>Nuestro Trabajo</h2>
 
-    <h2>Nuestro Trabajo</h2>
-
-    <div class="gallery-grid">
-
-        <img src="galeria-1.jpg" alt="trabajo 1">
-        <img src="galeria-2.jpg" alt="trabajo 2">
-        <img src="zx10r-hero.png" alt="moto">
-
-    </div>
-
+  <div class="gallery-grid">
+    <img src="galeria-1.jpg" alt="Trabajo 1">
+    <img src="galeria-2.jpg" alt="Trabajo 2">
+    <img src="zx10r-hero.png" alt="Moto Kawasaki">
+  </div>
 </section>
 
-<!-- ================= ANTES Y DESPUÉS ================= -->
+<!-- ANTES Y DESPUÉS -->
 <section class="before-after" data-aos="fade-up">
+  <h2>Antes y Después</h2>
 
-    <h2>Antes y Después</h2>
-
-    <div class="ba-container">
-
-        <div class="ba-card">
-            <h3>Antes</h3>
-            <img src="galeria-1.jpg" alt="antes moto">
-        </div>
-
-        <div class="ba-card">
-            <h3>Después</h3>
-            <img src="galeria-2.jpg" alt="después moto">
-        </div>
-
+  <div class="ba-container">
+    <div class="ba-card">
+      <h3>Antes</h3>
+      <img src="galeria-1.jpg" alt="Antes">
     </div>
 
+    <div class="ba-card">
+      <h3>Después</h3>
+      <img src="galeria-2.jpg" alt="Después">
+    </div>
+  </div>
 </section>
 
-<!-- ================= TESTIMONIOS ================= -->
+<!-- TESTIMONIOS -->
 <section class="testimonials" data-aos="fade-up">
+  <h2>Clientes satisfechos</h2>
 
-    <h2>Clientes satisfechos</h2>
-
-    <div class="testimonials-container">
-
-        <div class="testimonial">
-            <p>"Excelente servicio, dejaron mi moto como nueva."</p>
-            <h4>- Cliente 1</h4>
-        </div>
-
-        <div class="testimonial">
-            <p>"Muy profesionales y rápidos, recomendados."</p>
-            <h4>- Cliente 2</h4>
-        </div>
-
-        <div class="testimonial">
-            <p>"El mejor taller de motos en Lima."</p>
-            <h4>- Cliente 3</h4>
-        </div>
-
+  <div class="testimonials-container">
+    <div class="testimonial">
+      <p>"Excelente servicio, dejaron mi moto como nueva."</p>
+      <h4>- Cliente 1</h4>
     </div>
 
+    <div class="testimonial">
+      <p>"Muy profesionales y rápidos, recomendados."</p>
+      <h4>- Cliente 2</h4>
+    </div>
+
+    <div class="testimonial">
+      <p>"El mejor taller de motos en Lima."</p>
+      <h4>- Cliente 3</h4>
+    </div>
+  </div>
 </section>
 
-<!-- ================= CTA FINAL ================= -->
+<!-- CTA -->
 <section class="cta">
+  <h2>¿Listo para mejorar tu moto?</h2>
+  <p>Agenda tu cita ahora mismo por WhatsApp.</p>
 
-    <h2>¿Listo para mejorar tu moto?</h2>
-
-    <p>Agenda tu cita ahora mismo por WhatsApp.</p>
-
-    <a href="https://wa.me/51943398351?text=Hola%20quiero%20una%20cita%20en%20MECAMOTOR"
-       target="_blank"
-       class="cta-button">
-
-        Contactar ahora
-
-    </a>
-
+  <a href="https://wa.me/51943398351?text=Hola%20quiero%20una%20cita%20en%20MECAMOTOR"
+     target="_blank"
+     class="cta-button">
+    Contactar ahora
+  </a>
 </section>
 
-        <h2>Tu moto en manos expertas</h2>
-        <!-- ================= CONTACTO ================= -->
+<!-- CONTACTO -->
 <section id="contacto" class="contact" data-aos="fade-up">
+  <h2>Contacto</h2>
 
-    <h2>Contacto</h2>
-
-    <div class="contact-container">
-
-        <div class="contact-info">
-
-            <h3>MECAMOTOR</h3>
-
-            <p><i class="fa-solid fa-location-dot"></i> Jesús María, Lima - Perú</p>
-
-            <p><i class="fa-solid fa-phone"></i> +51 943 398 351</p>
-
-            <p><i class="fa-brands fa-whatsapp"></i> WhatsApp activo 24/7</p>
-
-        </div>
-
-        <form class="contact-form">
-
-            <input type="text" placeholder="Tu nombre">
-            <input type="email" placeholder="Tu correo">
-            <textarea placeholder="¿Qué necesita tu moto?"></textarea>
-
-            <button type="submit">Enviar mensaje</button>
-
-        </form>
-
+  <div class="contact-container">
+    <div class="contact-info">
+      <h3>MECAMOTOR</h3>
+      <p><i class="fa-solid fa-location-dot"></i> Jesús María, Lima - Perú</p>
+      <p><i class="fa-solid fa-phone"></i> +51 943 398 351</p>
+      <p><i class="fa-brands fa-whatsapp"></i> WhatsApp activo 24/7</p>
     </div>
 
+    <form class="contact-form">
+      <input type="text" placeholder="Tu nombre">
+      <input type="email" placeholder="Tu correo">
+      <textarea placeholder="¿Qué necesita tu moto?"></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </div>
 </section>
 
-<!-- ================= MAPA ================= -->
+<!-- MAPA -->
 <section class="map">
-
-    <iframe
-        src="https://www.google.com/maps?q=Jesus%20Maria%20Lima%20Peru&output=embed"
-        loading="lazy">
-    </iframe>
-
+  <iframe
+    src="https://www.google.com/maps?q=Jesus%20Maria%20Lima%20Peru&output=embed"
+    loading="lazy">
+  </iframe>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer class="footer">
+  <div class="footer-content">
+    <h2>MECAMOTOR</h2>
+    <p>Especialistas en motos deportivas y alta cilindrada en Lima.</p>
+  </div>
 
-    <div class="footer-content">
-
-        <h2>MECAMOTOR</h2>
-
-        <p>Especialistas en motos deportivas y alta cilindrada en Lima.</p>
-
-    </div>
-
-    <div class="footer-bottom">
-
-        <p>© 2026 MECAMOTOR - Todos los derechos reservados</p>
-
-    </div>
-
+  <div class="footer-bottom">
+    <p>© 2026 MECAMOTOR - Todos los derechos reservados</p>
+  </div>
 </footer>
 
-<!-- ================= WHATSAPP BOTÓN ================= -->
+<!-- WHATSAPP FLOAT -->
 <a class="whatsapp-float"
    href="https://wa.me/51943398351?text=Hola%20quiero%20información%20de%20MECAMOTOR"
    target="_blank">
-
-   <i class="fab fa-whatsapp"></i>
-
+  <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- ================= SCRIPTS ================= -->
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-<script>
-AOS.init();
-</script>
-
-<script src="script.js"></script>
-         
-         div id="kawaCursor">
+<!-- CURSOR KAWASAKI -->
+<div id="kawaCursor">
   <img src="img/kawa-hover.png" alt="Kawasaki Cursor">
 </div>
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="script.js"></script>
 
 </body>
 </html>
