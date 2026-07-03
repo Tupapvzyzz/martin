@@ -79,5 +79,23 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         behavior: "smooth"
       });
     }
+    document.addEventListener("click", (e) => {
+  for (let i = 0; i < 14; i++) {
+    const spark = document.createElement("span");
+    spark.className = "kawa-spark";
+
+    spark.style.left = e.clientX + "px";
+    spark.style.top = e.clientY + "px";
+
+    spark.style.setProperty("--x", `${(Math.random() - 0.5) * 180}px`);
+    spark.style.setProperty("--y", `${(Math.random() - 0.5) * 180}px`);
+
+    document.body.appendChild(spark);
+
+    setTimeout(() => {
+      spark.remove();
+    }, 700);
+  }
+});
   });
 });
