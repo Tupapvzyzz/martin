@@ -17,29 +17,38 @@ window.addEventListener("load", () => {
 });
 
 
-/* ================= CURSOR ================= */
-const cursor = document.querySelector(".cursor");
+/* ================= CURSOR KAWASAKI ================= */
 
-document.addEventListener("mousemove", (e) => {
+const cursor = document.getElementById("kawaCursor");
+
+if (cursor) {
+  document.addEventListener("mousemove", (e) => {
     cursor.style.left = e.clientX + "px";
     cursor.style.top = e.clientY + "px";
-});
+  });
 
+  document.addEventListener("mousedown", () => {
+    cursor.classList.add("kawa-click");
+  });
 
-/* ================= NAVBAR SCROLL ================= */
+  document.addEventListener("mouseup", () => {
+    cursor.classList.remove("kawa-click");
+  });
 
-const header = document.querySelector("header");
+  const hoverItems = document.querySelectorAll(
+    "a, button, .btn-primary, .btn-secondary, .cta-button, .btn-whatsapp, .whatsapp-float, .service-card, .brands-grid div, input, textarea"
+  );
 
-window.addEventListener("scroll", () => {
+  hoverItems.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      cursor.classList.add("kawa-active");
+    });
 
-    if (window.scrollY > 80) {
-        header.style.background = "rgba(0,0,0,0.9)";
-    } else {
-        header.style.background = "rgba(0,0,0,0.4)";
-    }
-
-});
-
+    item.addEventListener("mouseleave", () => {
+      cursor.classList.remove("kawa-active");
+    });
+  });
+}
 
 /* ================= SMOOTH SCROLL ================= */
 
