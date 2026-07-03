@@ -890,3 +890,23 @@ body{
     transform: translate(var(--x), var(--y)) scale(0);
   }
 }
+.kawa-spark {
+  position: fixed;
+  width: 9px;
+  height: 9px;
+  left: 0;
+  top: 0;
+  background: #00ff44;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999999;
+  box-shadow: 0 0 12px #00ff44, 0 0 25px #00ff44;
+  animation: kawaSpark 0.7s ease-out forwards;
+}
+
+@keyframes kawaSpark {
+  to {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(0);
+  }
+}
