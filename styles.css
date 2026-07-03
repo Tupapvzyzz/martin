@@ -735,38 +735,22 @@ body{
 
     cursor:none;
 
+}#kawaCursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+  z-index: 999999999;
+  transition: transform 0.08s linear;
 }
 
-#kawaCursor{
-
-    position:fixed;
-
-    left:0;
-    top:0;
-
-    width:70px;
-    height:70px;
-
-    pointer-events:none;
-
-    z-index:999999999;
-
-    transform:translate(-50%,-50%);
-
-    transition:
-    transform .15s ease,
-    filter .2s ease;
-
-    will-change:left,top;
-
+#kawaCursor img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
-
-#kawaCursor {
-  width: 180px;
-  height: 180px;
-}
-
-    object-fit:contain;
 
     filter:
     drop-shadow(0 0 10px #00ff44)
