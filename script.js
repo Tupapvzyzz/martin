@@ -168,3 +168,92 @@ function crearParticulaFuego() {
 }
   });
 });
+/* ================= MOTOR SOUND SYSTEM ================= */
+
+const engineBtn = document.getElementById("engineBtn");
+const motorStart = document.getElementById("motorStart");
+const motorBlips = document.getElementById("motorBlips");
+const engineFlash = document.getElementById("engineFlash");
+const smokeBox = document.getElementById("smokeBox");
+
+let enginePlaying = false;
+
+function createSmoke() {
+  if (!smokeBox) return;
+
+  const smoke = document.createElement("div");
+  smoke.classList.add("smoke");
+
+  smoke.style.left = Math.random() * 40 + "px";
+  smoke.style.bottom = Math.random() * 20 + "px";
+
+  smokeBox.appendChild(smoke);
+
+  setTimeout(() => {
+    smoke.remove();
+  }, 1800);
+}
+
+function engineFlashEffect() {
+  if (!engineFlash) return;
+
+  engineFlash.classList.remove("flash");
+  void engineFlash.offsetWidth;
+  engineFlash.classList.add("flash");
+}
+
+function shakeScreen() {
+  document.body.classList.remove("engine-shake");
+  void document.body.offsetWidth;
+  document.body.classList.add("engine-shake");
+}
+
+function engineEffectBurst() {
+  engineFlashEffect();
+  shakeScreen();
+
+  for (let i = 0; i < 6; i++) {
+    setTimeout(createSmoke, i * 120);
+  }
+}
+
+if (engineBtn && motorStart && motorBlips) {
+  engineBtn.addEventListener("click", () => {
+    if (enginePlaying) return;
+
+    enginePlaying = true;
+    engineBtn.classList.add("active");
+    engineBtn.textContent = "🏍️ Motor encendido";
+
+    motorStart.currentTime = 0;
+    motorBlips.currentTime = 0;
+
+    motorStart.volume = 1;
+    motorBlips.volume = 1;
+
+    motorStart.play();
+
+    engineEffectBurst();
+
+    const smokeInterval = setInterval(createSmoke, 500);
+
+    motorStart.onended = () => {
+      setTimeout(() => {
+        motorBlips.play();
+        engineEffectBurst();
+
+        setTimeout(engineEffectBurst, 900);
+        setTimeout(engineEffectBurst, 1700);
+      }, 500);
+    };
+
+    motorBlips.onended = () => {
+      clearInterval(smokeInterval);
+
+      engineBtn.classList.remove("active");
+      engineBtn.textContent = "🔊 Encender motor";
+
+      enginePlaying = false;
+    };
+  });
+}
