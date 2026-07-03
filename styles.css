@@ -946,4 +946,26 @@ body{
     opacity: 0;
     transform: translate(var(--x), var(--y)) scale(0);
   }
+   /* KTM MARCA DE AGUA EN ZONA MEDIA */
+.services {
+  position: relative;
+  overflow: hidden;
+  background: #050505;
+}
+
+.services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("ktm-racing.png") center center / 85% auto no-repeat;
+  opacity: 0.22;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.services h2,
+.services .services-container {
+  position: relative;
+  z-index: 2;
+}
 }
