@@ -600,3 +600,79 @@ header{
 }
 
 }
+/*=========================================
+      KAWASAKI PRO CURSOR
+=========================================*/
+
+body{
+    cursor:none;
+}
+
+/* Ocultar en celulares */
+@media(max-width:768px){
+    #kawaCursor{
+        display:none;
+    }
+
+    body{
+        cursor:auto;
+    }
+}
+
+#kawaCursor{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:55px;
+    height:55px;
+
+    pointer-events:none;
+
+    z-index:999999999;
+
+    transform:translate(-50%,-50%);
+
+    transition:
+    transform .12s ease-out,
+    filter .25s;
+
+    will-change:transform;
+
+}
+
+#kawaCursor img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    filter:
+    drop-shadow(0 0 10px #00ff44)
+    drop-shadow(0 0 20px #00ff44)
+    drop-shadow(0 0 30px #00ff44);
+
+}
+
+/* Cuando pasa sobre botones */
+
+.kawa-hover{
+
+    transform:
+    translate(-50%,-50%)
+    scale(1.35)
+    rotate(-12deg);
+
+}
+
+.kawa-hover img{
+
+    filter:
+    drop-shadow(0 0 15px #00ff44)
+    drop-shadow(0 0 30px #00ff44)
+    drop-shadow(0 0 45px #00ff44);
+
+}
