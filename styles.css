@@ -1597,3 +1597,56 @@ body.engine-shake {
     font-size: 12px;
   }
 }
+.formulario-servicio {
+  max-width: 520px;
+  margin: 40px 0 40px 40px;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.82);
+  border: 1px solid #00ff66;
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(0, 255, 80, 0.35);
+  color: white;
+}
+
+.formulario-servicio label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.formulario-servicio input,
+.formulario-servicio select,
+.formulario-servicio textarea {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #00ff66;
+  background: #111;
+  color: white;
+  outline: none;
+}
+
+.formulario-servicio textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#btnWhatsApp {
+  width: 100%;
+  margin-top: 18px;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  background: #00ff66;
+  color: #000;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  z-index: 9999;
+}
+
+#btnWhatsApp:hover {
+  background: #00cc55;
+}
