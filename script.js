@@ -232,7 +232,8 @@ if (engineBtn && motorStart && motorBlips) {
     motorStart.volume = 1;
     motorBlips.volume = 1;
 
-    motorStart.play();
+   motorStart.play();
+   dashboardBoot();
 
     engineEffectBurst();
 
@@ -241,6 +242,7 @@ if (engineBtn && motorStart && motorBlips) {
     motorStart.onended = () => {
       setTimeout(() => {
         motorBlips.play();
+        dashboardRevSequence();
         engineEffectBurst();
 
         setTimeout(engineEffectBurst, 900);
@@ -250,7 +252,7 @@ if (engineBtn && motorStart && motorBlips) {
 
     motorBlips.onended = () => {
       clearInterval(smokeInterval);
-
+      dashboardIdle();
       engineBtn.classList.remove("active");
       engineBtn.textContent = "🔊 Encender motor";
 
