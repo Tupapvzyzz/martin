@@ -310,6 +310,149 @@
     loading="lazy">
   </iframe>
 </section>
+   <!-- ================= FORMULARIO MECAMOTOR ================= -->
+
+<div class="input-group">
+    <label>👤 Nombre completo</label>
+    <input type="text" id="nombre" placeholder="Ej. Anthony Jara" required>
+</div>
+
+<div class="input-group">
+    <label>📱 Teléfono</label>
+    <input type="tel" id="telefono" placeholder="987654321" required>
+</div>
+
+<div class="input-group">
+    <label>🏍️ Marca</label>
+
+    <select id="marca" required>
+        <option value="">Seleccione una marca</option>
+        <option>Honda</option>
+        <option>Yamaha</option>
+        <option>Kawasaki</option>
+        <option>Suzuki</option>
+        <option>KTM</option>
+        <option>Bajaj</option>
+        <option>TVS</option>
+        <option>CFMOTO</option>
+        <option>Benelli</option>
+        <option>BMW</option>
+        <option>Aprilia</option>
+        <option>Husqvarna</option>
+        <option>Indian</option>
+        <option>QJMotor</option>
+        <option>Zontes</option>
+        <option>Voge</option>
+        <option>Otro</option>
+    </select>
+</div>
+
+<div class="input-group">
+    <label>🏍️ Modelo</label>
+    <input type="text" id="modelo" placeholder="Ej. Ninja ZX6R">
+</div>
+
+<div class="input-group">
+    <label>⚙️ Tipo de motocicleta</label>
+
+    <select id="tipo" required>
+        <option value="">Seleccione</option>
+        <option>Scooter</option>
+        <option>Pistera / Deportiva</option>
+        <option>Naked</option>
+        <option>Touring</option>
+        <option>Adventure</option>
+        <option>Motocross</option>
+        <option>Enduro</option>
+        <option>Doble propósito</option>
+        <option>Supermoto</option>
+        <option>Café Racer</option>
+        <option>Streetfighter</option>
+        <option>Otro</option>
+    </select>
+</div>
+
+<div class="input-group">
+    <label>🔥 Cilindrada</label>
+
+    <select id="cilindrada" required>
+        <option value="">Seleccione</option>
+        <option>110 cc</option>
+        <option>115 cc</option>
+        <option>125 cc</option>
+        <option>135 cc</option>
+        <option>150 cc</option>
+        <option>160 cc</option>
+        <option>180 cc</option>
+        <option>190 cc</option>
+        <option>200 cc</option>
+        <option>220 cc</option>
+        <option>250 cc</option>
+        <option>300 cc</option>
+        <option>310 cc</option>
+        <option>350 cc</option>
+        <option>390 cc</option>
+        <option>400 cc</option>
+        <option>450 cc</option>
+        <option>500 cc</option>
+        <option>550 cc</option>
+        <option>600 cc</option>
+        <option>Más de 600 cc</option>
+    </select>
+</div>
+
+<div class="input-group">
+    <label>🔧 Servicio solicitado</label>
+
+    <select id="servicio" required>
+        <option value="">Seleccione</option>
+
+        <option>Diagnóstico general</option>
+        <option>Mantenimiento preventivo</option>
+        <option>Mantenimiento correctivo</option>
+        <option>Cambio de aceite</option>
+        <option>Afinamiento</option>
+        <option>Limpieza de carburador</option>
+        <option>Inyección electrónica</option>
+        <option>Bajada de motor</option>
+        <option>Rectificación de motor</option>
+        <option>Regulación de válvulas</option>
+        <option>Cambio de embrague</option>
+        <option>Kit de transmisión</option>
+        <option>Cambio de pastillas</option>
+        <option>Suspensión</option>
+        <option>Frenos</option>
+        <option>Sistema eléctrico</option>
+        <option>Reparación por choque</option>
+        <option>Instalación de accesorios</option>
+        <option>Otro</option>
+    </select>
+</div>
+
+<div class="input-group">
+    <label>📝 Describe el problema</label>
+
+    <textarea
+        id="problema"
+        rows="5"
+        placeholder="Cuéntanos qué le sucede a tu motocicleta..."
+    ></textarea>
+</div>
+
+<div class="input-group">
+    <label>📷 Adjuntar fotografías (opcional)</label>
+
+    <input
+        type="file"
+        id="fotos"
+        accept="image/*"
+        multiple
+    >
+</div>
+
+<button id="enviarCotizacion" type="button">
+    📲 Enviar solicitud por WhatsApp
+</button>
 
 <!-- FOOTER -->
 <footer class="footer">
