@@ -320,33 +320,31 @@ function dashboardRevSequence() {
     if (engineLed) engineLed.classList.remove("warning");
   }, 2500);
 }
-document.getElementById("btnWhatsApp")?.addEventListener("click", function () {
-  const nombre = document.querySelector('input[name="nombre"]')?.value || "";
-  const telefono = document.querySelector('input[name="telefono"]')?.value || "";
-  const marca = document.querySelector('select[name="marca"]')?.value || "";
-  const modelo = document.querySelector('input[name="modelo"]')?.value || "";
-  const tipo = document.querySelector('select[name="tipo"]')?.value || "";
-  const cilindrada = document.querySelector('select[name="cilindrada"]')?.value || "";
-  const servicio = document.querySelector('select[name="servicio"]')?.value || "";
-  const problema = document.querySelector('textarea[name="problema"]')?.value || "";
+document.getElementById("enviarCotizacion").addEventListener("click", function () {
+  const nombre = document.getElementById("nombre").value;
+  const telefono = document.getElementById("telefono").value;
+  const marca = document.getElementById("marca").value;
+  const modelo = document.getElementById("modelo").value;
+  const tipo = document.getElementById("tipo").value;
+  const cilindrada = document.getElementById("cilindrada").value;
+  const servicio = document.getElementById("servicio").value;
+  const problema = document.getElementById("problema").value;
 
-  const mensaje = `
-Hola MECAMOTOR, quiero solicitar una revisión.
+  const mensaje = `Hola MECAMOTOR, quiero solicitar una cotización.
 
-Nombre: ${nombre}
-Teléfono: ${telefono}
-Marca: ${marca}
-Modelo: ${modelo}
-Tipo de moto: ${tipo}
-Cilindrada: ${cilindrada}
-Servicio solicitado: ${servicio}
+👤 Nombre: ${nombre}
+📱 Teléfono: ${telefono}
+🏍️ Marca: ${marca}
+🏍️ Modelo: ${modelo}
+⚙️ Tipo: ${tipo}
+🔥 Cilindrada: ${cilindrada}
+🔧 Servicio: ${servicio}
 
-Problema:
-${problema}
-`;
+📝 Problema:
+${problema}`;
 
-  const numeroWhatsApp = "51999999999";
-  const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+  const numero = "51943398351";
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
 
   window.open(url, "_blank");
 });
