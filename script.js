@@ -257,3 +257,57 @@ if (engineBtn && motorStart && motorBlips) {
     };
   });
 }
+/* ================= TACÓMETRO ANIMADO ================= */
+
+const rpmNeedle = document.getElementById("rpmNeedle");
+const rpmNumber = document.getElementById("rpmNumber");
+
+function setRPM(rpm) {
+  if (!rpmNeedle || !rpmNumber) return;
+
+  const maxRPM = 16000;
+  const minAngle = -120;
+  const maxAngle = 120;
+
+  const rpmFixed = Math.max(0, Math.min(rpm, maxRPM));
+  const angle = minAngle + (rpmFixed / maxRPM) * (maxAngle - minAngle);
+
+  rpmNeedle.style.transform = `translateX(-50%) rotate(${angle}deg)`;
+  rpmNumber.textContent = Math.round(rpmFixed);
+}
+
+function idleRPM() {
+  setRPM(1400);
+}
+
+function revRPM() {
+  setRPM(11500);
+
+  setTimeout(() => setRPM(6500), 250);
+  setTimeout(() => setRPM(13000), 650);
+  setTimeout(() => setRPM(5000), 1000);
+  setTimeout(() => setRPM(12000), 1350);
+  setTimeout(() => setRPM(1800), 1900);
+}
+
+if (engineBtn && motorStart && motorBlips) {
+  engineBtn.addEventListener("click", () => {
+    setRPM(0);
+
+    setTimeout(() => setRPM(4000), 300);
+    setTimeout(() => idleRPM(), 1000);
+
+    motorStart.onended = () => {
+      idleRPM();
+
+      setTimeout(() => {
+        motorBlips.play();
+        revRPM();
+      }, 500);
+    };
+
+    motorBlips.onended = () => {
+      setRPM(0);
+    };
+  });
+}
