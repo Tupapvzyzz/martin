@@ -257,57 +257,63 @@ if (engineBtn && motorStart && motorBlips) {
     };
   });
 }
-/* ================= TACÓMETRO ANIMADO ================= */
+/* ================= DASHBOARD KAWASAKI PRO ================= */
 
+const bikeDashboard = document.getElementById("bikeDashboard");
 const rpmNeedle = document.getElementById("rpmNeedle");
 const rpmNumber = document.getElementById("rpmNumber");
+const speedNumber = document.getElementById("speedNumber");
+const gearNumber = document.getElementById("gearNumber");
+const tempNumber = document.getElementById("tempNumber");
+const fuelNumber = document.getElementById("fuelNumber");
+const engineLed = document.querySelector(".engine-led");
 
-function setRPM(rpm) {
+function setDashboard(rpm, speed, gear, temp, fuel) {
   if (!rpmNeedle || !rpmNumber) return;
 
   const maxRPM = 16000;
   const minAngle = -120;
   const maxAngle = 120;
 
-  const rpmFixed = Math.max(0, Math.min(rpm, maxRPM));
-  const angle = minAngle + (rpmFixed / maxRPM) * (maxAngle - minAngle);
+  const cleanRPM = Math.max(0, Math.min(rpm, maxRPM));
+  const angle = minAngle + (cleanRPM / maxRPM) * (maxAngle - minAngle);
 
   rpmNeedle.style.transform = `translateX(-50%) rotate(${angle}deg)`;
-  rpmNumber.textContent = Math.round(rpmFixed);
+  rpmNumber.textContent = Math.round(cleanRPM);
+
+  if (speedNumber) speedNumber.textContent = speed;
+  if (gearNumber) gearNumber.textContent = gear;
+  if (tempNumber) tempNumber.textContent = temp + "°C";
+  if (fuelNumber) fuelNumber.textContent = fuel + "%";
 }
 
-function idleRPM() {
-  setRPM(1400);
+function dashboardBoot() {
+  setDashboard(0, 0, "N", 72, 84);
+
+  setTimeout(() => setDashboard(3000, 0, "N", 73, 84), 300);
+  setTimeout(() => setDashboard(7000, 0, "N", 74, 84), 600);
+  setTimeout(() => setDashboard(12000, 0, "N", 75, 84), 900);
+  setTimeout(() => setDashboard(1500, 0, "N", 76, 84), 1300);
 }
 
-function revRPM() {
-  setRPM(11500);
-
-  setTimeout(() => setRPM(6500), 250);
-  setTimeout(() => setRPM(13000), 650);
-  setTimeout(() => setRPM(5000), 1000);
-  setTimeout(() => setRPM(12000), 1350);
-  setTimeout(() => setRPM(1800), 1900);
+function dashboardIdle() {
+  setDashboard(1500, 0, "N", 78, 84);
 }
 
-if (engineBtn && motorStart && motorBlips) {
-  engineBtn.addEventListener("click", () => {
-    setRPM(0);
+function dashboardRevSequence() {
+  if (bikeDashboard) bikeDashboard.classList.add("revving");
+  if (engineLed) engineLed.classList.add("warning");
 
-    setTimeout(() => setRPM(4000), 300);
-    setTimeout(() => idleRPM(), 1000);
+  setTimeout(() => setDashboard(6000, 18, "1", 79, 84), 100);
+  setTimeout(() => setDashboard(11500, 42, "2", 80, 83), 350);
+  setTimeout(() => setDashboard(6500, 25, "1", 80, 83), 700);
+  setTimeout(() => setDashboard(13500, 58, "2", 81, 83), 1050);
+  setTimeout(() => setDashboard(8000, 31, "1", 82, 83), 1400);
+  setTimeout(() => setDashboard(12500, 50, "2", 83, 82), 1750);
+  setTimeout(() => setDashboard(1500, 0, "N", 82, 82), 2300);
 
-    motorStart.onended = () => {
-      idleRPM();
-
-      setTimeout(() => {
-        motorBlips.play();
-        revRPM();
-      }, 500);
-    };
-
-    motorBlips.onended = () => {
-      setRPM(0);
-    };
-  });
+  setTimeout(() => {
+    if (bikeDashboard) bikeDashboard.classList.remove("revving");
+    if (engineLed) engineLed.classList.remove("warning");
+  }, 2500);
 }
