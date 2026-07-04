@@ -320,3 +320,33 @@ function dashboardRevSequence() {
     if (engineLed) engineLed.classList.remove("warning");
   }, 2500);
 }
+document.getElementById("btnWhatsApp")?.addEventListener("click", function () {
+  const nombre = document.querySelector('input[name="nombre"]')?.value || "";
+  const telefono = document.querySelector('input[name="telefono"]')?.value || "";
+  const marca = document.querySelector('select[name="marca"]')?.value || "";
+  const modelo = document.querySelector('input[name="modelo"]')?.value || "";
+  const tipo = document.querySelector('select[name="tipo"]')?.value || "";
+  const cilindrada = document.querySelector('select[name="cilindrada"]')?.value || "";
+  const servicio = document.querySelector('select[name="servicio"]')?.value || "";
+  const problema = document.querySelector('textarea[name="problema"]')?.value || "";
+
+  const mensaje = `
+Hola MECAMOTOR, quiero solicitar una revisión.
+
+Nombre: ${nombre}
+Teléfono: ${telefono}
+Marca: ${marca}
+Modelo: ${modelo}
+Tipo de moto: ${tipo}
+Cilindrada: ${cilindrada}
+Servicio solicitado: ${servicio}
+
+Problema:
+${problema}
+`;
+
+  const numeroWhatsApp = "51999999999";
+  const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+
+  window.open(url, "_blank");
+});
