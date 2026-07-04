@@ -16,12 +16,43 @@
 <button id="engineBtn" class="engine-btn">
   🔊 Encender motor
 </button>
-  <!-- TACÓMETRO -->
-<div class="tachometer" id="tachometer">
-  <div class="rpm-text">RPM</div>
-  <div class="rpm-number" id="rpmNumber">0</div>
-  <div class="needle" id="rpmNeedle"></div>
-  <div class="tach-center"></div>
+<!-- DASHBOARD KAWASAKI PRO -->
+<div class="bike-dashboard" id="bikeDashboard">
+
+  <div class="dash-top">
+    <span class="led active">N</span>
+    <span class="led">ABS</span>
+    <span class="led">OIL</span>
+    <span class="led engine-led">ENGINE</span>
+  </div>
+
+  <div class="dash-main">
+    <div class="tach-pro">
+      <div class="rpm-scale">
+        <span>0</span><span>2</span><span>4</span><span>6</span>
+        <span>8</span><span>10</span><span>12</span><span class="red">14</span><span class="red">16</span>
+      </div>
+
+      <div class="rpm-needle" id="rpmNeedle"></div>
+      <div class="rpm-center"></div>
+      <div class="rpm-label">x1000 RPM</div>
+      <div class="rpm-digital" id="rpmNumber">0</div>
+    </div>
+
+    <div class="dash-info">
+      <div class="speed-box">
+        <span id="speedNumber">0</span>
+        <small>km/h</small>
+      </div>
+
+      <div class="gear-box" id="gearNumber">N</div>
+
+      <div class="mini-data">
+        <p>🌡️ TEMP <b id="tempNumber">72°C</b></p>
+        <p>⛽ FUEL <b id="fuelNumber">84%</b></p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- AUDIOS MOTOR -->
